@@ -7,4 +7,6 @@ public class Type : MonoBehaviour {
 	public const int UseAlcool = 2;
 	public const int AskVaccin = 3;
 
+	public int typeEvent;
+
 }
