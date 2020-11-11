@@ -7,6 +7,10 @@ public class AutoAttackSystem : FSystem {
 	private Family lym_T_macro = FamilyManager.getFamily(new AllOfComponents(typeof(Attack)),new NoneOfComponents(typeof(Move)));
 	private float c=1000f;
 	private bool hastraget=false;
+	private int hp=0;
+	private float d;
+	private int bd;
+	private GameObject t;
 
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
@@ -22,31 +26,31 @@ public class AutoAttackSystem : FSystem {
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach(GameObject vb in virus_bacterie_anticorp){
 			Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-			foreach(GameObject target in vbt){
+			foreach(GameObject target in vbt.Targets){
 				d=Vector2.Distance(vbt.transform.position, vb.transform.position);
 				if (d<c){
 					c=d;
-					target=vbt;
+					t=target;
 					hastraget=true;
 				}
 			}
 			if(hastraget==true){
-				v_attack(target,vb);
+				v_attack(t,vb);
 			}
 		}
 
 		foreach(GameObject vb in lym_T_macro){
 			Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-			foreach(GameObject target in vbt){
+			foreach(GameObject target in vbt.Targets){
 				d=Vector2.Distance(vbt.transform.position, vb.transform.position);
 				if (d<c){
 					c=d;
-					target=vbt;
+					t=target;
 					hastraget=true;
 				}
 			}
 			if(hastraget==true){
-				attack(target,vb);
+				attack(t,vb);
 			}
 		}
 	}
@@ -56,7 +60,7 @@ public class AutoAttackSystem : FSystem {
 		hp=hp-bd;
 		if(hp<0){
 			GameObjectManager.unbind(target);
-			Object.Destroy(targer);
+			Object.Destroy(target);
 		}
 		target.GetComponent<HP>().hp=hp;
 	}
