@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-public class Amount : MonoBehaviour {
+public class TimeLine : MonoBehaviour {
+	public int[] timeline;
 	// Advice: FYFY component aims to contain only public members (according to Entity-Component-System paradigm).
-	//public int amount = 5;
-	public float amount = 10f;
 }
