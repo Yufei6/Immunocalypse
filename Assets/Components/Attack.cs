@@ -5,7 +5,7 @@ public class Attack : MonoBehaviour {
 	public int baseDamage ;
 	public float frequency ; 
 	public float startpoint ;
-	public bool isAttack;
+	public bool isAttacking;
 	//test code
 	//public bool isAttack = false;
 }
