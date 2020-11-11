@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using FYFY;
-using SceneManege;
+using UnityEngine.SceneManagement;
 
 public class Controller : FSystem {
 	public const int MAINMENU = 0;
@@ -41,7 +41,7 @@ public class Controller : FSystem {
 			case 0:
 				Debug.Log("STATE0");
 				if (stateChange){
-					Debug.Log("Hello")
+					Debug.Log("Hello");
 				}
 
 				break;
