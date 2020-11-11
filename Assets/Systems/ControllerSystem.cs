@@ -11,24 +11,55 @@ public class Controller : FSystem {
 	public const int LOST = 6;
 	public const int WIN = 7;
 	
-	private int current_state = 0;
 
+	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
+	private GameState gs;
+	private GameLevel gl;
 
-
-	// Use this to update member variables when system pause. 
-	// Advice: avoid to update your families inside this function.
-	protected override void onPause(int currentFrame) {
-		current_state = 0;
-	}
-
-	// Use this to update member variables when system resume.
-	// Advice: avoid to update your families inside this function.
-	protected override void onResume(int currentFrame){
-		current_state = 0;
+	public Controller ()
+	{
+		gs = FamilyController.First().GetComponent<GameState>();
+		gl = FamilyController.First().GetComponent<GameLevel>();
 	}
 
 	// Use to process your families.
-	protected override void onProcess(int familiesUpdateCount) {
-		current_state = 0;
+	protected override void onProcess(int familiesUpdateCount) 
+	{
+		currentState = gs.currentState;
+		currentLevel = gl.currentLevel;
+		switch (currentState)
+		{
+			case 0:
+				Debug.Log("STATE0");
+				break;
+			case 1:
+				Debug.Log("STATE1");
+				break;
+			case 2:
+				Debug.Log("STATE2");
+				break;
+			case 3:
+				Debug.Log("STATE3");
+				break;
+			case 4:
+				Debug.Log("STATE4");
+				break;
+			case 5:
+				Debug.Log("STATE5");
+				break;
+			case 6:
+				Debug.Log("STATE6");
+				break;
+			case 7:
+				Debug.Log("STATE7");
+				break;
+			case 8:
+				Debug.Log("STATE8");
+				break;
+			case 9:
+				Debug.Log("STATE9");
+				break;
+			
+		}
 	}
 }
