@@ -25,32 +25,37 @@ public class AutoAttackSystem : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach(GameObject vb in virus_bacterie_anticorp){
-			Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-			foreach(GameObject target in vbt.Targets){
-				d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-				if (d<c){
-					c=d;
-					t=target;
-					hastraget=true;
+			if(attack_cd(vb)){
+				Triggered2D vbt= vb.GetComponent<Triggered2D> ();
+				foreach(GameObject target in vbt.Targets){
+					d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+					if (d<c){
+						c=d;
+						t=target;
+						hastraget=true;
+					}
 				}
-			}
-			if(hastraget==true){
-				v_attack(t,vb);
+				change_is_move(vb);
+				if(hastraget==true){
+					attack(t,vb);
+				}
 			}
 		}
 
 		foreach(GameObject vb in lym_T_macro){
-			Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-			foreach(GameObject target in vbt.Targets){
-				d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-				if (d<c){
-					c=d;
-					t=target;
-					hastraget=true;
+			if(attack_cd(vb)){
+				Triggered2D vbt= vb.GetComponent<Triggered2D> ();
+				foreach(GameObject target in vbt.Targets){
+					d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+					if (d<c){
+						c=d;
+						t=target;
+						hastraget=true;
+					}
 				}
-			}
-			if(hastraget==true){
-				attack(t,vb);
+				if(hastraget==true){
+					attack(t,vb);
+				}
 			}
 		}
 	}
@@ -61,10 +66,26 @@ public class AutoAttackSystem : FSystem {
 		if(hp<0){
 			GameObjectManager.unbind(target);
 			Object.Destroy(target);
+		}else{
+			target.GetComponent<HP>().hp=hp;
 		}
-		target.GetComponent<HP>().hp=hp;
+		hastraget=false;
+		
 	}
-	private void v_attack(GameObject target,GameObject att){
-		hp=0;
+	private void change_is_move(GameObject g){
+		g.GetComponent<Attack>().isAttacking=hastraget;
+
 	}
+	private bool attack_cd(GameObject v){
+		float b=v.GetComponent<Attack>().startpoint;
+		float a=v.GetComponent<Attack>().frequency;
+		if(a>b){
+			v.GetComponent<Attack>().startpoint=0;
+			return true;
+		}else{
+			v.GetComponent<Attack>().startpoint=b+1;
+			return false;
+		}
+	}
+	
 }
