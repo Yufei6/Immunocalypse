@@ -19,7 +19,7 @@ public class MovingSystem : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach (GameObject go in _controllableGO){
-			bool isMove = !go.GetComponent<Attack>().isAttack;
+			bool isMove = !go.GetComponent<Attack>().isAttacking;
 			if(isMove){
 				//get the target nearest
 				Vector3 target = go.GetComponent<Move>().routine[0];
