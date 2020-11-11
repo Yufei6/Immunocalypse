@@ -17,64 +17,87 @@ public class Controller : FSystem {
 	private GameState gs;
 	private GameLevel gl;
 	private bool stateChange;
-	private int currentState;
-	private int currentLevel;
+	private int lastState;
+	private int lastLevel;
 
 	public Controller ()
 	{
 		gs = FamilyController.First().GetComponent<GameState>();
 		gl = FamilyController.First().GetComponent<GameLevel>();
-		currentState = 0;
-		currentLevel = 1;
+		lastState = 0;
+		lastLevel = 1;
 		stateChange = false;
 
+	}
+
+	public void StartGame(int level=1)
+	{
+		gs.currentState = PLAYING;
+		gl.currentLevel = level;
 	}
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) 
 	{
-		stateChange = currentState == gs.currentState ? false : true ;
-		currentState = gs.currentState;
-		currentLevel = gl.currentLevel;
-		switch (currentState)
+		stateChange = lastState == gs.currentState ? false : true ;
+		if (stateChange && (lastState==PAUSE||lastState==EVENTCHOICE)) 
+		{
+			//Restart game
+			Time.timeScale = 1;
+		}
+		switch (gs.currentState)
 		{
 			case 0:
 				Debug.Log("STATE0");
 				if (stateChange){
-					Debug.Log("Hello");
+					SceneManager.LoadScene("MainMenuScene");
 				}
-
 				break;
 			case 1:
 				Debug.Log("STATE1");
+				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
+					SceneManager.LoadScene("Level"+gl.currentLevel.ToString()+"Scene");
+				}
 				break;
 			case 2:
 				Debug.Log("STATE2");
+				Time.timeScale = 0;
 				break;
 			case 3:
 				Debug.Log("STATE3");
+				Time.timeScale = 0;
 				break;
 			case 4:
 				Debug.Log("STATE4");
+				//TODO
 				break;
 			case 5:
 				Debug.Log("STATE5");
+				//TODO
 				break;
 			case 6:
 				Debug.Log("STATE6");
+				if (stateChange){
+					SceneManager.LoadScene("LostScene");
+				}
 				break;
 			case 7:
 				Debug.Log("STATE7");
+				if (stateChange){
+					SceneManager.LoadScene("WinScene");
+				}
 				break;
-			case 8:
-				Debug.Log("STATE8");
-				break;
-			case 9:
-				Debug.Log("STATE9");
-				break;
+			// case 8:
+			// 	Debug.Log("STATE8");
+			// 	break;
+			// case 9:
+			// 	Debug.Log("STATE9");
+			// 	break;
 			default :
 				Debug.Log("Error : Unknown STATE!");
 				break;
+		lastState = gs.currentState;
+		lastLevel = gl.currentLevel;
 			
 		}
 	}
