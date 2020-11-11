@@ -20,15 +20,11 @@ public class MovingSystem : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach (GameObject go in _controllableGO){
-<<<<<<< Updated upstream
-			bool isMove = !go.GetComponent<Attack>().isAttacking;
-=======
 			bool isMove = !go.GetComponent<Attack>().isAttack;
 			
->>>>>>> Stashed changes
 			if(isMove){
 				//get the target nearest
-				Debug.Log(cpt);
+				//Debug.Log(cpt);
 				Vector3 target = go.GetComponent<Move>().routine[cpt];
 				float speed = go.GetComponent<Move>().speed;
 				//get the transform of the guidance and walks towards it
