@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using FYFY;
+using SceneManege;
 
 public class Controller : FSystem {
 	public const int MAINMENU = 0;
@@ -15,22 +16,34 @@ public class Controller : FSystem {
 	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
 	private GameState gs;
 	private GameLevel gl;
+	private bool stateChange;
+	private int currentState;
+	private int currentLevel;
 
 	public Controller ()
 	{
 		gs = FamilyController.First().GetComponent<GameState>();
 		gl = FamilyController.First().GetComponent<GameLevel>();
+		currentState = 0;
+		currentLevel = 1;
+		stateChange = false;
+
 	}
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) 
 	{
+		stateChange = currentState == gs.currentState ? false : true ;
 		currentState = gs.currentState;
 		currentLevel = gl.currentLevel;
 		switch (currentState)
 		{
 			case 0:
 				Debug.Log("STATE0");
+				if (stateChange){
+					Debug.Log("Hello")
+				}
+
 				break;
 			case 1:
 				Debug.Log("STATE1");
@@ -58,6 +71,9 @@ public class Controller : FSystem {
 				break;
 			case 9:
 				Debug.Log("STATE9");
+				break;
+			default :
+				Debug.Log("Error : Unknown STATE!");
 				break;
 			
 		}
