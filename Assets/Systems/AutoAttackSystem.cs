@@ -27,12 +27,17 @@ public class AutoAttackSystem : FSystem {
 		foreach(GameObject vb in virus_bacterie_anticorp){
 			if(attack_cd(vb)){
 				Triggered2D vbt= vb.GetComponent<Triggered2D> ();
+
 				foreach(GameObject target in vbt.Targets){
-					d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-					if (d<c){
-						c=d;
-						t=target;
-						hastraget=true;
+					if(target.CompareTag("def")||target.CompareTag("enemy")){
+						if(target.tag !=vb.tag){
+							d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+							if (d<c){
+								c=d;
+								t=target;
+								hastraget=true;
+							}
+						}
 					}
 				}
 				change_is_move(vb);
@@ -46,11 +51,13 @@ public class AutoAttackSystem : FSystem {
 			if(attack_cd(vb)){
 				Triggered2D vbt= vb.GetComponent<Triggered2D> ();
 				foreach(GameObject target in vbt.Targets){
-					d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-					if (d<c){
-						c=d;
-						t=target;
-						hastraget=true;
+					if(target.CompareTag("enemy")){
+						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+						if (d<c){
+							c=d;
+							t=target;
+							hastraget=true;
+						}
 					}
 				}
 				if(hastraget==true){

@@ -31,7 +31,7 @@ public class MovingSystem : FSystem {
 				Vector3 dir = target-go.transform.position;
 				//Debug.Log(speed);
 
-				if(Vector3.Distance(go.transform.position,target)>0.5f){
+				if(Vector3.Distance(go.transform.position,target)>0.1f){
 					go.transform.Translate(dir.normalized*speed*Time.deltaTime,Space.World);
 
 				}else if(cpt<go.GetComponent<Move>().routine.Count-1){
