@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using FYFY;
-using UnityEngine.SceneManagement;
 
 public class Controller : FSystem {
 	public const int MAINMENU = 0;
@@ -19,6 +18,8 @@ public class Controller : FSystem {
 	private bool stateChange;
 	private int lastState;
 	private int lastLevel;
+	private GameObject controller;
+
 
 	public Controller ()
 	{
@@ -27,7 +28,7 @@ public class Controller : FSystem {
 		lastState = 0;
 		lastLevel = 1;
 		stateChange = false;
-
+		controller = FamilyController.First();
 	}
 
 	public void StartGame(int level=1)
@@ -35,6 +36,8 @@ public class Controller : FSystem {
 		gs.currentState = PLAYING;
 		gl.currentLevel = level;
 	}
+
+
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) 
@@ -50,13 +53,15 @@ public class Controller : FSystem {
 			case 0:
 				Debug.Log("STATE0");
 				if (stateChange){
-					SceneManager.LoadScene("MainMenuScene");
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("MainMenuScene");
 				}
 				break;
 			case 1:
 				Debug.Log("STATE1");
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
-					SceneManager.LoadScene("Level"+gl.currentLevel.ToString()+"Scene");
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("Level"+gl.currentLevel.ToString()+"Scene");
 				}
 				break;
 			case 2:
@@ -78,13 +83,15 @@ public class Controller : FSystem {
 			case 6:
 				Debug.Log("STATE6");
 				if (stateChange){
-					SceneManager.LoadScene("LostScene");
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("LostScene");
 				}
 				break;
 			case 7:
 				Debug.Log("STATE7");
 				if (stateChange){
-					SceneManager.LoadScene("WinScene");
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("WinScene");
 				}
 				break;
 			// case 8:
