@@ -10,4 +10,12 @@ public class Move : MonoBehaviour {
 
 	public List<Vector3> routine;
 
+	/* //test code
+	void Awake(){
+		routine = new List<Vector3>();
+		routine.Add(new Vector3(-3,0,0));
+		routine.Add(new Vector3(3,0,0));
+	}
+	*/
+
 }

@@ -4,6 +4,8 @@ public class Attack : MonoBehaviour {
 	// Advice: FYFY component aims to contain only public members (according to Entity-Component-System paradigm).
 	public int baseDamage ;
 	public float frequency ; 
-	public float startpoint ; 
+	public float startpoint ;
 	public bool isAttacking;
+	//test code
+	//public bool isAttack = false;
 }
