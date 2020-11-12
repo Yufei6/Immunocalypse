@@ -4382,7 +4382,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e9160edf6d843e7866ec6451c0f1fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  routine: []
+  routine:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!1 &1402339772
 GameObject:
   m_ObjectHideFlags: 0
@@ -5698,6 +5701,7 @@ GameObject:
   - component: {fileID: 1655860561}
   - component: {fileID: 1655860560}
   - component: {fileID: 1655860559}
+  - component: {fileID: 1655860564}
   m_Layer: 0
   m_Name: Main_Loop
   m_TagString: Untagged
@@ -5762,7 +5766,11 @@ MonoBehaviour:
       PublicKeyToken=null
     _typeFullName: MovingSystem
     _pause: 0
-  _updateSystemDescriptions: []
+  _updateSystemDescriptions:
+  - _typeAssemblyQualifiedName: MultiplierSystem, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _typeFullName: MultiplierSystem
+    _pause: 0
   _lateUpdateSystemDescriptions: []
   _forceUpdateInspector: 0
   _loadingState: 0
@@ -5791,6 +5799,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1655860564
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655860558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1bc301050ac4ec3b110240822867de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1660708490
 GameObject:
   m_ObjectHideFlags: 0

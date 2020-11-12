@@ -19,8 +19,11 @@ public class MultiplierSystem : FSystem {
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach(GameObject nu in nut){
 			cible=nu.GetComponent<Nutrition>().nut_cible;
+
 			actuelle=nu.GetComponent<Nutrition>().nut_actuelle;
-			if (cible==actuelle){
+			//nu.GetComponent<Nutrition>().nut_actuelle=actuelle+1;
+			if (cible<=actuelle){
+				nu.GetComponent<Nutrition>().nut_actuelle=actuelle-cible;
 				se_multi(nu);
 			}
 		}

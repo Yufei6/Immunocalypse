@@ -2,9 +2,20 @@
 using FYFY;
 using FYFY_plugins.TriggerManager;
 
+
 public class AutoAttackSystem : FSystem {
-	private Family virus_bacterie_anticorp = FamilyManager.getFamily(new AllOfComponents(typeof(Attack),typeof(Move)));
-	private Family lym_T_macro = FamilyManager.getFamily(new AllOfComponents(typeof(Attack)),new NoneOfComponents(typeof(Move)));
+	private Family virus_bacterie = FamilyManager.getFamily(
+		new AllOfComponents(
+			typeof(Attack),typeof(Move),typeof(Nutrition)
+			));
+	private Family lym_T_macro = FamilyManager.getFamily(
+		new AllOfComponents(
+			typeof(Attack)),
+		new NoneOfComponents(typeof(Move)));
+	private Family anticorp = FamilyManager.getFamily(
+		new AllOfComponents(
+			typeof(Attack),typeof(Move)),
+		new NoneOfComponents(typeof(Nutrition)));
 	private float c=1000f;
 	private bool hastraget=false;
 	private int hp=0;
@@ -24,13 +35,11 @@ public class AutoAttackSystem : FSystem {
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
-		foreach(GameObject vb in virus_bacterie_anticorp){
+		foreach(GameObject vb in virus_bacterie){
 			if(attack_cd(vb)){
 				Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-
 				foreach(GameObject target in vbt.Targets){
-					if(target.CompareTag("def")||target.CompareTag("enemy")){
-						if(target.tag !=vb.tag){
+					if(target.CompareTag("def")||target.CompareTag("cellule")){	
 							d=Vector2.Distance(vbt.transform.position, vb.transform.position);
 							if (d<c){
 								c=d;
@@ -38,7 +47,26 @@ public class AutoAttackSystem : FSystem {
 								hastraget=true;
 							}
 						}
-					}
+				}
+				change_is_move(vb);
+				if(hastraget==true){
+					add_nutrition(vb,t);
+					attack(t,vb);
+				}
+			}
+		}
+		foreach(GameObject vb in anticorp){
+			if(attack_cd(vb)){
+				Triggered2D vbt= vb.GetComponent<Triggered2D> ();
+				foreach(GameObject target in vbt.Targets){
+					if(target.CompareTag("enemy")){	
+							d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+							if (d<c){
+								c=d;
+								t=target;
+								hastraget=true;
+							}
+						}
 				}
 				change_is_move(vb);
 				if(hastraget==true){
@@ -46,7 +74,6 @@ public class AutoAttackSystem : FSystem {
 				}
 			}
 		}
-
 		foreach(GameObject vb in lym_T_macro){
 			if(attack_cd(vb)){
 				Triggered2D vbt= vb.GetComponent<Triggered2D> ();
@@ -61,6 +88,7 @@ public class AutoAttackSystem : FSystem {
 					}
 				}
 				if(hastraget==true){
+
 					attack(t,vb);
 				}
 			}
@@ -92,6 +120,21 @@ public class AutoAttackSystem : FSystem {
 		}else{
 			v.GetComponent<Attack>().startpoint=b+1;
 			return false;
+		}
+	}
+	private void add_nutrition(GameObject v,GameObject target){
+		if(target.CompareTag("cellule")){
+			int actuelle=v.GetComponent<Nutrition>().nut_actuelle;
+			int nut=min_v(v.GetComponent<Attack>().baseDamage,target.GetComponent<HP>().hp);
+			v.GetComponent<Nutrition>().nut_actuelle=actuelle+nut;
+		}
+
+	}
+	private int min_v(int i,int j){
+		if (i<j){
+			return i;
+		}else{
+			return j;
 		}
 	}
 	
