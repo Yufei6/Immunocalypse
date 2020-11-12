@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8313495439222542026}
   - component: {fileID: 8313495439222542029}
   - component: {fileID: 7145097375198730593}
+  - component: {fileID: 5213414019841642653}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -107,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f3b7939a53ac847ad63c519370ee19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   isMove: 1
   routine: []
 --- !u!114 &7145097375198730593
@@ -126,3 +127,17 @@ MonoBehaviour:
   frequency: 0
   startpoint: 0
   isAttacking: 0
+--- !u!114 &5213414019841642653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313495439222542028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd402de61004c814aabc7113291f6f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nut_cible: 50
+  nut_actuelle: 0
