@@ -103,9 +103,8 @@ public class Controller : FSystem {
 			default :
 				Debug.Log("Error : Unknown STATE!");
 				break;
+		}
 		lastState = gs.currentState;
 		lastLevel = gl.currentLevel;
-			
-		}
 	}
 }
