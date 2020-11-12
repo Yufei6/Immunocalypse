@@ -15,7 +15,7 @@ TagManager:
   - 
   - 
   - map
-  - 
+  - image
   - 
   - 
   - 
@@ -44,4 +44,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: image
+    uniqueID: 96724285
     locked: 0
