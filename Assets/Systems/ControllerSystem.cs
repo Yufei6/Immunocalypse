@@ -37,6 +37,11 @@ public class Controller : FSystem {
 		gl.currentLevel = level;
 	}
 
+	public void Pauss()
+	{
+		gs.currentState = PAUSE;
+	}
+
 
 
 	// Use to process your families.
