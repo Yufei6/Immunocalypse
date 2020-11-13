@@ -10,11 +10,6 @@ public class ControllableSystem : FSystem {
 	public int currentTowerType;
 	private Family pointerOverFamily = FamilyManager.getFamily (new AllOfComponents (typeof (PointerOver)));
 	private Family towerFacFamily = FamilyManager.getFamily(new AllOfComponents(typeof(BuildTower)));
-	private Family normalCellFamily = FamilyManager.getFamily(new AllOfComponents(typeof(HP)), new AllOfComponents(typeof(NormalCell)));
-	private Family towerPlaceFamily = FamilyManager.getFamily(
-		new AllOfComponents(typeof(TypeCase)),
-		new NoneOfComponents(typeof(ColdDown)));
-
 	private BuildTower towerFac;
 	private GameObject tower;
 
