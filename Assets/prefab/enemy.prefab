@@ -493,6 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4347469561699546298}
   - component: {fileID: 2786145239744743633}
+  - component: {fileID: 1828092243669523581}
   m_Layer: 0
   m_Name: dachang
   m_TagString: Untagged
@@ -564,6 +565,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &1828092243669523581
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5964048611276092027}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 59a85e3b411b74b8fb8459b95aaf7dfd, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 59a85e3b411b74b8fb8459b95aaf7dfd, type: 2}
+  - {fileID: 7400000, guid: 59a85e3b411b74b8fb8459b95aaf7dfd, type: 2}
+  - {fileID: 7400000, guid: 59a85e3b411b74b8fb8459b95aaf7dfd, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8887882084525712126
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +599,7 @@ GameObject:
   - component: {fileID: 5303435777785666349}
   - component: {fileID: 8953706597383962250}
   - component: {fileID: 7334499006326550353}
+  - component: {fileID: -4452266984127143291}
   m_Layer: 0
   m_Name: enemy
   m_TagString: enemy
@@ -678,6 +698,7 @@ MonoBehaviour:
   speed: 1
   isMove: 1
   routine: []
+  cpt: 0
 --- !u!114 &5303435777785666349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,3 +744,20 @@ MonoBehaviour:
   hp: 75
   hp_max: 100
   barre: {fileID: 6508567229098057275}
+--- !u!111 &-4452266984127143291
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887882084525712126}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 0}
+  - {fileID: 7400000, guid: 59a85e3b411b74b8fb8459b95aaf7dfd, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
