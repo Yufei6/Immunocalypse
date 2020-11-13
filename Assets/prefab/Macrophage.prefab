@@ -102,6 +102,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 969086081637933339}
+  - component: {fileID: 438583851832588765}
+  - component: {fileID: -4852874944006927554}
   m_Layer: 0
   m_Name: Macrophage
   m_TagString: Untagged
@@ -124,3 +126,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &438583851832588765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830931992787935135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172815aa00a697a42be67204cdb27463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  hp_max: 100
+  barre: {fileID: 0}
+--- !u!114 &-4852874944006927554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830931992787935135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3f4b7cfbb91d640a66a9af2f178da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 0
+  frequency: 0
+  startpoint: 0
+  isAttacking: 0

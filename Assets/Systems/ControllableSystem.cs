@@ -3,6 +3,7 @@ using FYFY;
 using FYFY_plugins.PointerManager;
 
 public class ControllableSystem : FSystem {
+	public const int DESTROY = -1;
 	public const int MACROPHAGE = 0;
 	public const int IMPHOCYTET = 1;
 	public const int IMPHOCYTEB = 2;
@@ -10,15 +11,17 @@ public class ControllableSystem : FSystem {
 	public int currentTowerType;
 	private Family pointerOverFamily = FamilyManager.getFamily (new AllOfComponents (typeof (PointerOver)));
 	private Family towerFacFamily = FamilyManager.getFamily(new AllOfComponents(typeof(BuildTower)));
-	private Family normalCellF = FamilyManager.getFamily(new AllOfComponents(typeof(HP), typeof(NormalCell)));
-	private Family caseTowerF = FamilyManager.getFamily(new AllOfComponents(typeof(TypeCase)));
+	private Family normalCellF = FamilyManager.getFamily(new AllOfComponents(typeof(HP), typeof(HasTower)));
+	private Family caseTowerF = FamilyManager.getFamily(new AllOfComponents(typeof(TypeCase), typeof(HasTower)));
+	private Family towerF = FamilyManager.getFamily(new AllOfComponents(typeof(Attack), typeof(HP)),
+		new NoneOfComponents(typeof(Move)));
 	private BuildTower towerFac;
 	private GameObject tower;
 
 
 	public ControllableSystem()
 	{
-		currentTowerType = -1;
+		currentTowerType = -2;
 		towerFac = towerFacFamily.First().GetComponent<BuildTower>();
 	}
 
@@ -34,6 +37,7 @@ public class ControllableSystem : FSystem {
 		// Debug.Log(go.transform+"Hello");
 
 	}
+
 
 	public Vector3 mousePos2worldPos(Vector3 mousePos)
 	{
@@ -58,7 +62,7 @@ public class ControllableSystem : FSystem {
 		return true;
 	}
 
-	private GameObject getObjectClick(Vector3 pos)
+	private GameObject getCaseClick(Vector3 pos)
 	{
 		foreach (GameObject go in normalCellF)
 		{
@@ -76,44 +80,71 @@ public class ControllableSystem : FSystem {
 		}
 		return null;
 	}
-
-	public void BuildTower(Vector3 pos, int towerType)
+	
+	private GameObject getTowerClick(Vector3 pos)
 	{
-		GameObject go = getObjectClick(pos);
+		foreach (GameObject go in towerF)
+		{
+			if (insideInObject(go,pos))
+			{
+				return go;
+			}
+		}
+		return null;
+	}
+
+	private void BuildTower(Vector3 pos, int towerType)
+	{
+		GameObject go = getCaseClick(pos);
 		if (go != null)
 		{
 			bool isMacrophage = go.GetComponent<HP>() == null ? false:true;
-			switch(towerType)
+			if(!go.GetComponent<HasTower>().hasTower)
 			{
-				case 0:
-					if (isMacrophage)
-					{
-						tower = Object.Instantiate<GameObject>(towerFac.macrophage);
-					}
-					break;
-				case 1:
-					if (!isMacrophage)
-					{
-						tower = Object.Instantiate<GameObject>(towerFac.cellT);
-					}
-					break;
-				case 2:
-					if (!isMacrophage)
-					{
-						tower = Object.Instantiate<GameObject>(towerFac.cellB);
-					}
-					break;
-				default:
-					Debug.Log("Unknow type of tower!(Yufei)");
-					break;
+				switch(towerType)
+				{
+					case 0:
+						if (isMacrophage)
+						{
+							tower = Object.Instantiate<GameObject>(towerFac.macrophage);
+						}
+						break;
+					case 1:
+						if (!isMacrophage)
+						{
+							tower = Object.Instantiate<GameObject>(towerFac.cellT);
+						}
+						break;
+					case 2:
+						if (!isMacrophage)
+						{
+							tower = Object.Instantiate<GameObject>(towerFac.cellB);
+						}
+						break;
+					default:
+						Debug.Log("Unknow type of tower!(Yufei)");
+						break;
+				}
 			}
 			if (tower != null){
 				GameObjectManager.bind(tower);
 				tower.transform.position = go.transform.position;
+				go.GetComponent<HasTower>().hasTower = true; 
 				tower = null;
 			}
 		}
 		
+	}
+
+	private void DestroyTower(Vector3 pos){
+		GameObject case1 = getCaseClick(pos);
+		GameObject tower = getTowerClick(pos);
+		if ((tower != null) && (case1 != null))
+		{
+			GameObjectManager.unbind(tower);
+			Object.Destroy(tower);
+			case1.GetComponent<HasTower>().hasTower = false; 
+		}
 	}
 	
 
@@ -122,15 +153,21 @@ public class ControllableSystem : FSystem {
 		foreach (GameObject go in pointerOverFamily)
 		{
 			ShowInformation(go);
+		}
+		if (currentTowerType == -1){
+			if (Input.GetMouseButton(0))
+			{
+				DestroyTower(mousePos2worldPos(Input.mousePosition));
+				currentTowerType = -2;
+			}
 		} 
-		if (currentTowerType > -1)
+		else if (currentTowerType > -1)
 		{
 			if (Input.GetMouseButton(0))
 			{
 				BuildTower(mousePos2worldPos(Input.mousePosition), currentTowerType);
-				currentTowerType = -1;
+				currentTowerType = -2;
 			}
-
 		}
 	}
 }

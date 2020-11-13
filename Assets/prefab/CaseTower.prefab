@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2740068113948417690}
   - component: {fileID: 2740068113948417691}
   - component: {fileID: -5441909073890129042}
+  - component: {fileID: 7776052086071318312}
   m_Layer: 8
   m_Name: CaseTower
   m_TagString: Untagged
@@ -107,3 +108,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeCase: 0
+--- !u!114 &7776052086071318312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2740068113948417693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1042b05c7620b416f9f33929307ea7f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasTower: 0
