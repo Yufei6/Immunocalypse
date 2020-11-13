@@ -20,12 +20,7 @@ public class FactorySystem : FSystem {
 		tl=timeline.First().GetComponent<TimeLine>();
 		te=alltype.First().GetComponent<AllTypeEnemy>();
 		//test
-		foreach(GameObject fac in factory){
-			v=new Vector3(-1,-1,0);
-			fac.GetComponent<Routine>().routine.Add(v);
-			fac.GetComponent<Routine>().routine.Add(new Vector3(-1,-2,0));
-			fac.GetComponent<Routine>().routine.Add(new Vector3(1,-2,0));
-		}
+		
 	}
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
@@ -45,8 +40,8 @@ public class FactorySystem : FSystem {
 
 		//Debug.Log(tl.i);
 		if(frame_compteur==tl.frame[enemy_compteur]){
-			int type=tl.type[enemy_compteur];
-			int id=tl.id[enemy_compteur];
+			int type=tl.type_enemy[enemy_compteur];
+			int id=tl.id_fac[enemy_compteur];
 			GameObject prefab;
 			if(type ==1){
 				prefab=te.virus;	
