@@ -14,4 +14,9 @@ public class Controller_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("Controller", "StartGame", level);
 	}
 
+	public void Pauss()
+	{
+		MainLoop.callAppropriateSystemMethod ("Controller", "Pauss", null);
+	}
+
 }
