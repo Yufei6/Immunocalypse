@@ -7,7 +7,9 @@ public class MovingSystem : FSystem {
 	// Advice: avoid to update your families inside this function.
 
 	private Family _controllableGO = FamilyManager.getFamily(new AllOfComponents(typeof(Move)));
-	private int cpt = 0;
+
+
+	//private int cpt = 0;
 
 	protected override void onPause(int currentFrame) {
 	}
@@ -19,25 +21,29 @@ public class MovingSystem : FSystem {
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
+
 		foreach (GameObject go in _controllableGO){
 			bool isMove = !go.GetComponent<Attack>().isAttacking;
+			//get his own compteur for the targets
+			int _cpt = go.GetComponent<Move>().cpt;
 			
 			if(isMove){
 				//get the target nearest
-				
-				Vector3 target = go.GetComponent<Move>().routine[cpt];
+				Vector3 target = go.GetComponent<Move>().routine[_cpt];
 				float speed = go.GetComponent<Move>().speed;
 				//get the transform of the guidance and walks towards it
 				Vector3 dir = target-go.transform.position;
-				//Debug.Log(speed);
+				Debug.Log(target);
 
 				if(Vector3.Distance(go.transform.position,target)>0.1f){
 					go.transform.Translate(dir.normalized*speed*Time.deltaTime,Space.World);
 
-				}else if(cpt<go.GetComponent<Move>().routine.Count-1){
-					cpt+=1;
-					target = go.GetComponent<Move>().routine[cpt];
-					Debug.Log(go.GetComponent<Move>().routine[cpt]);
+				}else if(_cpt<go.GetComponent<Move>().routine.Count-1){
+					//_cpt+=1;
+					go.GetComponent<Move>().cpt+=1;
+					//target = go.GetComponent<Move>().routine[_cpt];
+					//Debug.Log(go.GetComponent<Move>().routine.Count);
+					Debug.Log(target);
 				}else{
 					int i=1;
 					//Debug.Log("All targets reached");

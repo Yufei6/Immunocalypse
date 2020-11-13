@@ -10,6 +10,8 @@ public class Move : MonoBehaviour {
 
 	public List<Vector3> routine;
 
+	public int cpt = 0;
+
 	/* //test code
 	void Awake(){
 		routine = new List<Vector3>();
