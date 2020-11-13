@@ -10,7 +10,7 @@ public class ControllableSystem : FSystem {
 	public int currentTowerType;
 	private Family pointerOverFamily = FamilyManager.getFamily (new AllOfComponents (typeof (PointerOver)));
 	private Family towerFacFamily = FamilyManager.getFamily(new AllOfComponents(typeof(BuildTower)));
-	private Family normalCellF = FamilyManager.getFamily(new AllOfComponents(typeof(HP)), new AllOfComponents(typeof(NormalCell)));
+	private Family normalCellF = FamilyManager.getFamily(new AllOfComponents(typeof(HP), typeof(NormalCell)));
 	private Family caseTowerF = FamilyManager.getFamily(new AllOfComponents(typeof(TypeCase)));
 	private BuildTower towerFac;
 	private GameObject tower;
@@ -30,14 +30,16 @@ public class ControllableSystem : FSystem {
 
 	public void ShowInformation(GameObject go)
 	{
-		Debug.Log(go.transform+"Hello");
+		int i = 1;
+		// Debug.Log(go.transform+"Hello");
 
 	}
 
 	public Vector3 mousePos2worldPos(Vector3 mousePos)
 	{
 		Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePos);
-		Debug.Log("Before"+mousePos+"After"+mouseWorldPos);
+		// Debug.Log("Before"+mousePos+"After"+mouseWorldPos);
+		Debug.Log("mousePos"+mouseWorldPos);
  		return mouseWorldPos;
 	}
 
@@ -46,11 +48,13 @@ public class ControllableSystem : FSystem {
 		float diffX = pos.x - go.transform.position.x;
 		float diffY = pos.y - go.transform.position.y;
 		diffX = diffX >= 0 ? diffX : -diffX;
-		diffY = diffY >= 0 ? diffY : -diffX;
-		if ((diffX>go.transform.localScale.x) || (diffY>go.transform.localScale.y))
+		diffY = diffY >= 0 ? diffY : -diffY;
+		if ((diffX > 0.5 * go.transform.localScale.x) || (diffY > 0.5f * go.transform.localScale.y))
 		{
 			return false;
 		}
+		// Debug.Log("OK, Object at"+go.transform.position+" ; your mouse at "+pos);
+		// Debug.Log("Diff X="+diffX+" ; Diff Y= "+diffY);
 		return true;
 	}
 
@@ -75,23 +79,40 @@ public class ControllableSystem : FSystem {
 
 	public void BuildTower(Vector3 pos, int towerType)
 	{
-		switch(towerType)
+		GameObject go = getObjectClick(pos);
+		if (go != null)
 		{
-			case 0:
-				tower = Object.Instantiate<GameObject>(towerFac.macrophage);
-				break;
-			case 1:
-				tower = Object.Instantiate<GameObject>(towerFac.cellT);
-				break;
-			case 2:
-				tower = Object.Instantiate<GameObject>(towerFac.cellB);
-				break;
-			default:
-				Debug.Log("Unknow type of tower!(Yufei)");
-				break;
+			bool isMacrophage = go.GetComponent<HP>() == null ? false:true;
+			switch(towerType)
+			{
+				case 0:
+					if (isMacrophage)
+					{
+						tower = Object.Instantiate<GameObject>(towerFac.macrophage);
+					}
+					break;
+				case 1:
+					if (!isMacrophage)
+					{
+						tower = Object.Instantiate<GameObject>(towerFac.cellT);
+					}
+					break;
+				case 2:
+					if (!isMacrophage)
+					{
+						tower = Object.Instantiate<GameObject>(towerFac.cellB);
+					}
+					break;
+				default:
+					Debug.Log("Unknow type of tower!(Yufei)");
+					break;
+			}
+			if (tower != null){
+				GameObjectManager.bind(tower);
+				tower.transform.position = go.transform.position;
+				tower = null;
+			}
 		}
-		GameObjectManager.bind(tower);
-		tower.transform.position = pos;
 		
 	}
 	
