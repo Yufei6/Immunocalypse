@@ -7,6 +7,7 @@ public class AfficheSystem : FSystem {
 	// Advice: avoid to update your families inside this function
 	private Family amount_family = FamilyManager.getFamily(new AllOfComponents(typeof(Amount)));
 	private Family hp_family = FamilyManager.getFamily(new AllOfComponents(typeof(HP)));
+
 	//private float startAmount = 10f;
 
 	protected override void onPause(int currentFrame) {
@@ -38,4 +39,5 @@ public class AfficheSystem : FSystem {
 		}
 
 	}
+
 }
