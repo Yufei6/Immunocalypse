@@ -41,6 +41,38 @@ public class ControllableSystem : FSystem {
  		return mouseWorldPos;
 	}
 
+	private bool insideInObject(GameObject go, Vector3 pos)
+	{
+		float diffX = pos.x - go.transform.position.x;
+		float diffY = pos.y - go.transform.position.y;
+		diffX = diffX >= 0 ? diffX : -diffX;
+		diffY = diffY >= 0 ? diffY : -diffX;
+		if ((diffX>go.transform.localScale.x) || (diffY>go.transform.localScale.y))
+		{
+			return false;
+		}
+		return true;
+	}
+
+	private GameObject getObjectClick(Vector3 pos)
+	{
+		foreach (GameObject go in normalCellF)
+		{
+			if (insideInObject(go,pos))
+			{
+				return go;
+			}
+		}
+		foreach (GameObject go in caseTowerF)
+		{
+			if (insideInObject(go,pos))
+			{
+				return go;
+			}
+		}
+		return null;
+	}
+
 	public void BuildTower(Vector3 pos, int towerType)
 	{
 		switch(towerType)

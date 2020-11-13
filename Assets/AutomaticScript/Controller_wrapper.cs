@@ -19,4 +19,9 @@ public class Controller_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("Controller", "Pauss", null);
 	}
 
+	public void ShowCollection()
+	{
+		MainLoop.callAppropriateSystemMethod ("Controller", "ShowCollection", null);
+	}
+
 }

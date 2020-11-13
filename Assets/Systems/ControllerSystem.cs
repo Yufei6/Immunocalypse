@@ -42,6 +42,11 @@ public class Controller : FSystem {
 		gs.currentState = PAUSE;
 	}
 
+	public void ShowCollection()
+	{
+		gs.currentState = SHOWCOLLECTION;
+	}
+
 
 
 	// Use to process your families.
@@ -83,7 +88,10 @@ public class Controller : FSystem {
 				break;
 			case 5:
 				Debug.Log("STATE5");
-				//TODO
+				if (stateChange){
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("collection");
+				}
 				break;
 			case 6:
 				Debug.Log("STATE6");
