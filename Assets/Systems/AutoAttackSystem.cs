@@ -38,9 +38,8 @@ public class AutoAttackSystem : FSystem {
 		foreach(GameObject vb in virus_bacterie){
 			
 			Triggered2D vbt= vb.GetComponent<Triggered2D>();
-			Debug.Log(vbt);
+			Debug.Log(vb);
 			foreach(GameObject target in vbt.Targets){
-				
 				if(target.CompareTag("def")||target.CompareTag("cellule")){	
 						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
 						if (d<c){
