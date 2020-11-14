@@ -3,6 +3,7 @@ using FYFY;
 using FYFY_plugins.PointerManager;
 
 public class ControllableSystem : FSystem {
+	public const int NOTHING = -2;
 	public const int DESTROY = -1;
 	public const int MACROPHAGE = 0;
 	public const int IMPHOCYTET = 1;
@@ -15,16 +16,30 @@ public class ControllableSystem : FSystem {
 	private Family caseTowerF = FamilyManager.getFamily(new AllOfComponents(typeof(TypeCase), typeof(HasTower)));
 	private Family towerF = FamilyManager.getFamily(new AllOfComponents(typeof(Attack), typeof(HP)),
 		new NoneOfComponents(typeof(Move)));
-	//add to cool down
-	//private Family coolDownFamily = FamilyManager.getFamily(new AllOfComponents(typeof(ColdDown)));
+
+	private Family cursorTypeF = FamilyManager.getFamily(new AllOfComponents(typeof(TypeCursor)));
+
 	private BuildTower towerFac;
 	private GameObject tower;
+	private TypeCursor tc;
+	private Texture2D CursorNormal;
+	private Texture2D CursorM;
+	private Texture2D CursorT;
+	private Texture2D CursorB;
+	private Texture2D CursorDestroy;
+	
 
 
 	public ControllableSystem()
 	{
 		currentTowerType = -2;
 		towerFac = towerFacFamily.First().GetComponent<BuildTower>();
+		tc = cursorTypeF.First().GetComponent<TypeCursor>();
+		CursorNormal = tc.CursorNormal;
+		CursorM = tc.CursorM;
+		CursorT = tc.CursorT;
+		CursorB = tc.CursorB;
+		CursorDestroy = tc.CursorDestroy;
 	}
 
 
@@ -155,10 +170,36 @@ public class ControllableSystem : FSystem {
 			case1.GetComponent<HasTower>().hasTower = false; 
 		}
 	}
+
+	private void UpdateCursor()
+	{
+		switch (currentTowerType)
+		{
+			case NOTHING:
+				Cursor.SetCursor(CursorNormal, Vector2.zero, CursorMode.Auto);
+				break;
+			case DESTROY:
+				Cursor.SetCursor(CursorDestroy, Vector2.zero, CursorMode.Auto);
+				break;
+			case MACROPHAGE:
+				Cursor.SetCursor(CursorM, Vector2.zero, CursorMode.Auto);
+				break;
+			case IMPHOCYTET:
+				Cursor.SetCursor(CursorT, Vector2.zero, CursorMode.Auto);
+				break;	
+			case IMPHOCYTEB:
+				Cursor.SetCursor(CursorB, Vector2.zero, CursorMode.Auto);
+				break;
+			default:
+				Debug.Log("Unknow CursorType!!(Yufei)");
+				break;
+		}
+	}
 	
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
+		UpdateCursor();
 		foreach (GameObject go in pointerOverCaseFamily)
 		{
 			// Debug.Log("INNN");

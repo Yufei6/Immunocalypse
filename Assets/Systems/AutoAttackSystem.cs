@@ -38,6 +38,7 @@ public class AutoAttackSystem : FSystem {
 		foreach(GameObject vb in virus_bacterie){
 			
 			Triggered2D vbt= vb.GetComponent<Triggered2D>();
+			//hastraget=false;
 			if (vbt!=null){
 				foreach(GameObject target in vbt.Targets){	
 					if(target.CompareTag("def")||target.CompareTag("cellule")){	
@@ -90,21 +91,27 @@ public class AutoAttackSystem : FSystem {
 		}
 		foreach(GameObject vb in lym_T_macro){
 			Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-			foreach(GameObject target in vbt.Targets){
-				if(target.CompareTag("enemy")){
-					d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-					if (d<c){
-						c=d;
-						t=target;
-						hastraget=true;
+
+			//hastraget=false;		
+			if (vbt!=null){
+				foreach(GameObject target in vbt.Targets){
+					//Debug.Log(vb);
+					if(target.CompareTag("enemy")){
+						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+						if (d<c){
+							c=d;
+							t=target;
+							hastraget=true;
+						}
+					}
+				}
+				if(hastraget==true){
+					if(attack_cd(vb)){
+						attack(t,vb);
 					}
 				}
 			}
-			if(hastraget==true){
-				if(attack_cd(vb)){
-				attack(t,vb);
-				}
-			}
+			
 		}
 	}
 	private void attack(GameObject target,GameObject att){
