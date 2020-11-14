@@ -17,6 +17,9 @@ public class ControllableSystem : FSystem {
 	private Family towerF = FamilyManager.getFamily(new AllOfComponents(typeof(Attack), typeof(HP)),
 		new NoneOfComponents(typeof(Move)));
 	private Family cursorTypeF = FamilyManager.getFamily(new AllOfComponents(typeof(TypeCursor)));
+	private Family buttonTowerF = FamilyManager.getFamily(new AllOfComponents(typeof(ColdDownTower)));
+	private Family ressourcesF = FamilyManager.getFamily(new AllOfComponents(typeof(Amout)));
+
 	private BuildTower towerFac;
 	private GameObject tower;
 	private TypeCursor tc;
@@ -25,6 +28,7 @@ public class ControllableSystem : FSystem {
 	private Texture2D CursorT;
 	private Texture2D CursorB;
 	private Texture2D CursorDestroy;
+	private Amout amout;
 	
 
 
@@ -38,6 +42,7 @@ public class ControllableSystem : FSystem {
 		CursorT = tc.CursorT;
 		CursorB = tc.CursorB;
 		CursorDestroy = tc.CursorDestroy;
+		amout = ressourcesF.First().GetComponent<Amout>();
 	}
 
 
@@ -115,6 +120,18 @@ public class ControllableSystem : FSystem {
 		return null;
 	}
 
+	private GameObject getButtonTower()
+	{
+		foreach (GameObject go in buttonTowerF)
+		{
+			if (go.GetComponent<ColdDownTower>().typeTower == currentTowerType)
+			{
+				return go;
+			}
+		}
+		return null;
+	}
+
 	private void BuildTower(Vector3 pos, int towerType)
 	{
 		GameObject go = getCaseClick(pos);
@@ -123,24 +140,32 @@ public class ControllableSystem : FSystem {
 			bool isMacrophage = go.GetComponent<HP>() == null ? false:true;
 			if(!go.GetComponent<HasTower>().hasTower)
 			{
+				buttonTower = getButtonTower();
+				ColdDownTower cdt = buttonTower.GetComponent<ColdDownTower>();
 				switch(towerType)
 				{
 					case 0:
 						if (isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.macrophage);
+							cdt.cd = 2f;
+							amout.amout -= 2;
 						}
 						break;
 					case 1:
 						if (!isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.cellT);
+							cdt.cd = 4f;
+							amout.amout -= 4;
 						}
 						break;
 					case 2:
 						if (!isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.cellB);
+							cdt.cd = 5f;
+							amout.amout -= 5;
 						}
 						break;
 					default:
