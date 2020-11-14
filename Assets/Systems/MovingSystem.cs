@@ -33,7 +33,7 @@ public class MovingSystem : FSystem {
 				float speed = go.GetComponent<Move>().speed;
 				//get the transform of the guidance and walks towards it
 				Vector3 dir = target-go.transform.position;
-				Debug.Log(target);
+				//Debug.Log(target);
 
 				if(Vector3.Distance(go.transform.position,target)>0.1f){
 					go.transform.Translate(dir.normalized*speed*Time.deltaTime,Space.World);
