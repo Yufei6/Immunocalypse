@@ -45,7 +45,8 @@ public class MovingSystem : FSystem {
 					//Debug.Log(go.GetComponent<Move>().routine.Count);
 					//Debug.Log(target);
 				}else{
-					int i=1;
+					
+					GameObjectManager.loadScene("WinScene");
 					//Debug.Log("All targets reached");
 				}
 
