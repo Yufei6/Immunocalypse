@@ -18,8 +18,8 @@ public class ControllableSystem : FSystem {
 		new NoneOfComponents(typeof(Move)));
 
 	private Family cursorTypeF = FamilyManager.getFamily(new AllOfComponents(typeof(TypeCursor)));
-	private Family buttonTowerF = FamilyManager.getFamily(new AllOfComponents(typeof(ColdDownTower)));
-	private Family ressourcesF = FamilyManager.getFamily(new AllOfComponents(typeof(Amout)));
+	private Family buttonTowerF = FamilyManager.getFamily(new AllOfComponents(typeof(cdTower)));
+	private Family ressourcesF = FamilyManager.getFamily(new AllOfComponents(typeof(Amount)));
 
 
 	private BuildTower towerFac;
@@ -30,7 +30,8 @@ public class ControllableSystem : FSystem {
 	private Texture2D CursorT;
 	private Texture2D CursorB;
 	private Texture2D CursorDestroy;
-	private Amout amout;
+	private Amount amount;
+	private GameObject buttonTower;
 	
 
 
@@ -44,7 +45,7 @@ public class ControllableSystem : FSystem {
 		CursorT = tc.CursorT;
 		CursorB = tc.CursorB;
 		CursorDestroy = tc.CursorDestroy;
-		amout = ressourcesF.First().GetComponent<Amout>();
+		amount = ressourcesF.First().GetComponent<Amount>();
 	}
 
 
@@ -126,7 +127,7 @@ public class ControllableSystem : FSystem {
 	{
 		foreach (GameObject go in buttonTowerF)
 		{
-			if (go.GetComponent<ColdDownTower>().typeTower == currentTowerType)
+			if (go.GetComponent<cdTower>().id == currentTowerType)
 			{
 				return go;
 			}
@@ -143,37 +144,33 @@ public class ControllableSystem : FSystem {
 			if(!go.GetComponent<HasTower>().hasTower)
 			{
 				buttonTower = getButtonTower();
-				ColdDownTower cdt = buttonTower.GetComponent<ColdDownTower>();
+				cdTower cdt = buttonTower.GetComponent<cdTower>();
 				switch(towerType)
 				{
 					case 0:
 						if (isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.macrophage);
-							cdt.cd = 2f;
-							amout.amout -= 2;
 						}
 						break;
 					case 1:
 						if (!isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.cellT);
-							cdt.cd = 4f;
-							amout.amout -= 4;
 						}
 						break;
 					case 2:
 						if (!isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.cellB);
-							cdt.cd = 5f;
-							amout.amout -= 5;
 						}
 						break;
 					default:
 						Debug.Log("Unknow type of tower!(Yufei)");
 						break;
 				}
+				cdt.timer = 0f;
+				amount.amount -= cdt.ressource;
 			}
 			if (tower != null){
 				GameObjectManager.bind(tower);
