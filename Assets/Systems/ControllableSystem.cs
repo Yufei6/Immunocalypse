@@ -40,7 +40,9 @@ public class ControllableSystem : FSystem {
 
 	public void ChangeCaseColor(GameObject go)
 	{
-		go.GetComponent<Renderer>().material.color = Color.green;
+		int i = 1;
+		//TODO
+		// go.GetComponent<MeshRenderer>().material.color = Color.green;
 	}
 
 
@@ -48,7 +50,7 @@ public class ControllableSystem : FSystem {
 	{
 		Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePos);
 		// Debug.Log("Before"+mousePos+"After"+mouseWorldPos);
-		Debug.Log("mousePos"+mouseWorldPos);
+		// Debug.Log("mousePos"+mouseWorldPos);
  		return mouseWorldPos;
 	}
 
@@ -157,8 +159,9 @@ public class ControllableSystem : FSystem {
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach (GameObject go in pointerOverCaseFamily)
 		{
+			// Debug.Log("INNN");
 			ChangeCaseColor(go);
-			// ShowInformation(go);
+			ShowInformation(go);
 		}
 		if (currentTowerType == -1){
 			if (Input.GetMouseButton(0))
