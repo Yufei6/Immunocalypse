@@ -1409,6 +1409,7 @@ GameObject:
   - component: {fileID: 1655860565}
   - component: {fileID: 1655860566}
   - component: {fileID: 1655860567}
+  - component: {fileID: 1655860568}
   m_Layer: 0
   m_Name: Main_Loop
   m_TagString: Untagged
@@ -1476,6 +1477,10 @@ MonoBehaviour:
   - _typeAssemblyQualifiedName: MovingSystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     _typeFullName: MovingSystem
+    _pause: 0
+  - _typeAssemblyQualifiedName: AutoAttackSystem, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _typeFullName: AutoAttackSystem
     _pause: 0
   _updateSystemDescriptions:
   - _typeAssemblyQualifiedName: MultiplierSystem, Assembly-CSharp, Version=0.0.0.0,
@@ -1564,6 +1569,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 109a930c8a2084051993f076915572e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1655860568
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655860558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ec0b1044b2e4dc8a2e78dab0e2e2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1911139123
