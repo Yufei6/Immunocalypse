@@ -707,7 +707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   hp_max: 100
-  barre: {fileID: 0}
+  barre: {fileID: 4832498558871648337}
 --- !u!114 &1950372479157029555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,6 +724,7 @@ MonoBehaviour:
   frequency: 30
   startpoint: 0
   isAttacking: 0
+  hastarget: 0
 --- !u!61 &854992729013030524
 BoxCollider2D:
   m_ObjectHideFlags: 0
