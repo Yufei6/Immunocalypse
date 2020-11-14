@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 1950372479157029555}
   m_Layer: 0
   m_Name: CellB
-  m_TagString: Untagged
+  m_TagString: def
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f4b7cfbb91d640a66a9af2f178da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 0
-  frequency: 0
+  baseDamage: 10
+  frequency: 30
   startpoint: 0
   isAttacking: 0
