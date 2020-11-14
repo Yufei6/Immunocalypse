@@ -15,6 +15,8 @@ public class ControllableSystem : FSystem {
 	private Family caseTowerF = FamilyManager.getFamily(new AllOfComponents(typeof(TypeCase), typeof(HasTower)));
 	private Family towerF = FamilyManager.getFamily(new AllOfComponents(typeof(Attack), typeof(HP)),
 		new NoneOfComponents(typeof(Move)));
+	//add to cool down
+	//private Family coolDownFamily = FamilyManager.getFamily(new AllOfComponents(typeof(ColdDown)));
 	private BuildTower towerFac;
 	private GameObject tower;
 
@@ -175,6 +177,8 @@ public class ControllableSystem : FSystem {
 			if (Input.GetMouseButton(0))
 			{
 				BuildTower(mousePos2worldPos(Input.mousePosition), currentTowerType);
+				//coldDown
+
 				currentTowerType = -2;
 			}
 		}

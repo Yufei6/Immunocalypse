@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public class Amout : MonoBehaviour {
+public class cdTower : MonoBehaviour {
 	// Advice: FYFY component aims to contain only public members (according to Entity-Component-System paradigm).
-	public int amout;
+	public float ressource;
+	public float cd;
+	public int id;
+	public float timer=0;
 }
