@@ -9,7 +9,7 @@ public class ControllableSystem : FSystem {
 	public const int IMPHOCYTEB = 2;
 
 	public int currentTowerType;
-	private Family pointerOverFamily = FamilyManager.getFamily (new AllOfComponents (typeof (PointerOver)));
+	private Family pointerOverCaseFamily = FamilyManager.getFamily (new AllOfComponents (typeof (PointerOver), typeof(HasTower)));
 	private Family towerFacFamily = FamilyManager.getFamily(new AllOfComponents(typeof(BuildTower)));
 	private Family normalCellF = FamilyManager.getFamily(new AllOfComponents(typeof(HP), typeof(HasTower)));
 	private Family caseTowerF = FamilyManager.getFamily(new AllOfComponents(typeof(TypeCase), typeof(HasTower)));
@@ -36,6 +36,11 @@ public class ControllableSystem : FSystem {
 		int i = 1;
 		// Debug.Log(go.transform+"Hello");
 
+	}
+
+	public void ChangeCaseColor(GameObject go)
+	{
+		go.GetComponent<Renderer>().material.color = Color.green;
 	}
 
 
@@ -150,9 +155,10 @@ public class ControllableSystem : FSystem {
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
-		foreach (GameObject go in pointerOverFamily)
+		foreach (GameObject go in pointerOverCaseFamily)
 		{
-			ShowInformation(go);
+			ChangeCaseColor(go);
+			// ShowInformation(go);
 		}
 		if (currentTowerType == -1){
 			if (Input.GetMouseButton(0))

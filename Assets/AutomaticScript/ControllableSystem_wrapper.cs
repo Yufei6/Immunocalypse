@@ -19,4 +19,9 @@ public class ControllableSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("ControllableSystem", "ShowInformation", go);
 	}
 
+	public void ChangeCaseColor(UnityEngine.GameObject go)
+	{
+		MainLoop.callAppropriateSystemMethod ("ControllableSystem", "ChangeCaseColor", go);
+	}
+
 }
