@@ -36,49 +36,12 @@ public class AutoAttackSystem : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach(GameObject vb in virus_bacterie){
-			if(attack_cd(vb)){
-				Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-				foreach(GameObject target in vbt.Targets){
-					if(target.CompareTag("def")||target.CompareTag("cellule")){	
-							d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-							if (d<c){
-								c=d;
-								t=target;
-								hastraget=true;
-							}
-						}
-				}
-				change_is_move(vb);
-				if(hastraget==true){
-					add_nutrition(vb,t);
-					attack(t,vb);
-				}
-			}
-		}
-		foreach(GameObject vb in anticorp){
-			if(attack_cd(vb)){
-				Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-				foreach(GameObject target in vbt.Targets){
-					if(target.CompareTag("enemy")){	
-							d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-							if (d<c){
-								c=d;
-								t=target;
-								hastraget=true;
-							}
-						}
-				}
-				change_is_move(vb);
-				if(hastraget==true){
-					attack(t,vb);
-				}
-			}
-		}
-		foreach(GameObject vb in lym_T_macro){
-			if(attack_cd(vb)){
-				Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-				foreach(GameObject target in vbt.Targets){
-					if(target.CompareTag("enemy")){
+			
+			Triggered2D vbt= vb.GetComponent<Triggered2D>();
+			Debug.Log(vbt);
+			foreach(GameObject target in vbt.Targets){
+				
+				if(target.CompareTag("def")||target.CompareTag("cellule")){	
 						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
 						if (d<c){
 							c=d;
@@ -86,10 +49,49 @@ public class AutoAttackSystem : FSystem {
 							hastraget=true;
 						}
 					}
-				}
-				if(hastraget==true){
-
+			}
+			change_is_move(vb);
+			if(hastraget==true){
+				if(attack_cd(vb)){
+					add_nutrition(vb,t);
 					attack(t,vb);
+				}
+			}
+		}
+		foreach(GameObject vb in anticorp){
+			Triggered2D vbt= vb.GetComponent<Triggered2D> ();
+			foreach(GameObject target in vbt.Targets){
+				if(target.CompareTag("enemy")){	
+						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+						if (d<c){
+							c=d;
+							t=target;
+							hastraget=true;
+						}
+					}
+			}
+			change_is_move(vb);
+			if(hastraget==true){
+				if(attack_cd(vb)){
+				attack(t,vb);
+				}
+			}
+		}
+		foreach(GameObject vb in lym_T_macro){
+			Triggered2D vbt= vb.GetComponent<Triggered2D> ();
+			foreach(GameObject target in vbt.Targets){
+				if(target.CompareTag("enemy")){
+					d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+					if (d<c){
+						c=d;
+						t=target;
+						hastraget=true;
+					}
+				}
+			}
+			if(hastraget==true){
+				if(attack_cd(vb)){
+				attack(t,vb);
 				}
 			}
 		}
