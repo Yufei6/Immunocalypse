@@ -61,47 +61,48 @@ public class Controller : FSystem {
 		switch (gs.currentState)
 		{
 			case 0:
-				Debug.Log("STATE0");
+				// Debug.Log("STATE0");
 				if (stateChange){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("MainMenuScene");
 				}
 				break;
 			case 1:
-				Debug.Log("STATE1");
+				// Debug.Log("STATE1");
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("Level"+gl.currentLevel.ToString()+"Scene");
 				}
 				break;
 			case 2:
-				Debug.Log("STATE2");
+				// Debug.Log("STATE2");
 				Time.timeScale = 0;
 				break;
 			case 3:
-				Debug.Log("STATE3");
+				// Debug.Log("STATE3");
 				Time.timeScale = 0;
 				break;
 			case 4:
-				Debug.Log("STATE4");
+				// Debug.Log("STATE4");
 				//TODO
+				int i = 1;
 				break;
 			case 5:
-				Debug.Log("STATE5");
+				// Debug.Log("STATE5");
 				if (stateChange){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("collection");
 				}
 				break;
 			case 6:
-				Debug.Log("STATE6");
+				// Debug.Log("STATE6");
 				if (stateChange){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("LostScene");
 				}
 				break;
 			case 7:
-				Debug.Log("STATE7");
+				// Debug.Log("STATE7");
 				if (stateChange){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("WinScene");
