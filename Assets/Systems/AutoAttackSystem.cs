@@ -38,38 +38,50 @@ public class AutoAttackSystem : FSystem {
 		foreach(GameObject vb in virus_bacterie){
 			
 			Triggered2D vbt= vb.GetComponent<Triggered2D>();
-			Debug.Log(vb);
-			foreach(GameObject target in vbt.Targets){
-				if(target.CompareTag("def")||target.CompareTag("cellule")){	
-						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-						if (d<c){
-							c=d;
-							t=target;
-							hastraget=true;
-						}
+			if (vbt!=null){
+				foreach(GameObject target in vbt.Targets){	
+					if(target.CompareTag("def")||target.CompareTag("cellule")){	
+							d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+							if (d<c){
+								c=d;
+								t=target;
+								hastraget=true;
+								change_is_move(vb);
+							}
 					}
+				}
 			}
-			change_is_move(vb);
+			if(hastraget==false){
+				change_is_move(vb);
+			}
 			if(hastraget==true){
 				if(attack_cd(vb)){
 					add_nutrition(vb,t);
 					attack(t,vb);
 				}
 			}
+
+
 		}
 		foreach(GameObject vb in anticorp){
 			Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-			foreach(GameObject target in vbt.Targets){
-				if(target.CompareTag("enemy")){	
-						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-						if (d<c){
-							c=d;
-							t=target;
-							hastraget=true;
+			if (vbt!=null){
+				foreach(GameObject target in vbt.Targets){
+					if(target.CompareTag("enemy")){	
+							d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+							if (d<c){
+								c=d;
+								t=target;
+								hastraget=true;
+								change_is_move(vb);
+							}
 						}
-					}
+				}
 			}
-			change_is_move(vb);
+			if(hastraget==false){
+				change_is_move(vb);
+			}
+			
 			if(hastraget==true){
 				if(attack_cd(vb)){
 				attack(t,vb);
@@ -103,9 +115,11 @@ public class AutoAttackSystem : FSystem {
 			GameObjectManager.unbind(target);
 			Object.Destroy(target);
 		}else{
+			//Debug.Log(hp);
 			target.GetComponent<HP>().hp=hp;
 		}
 		hastraget=false;
+		c=1000f;
 		
 	}
 	private void change_is_move(GameObject g){
@@ -115,7 +129,7 @@ public class AutoAttackSystem : FSystem {
 	private bool attack_cd(GameObject v){
 		float b=v.GetComponent<Attack>().startpoint;
 		float a=v.GetComponent<Attack>().frequency;
-		if(a>b){
+		if(a<b){
 			v.GetComponent<Attack>().startpoint=0;
 			return true;
 		}else{

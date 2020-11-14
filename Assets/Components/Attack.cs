@@ -6,6 +6,7 @@ public class Attack : MonoBehaviour {
 	public float frequency ; 
 	public float startpoint ;
 	public bool isAttacking;
+	public bool hastarget;
 	//test code
 	//public bool isAttack = false;
 }

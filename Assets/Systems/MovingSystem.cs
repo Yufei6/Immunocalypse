@@ -43,7 +43,7 @@ public class MovingSystem : FSystem {
 					go.GetComponent<Move>().cpt+=1;
 					//target = go.GetComponent<Move>().routine[_cpt];
 					//Debug.Log(go.GetComponent<Move>().routine.Count);
-					Debug.Log(target);
+					//Debug.Log(target);
 				}else{
 					int i=1;
 					//Debug.Log("All targets reached");
