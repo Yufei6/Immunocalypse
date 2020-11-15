@@ -24,4 +24,9 @@ public class Controller_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("Controller", "ShowCollection", null);
 	}
 
+	public void Quit()
+	{
+		MainLoop.callAppropriateSystemMethod ("Controller", "Quit", null);
+	}
+
 }
