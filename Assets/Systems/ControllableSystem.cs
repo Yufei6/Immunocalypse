@@ -151,26 +151,30 @@ public class ControllableSystem : FSystem {
 						if (isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.macrophage);
+							cdt.timer = 0f;
+							amount.amount -= cdt.ressource;
 						}
 						break;
 					case 1:
 						if (!isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.cellT);
+							cdt.timer = 0f;
+							amount.amount -= cdt.ressource;
 						}
 						break;
 					case 2:
 						if (!isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.cellB);
+							cdt.timer = 0f;
+							amount.amount -= cdt.ressource;
 						}
 						break;
 					default:
 						Debug.Log("Unknow type of tower!(Yufei)");
 						break;
 				}
-				cdt.timer = 0f;
-				amount.amount -= cdt.ressource;
 			}
 			if (tower != null){
 				GameObjectManager.bind(tower);
