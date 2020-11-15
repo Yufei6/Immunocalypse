@@ -8,6 +8,7 @@ public class MultiplierSystem : FSystem {
 	private Family alltype=FamilyManager.getFamily(new AllOfComponents(typeof(AllTypeEnemy)));
 	private AllTypeEnemy te;
 	private GameObject pf;
+	private Family timeline=FamilyManager.getFamily(new AllOfComponents(typeof(TimeLine)), new NoneOfComponents(typeof(TimelineEvent)));
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
 	public MultiplierSystem(){
@@ -37,6 +38,8 @@ public class MultiplierSystem : FSystem {
 		}
 	}
 	public void se_multi(GameObject prefab){
+		GameObject tl=timeline.First();
+		tl.GetComponent<TimeLine>().win_condtion +=1;
 		int type=prefab.GetComponent<Id_enemy>().id;
 		if(type ==1){
 				pf=te.virus;	
