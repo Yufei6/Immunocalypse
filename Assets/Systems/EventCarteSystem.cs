@@ -10,6 +10,7 @@ public class EventCarteSystem : FSystem {
 	private Family canvasEvent1F = FamilyManager.getFamily(new AllOfComponents(typeof(CanvasEvent1)));
 	private Family canvasEvent2F = FamilyManager.getFamily(new AllOfComponents(typeof(CanvasEvent2)));
 	private Family canvasEvent3F = FamilyManager.getFamily(new AllOfComponents(typeof(CanvasEvent3)));
+	private Family enemyF = FamilyManager.getFamily(new AllOfComponents(typeof(Attack),typeof(Move),typeof(Nutrition)));
 	
 	private TimeLine tl ;
 	private int frame_compteur;
@@ -17,6 +18,7 @@ public class EventCarteSystem : FSystem {
 	private GameObject ce1;
 	private GameObject ce2;
 	private GameObject ce3;
+	private float proba;
 
 	public EventCarteSystem()
 	{
@@ -26,13 +28,25 @@ public class EventCarteSystem : FSystem {
 		ce1 = canvasEvent1F.First();
 		ce2 = canvasEvent2F.First();
 		ce3 = canvasEvent3F.First();
+		proba = 0.3f;
 	}
 
 	public void WashHand(int want)
 	{
+		float probaAttackEnemy = 0.5f;
+		int dam = 20;
 		if (want>0){
-			int i = 11;
-			// TODO
+			foreach (GameObject go in enemyF)
+			{
+				if (Random.value <= probaAttackEnemy)
+				{
+					go.GetComponent<HP>().hp -= dam;
+					if (go.GetComponent<HP>().hp<0)
+					{
+						go.GetComponent<HP>().hp = 1;
+					}
+				}
+			}
 		}
 		ce1.SetActive(false);
 		Time.timeScale = 1;
@@ -40,9 +54,21 @@ public class EventCarteSystem : FSystem {
 
 	public void DoSport(int want)
 	{
+		
+		float probaAttackEnemy = 0.5f;
+		int dam = 20;
 		if (want>0){
-			int i = 11;
-			// TODO
+			foreach (GameObject go in enemyF)
+			{
+				if (Random.value <= probaAttackEnemy)
+				{
+					go.GetComponent<HP>().hp -= dam;
+					if (go.GetComponent<HP>().hp<0)
+					{
+						go.GetComponent<HP>().hp = 1;
+					}
+				}
+			}
 		}
 		ce2.SetActive(false);
 		Time.timeScale = 1;
@@ -50,9 +76,20 @@ public class EventCarteSystem : FSystem {
 
 	public void Vaccine(int want)
 	{
+		float probaAttackEnemy = 0.5f;
+		int dam = 20;
 		if (want>0){
-			int i = 11;
-			// TODO
+			foreach (GameObject go in enemyF)
+			{
+				if (Random.value <= probaAttackEnemy)
+				{
+					go.GetComponent<HP>().hp -= dam;
+					if (go.GetComponent<HP>().hp<0)
+					{
+						go.GetComponent<HP>().hp = 1;
+					}
+				}
+			}
 		}
 		ce3.SetActive(false);
 		Time.timeScale = 1;
@@ -66,7 +103,7 @@ public class EventCarteSystem : FSystem {
 
 		if(frame_compteur==tl.frame[event_compteur]){
 			// Debug.Log("Hello event");
-			if(Random.value < 1)
+			if(Random.value < proba)
 			{				
 				Time.timeScale = 0;
 				int typeEvent = tl.type_event[event_compteur];

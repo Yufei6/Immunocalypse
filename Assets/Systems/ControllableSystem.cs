@@ -222,7 +222,7 @@ public class ControllableSystem : FSystem {
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
-		//UpdateCursor();
+		UpdateCursor();
 		foreach (GameObject go in pointerOverCaseFamily)
 		{
 			// Debug.Log("INNN");
