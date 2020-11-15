@@ -51,29 +51,10 @@ public class RefreshSystem : FSystem {
 		}
 
 		foreach (GameObject c in _cdFamily){
-			int type = c.GetComponent<cdTower>().id;
-			float _ressource = c.GetComponent<cdTower>().ressource;
-			float _cd = c.GetComponent<cdTower>().cd;
-			float _timer = c.GetComponent<cdTower>().timer;
+			cdTower cdt = c.GetComponent<cdTower>();
 			
-			//check if we have enough money to buy the tower
-			c.GetComponent<Button>().interactable = (_amount>=_ressource)&&(_timer==0);
-
-			if(type==currentType){
-				//if this button has been clicked, we first minus the cost
-				//GameObject r = _controllerR[0];
-				//r.GetComponent<Amount>() -= _ressource;
-				if(_timer<_cd){
-					//and set this button disabled for a certain period
-					c.GetComponent<Button>().interactable = false;
-					c.GetComponent<cdTower>().timer += Time.deltaTime;
-				}else{
-					//_timer = 0f;
-					c.GetComponent<cdTower>().timer=0f;
-					currentType = -1;
-				}
-
-			}
+			c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.cd);
+			cdt.timer += Time.deltaTime;
 		}
 
 		
