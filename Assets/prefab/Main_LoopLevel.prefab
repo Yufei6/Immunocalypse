@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 4999982599548398895}
   - component: {fileID: 4999982599548398894}
   m_Layer: 0
-  m_Name: Main_Loop
+  m_Name: Main_LoopLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
