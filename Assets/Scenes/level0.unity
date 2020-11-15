@@ -1379,6 +1379,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'alltype '
       objectReference: {fileID: 0}
+    - target: {fileID: 5262570072454852818, guid: da9037ad61fec7541bb79f9d56cafe5d,
+        type: 3}
+      propertyPath: virus
+      value: 
+      objectReference: {fileID: 1591776982113233080, guid: 0b070711d0ea54729b6e5472980e9fec,
+        type: 3}
     - target: {fileID: 5262570072454852819, guid: da9037ad61fec7541bb79f9d56cafe5d,
         type: 3}
       propertyPath: m_LocalPosition.x
