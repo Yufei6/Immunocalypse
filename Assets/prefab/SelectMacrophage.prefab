@@ -253,7 +253,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4999982599548398881, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+          type: 3}
         m_MethodName: SelectTower
         m_Mode: 3
         m_Arguments:
@@ -264,7 +265,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4999982599548398894, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+          type: 3}
         m_MethodName: SetDisabled
         m_Mode: 3
         m_Arguments:
@@ -287,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73ea6eec7c6ecf4ca45cb101b7437f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ressource: 5
-  cd: 5
+  ressource: 3
+  cd: 3
   id: 0
   timer: 0
