@@ -20,8 +20,8 @@ public class ControllerSystem : FSystem {
 	private GameState gs;
 	private GameLevel gl;
 	private bool stateChange;
-	private int lastState;
-	private int lastLevel;
+	private int lastState = 0;
+	private int lastLevel = 0;
 	private GameObject controller;
 
 
@@ -29,8 +29,6 @@ public class ControllerSystem : FSystem {
 	{
 		gs = FamilyController.First().GetComponent<GameState>();
 		gl = FamilyController.First().GetComponent<GameLevel>();
-		lastState = 0;
-		lastLevel = 1;
 		stateChange = false;
 		controller = FamilyController.First();
 	}
@@ -39,36 +37,43 @@ public class ControllerSystem : FSystem {
 	{
 		gs.currentState = PLAYING;
 		gl.currentLevel = level;
+		stateChange = true;
 	}
 
 	public void StartIntro()
 	{
 		gs.currentState = START;
+		stateChange = true;
 	}
 
 	public void Pauss()
 	{
 		gs.currentState = PAUSE;
+		stateChange = true;
 	}
 
 	public void ShowCollection()
 	{
 		gs.currentState = SHOWCOLLECTION;
+		stateChange = true;
 	}
 
 	public void Manuel()
 	{
 		gs.currentState = MANUEL;
+		stateChange = true;
 	}
 
 	public void IntroLevel1()
 	{
 		gs.currentState = INTROLEVEL1;
+		stateChange = true;
 	}
 
 	public void IntroLevel2()
 	{
 		gs.currentState = INTROLEVEL2;
+		stateChange = true;
 	}
 
 	public void Quit()
@@ -82,12 +87,18 @@ public class ControllerSystem : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) 
 	{
-		stateChange = lastState == gs.currentState ? false : true ;
+		// stateChange = lastState == gs.currentState ? false : true ;
+		// if(stateChange){
+		// 	Debug.Log(lastState+"CHANGE"+gs.currentState);
+		// }
 		if (stateChange && (lastState==PAUSE||lastState==EVENTCHOICE)) 
 		{
 			//Restart game
 			Time.timeScale = 1;
 		}
+		lastState = gs.currentState;
+		// Debug.Log("lastStat"+lastState);
+		lastLevel = gl.currentLevel;
 		switch (gs.currentState)
 		{
 			case MAINMENU:
@@ -166,7 +177,6 @@ public class ControllerSystem : FSystem {
 				Debug.Log("Error : Unknown STATE!");
 				break;
 		}
-		lastState = gs.currentState;
-		lastLevel = gl.currentLevel;
+		stateChange = false;
 	}
 }
