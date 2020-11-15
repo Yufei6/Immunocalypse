@@ -4,6 +4,8 @@ using FYFY_plugins.TriggerManager;
 
 
 public class AutoAttackSystem : FSystem {
+	private Family timeline=FamilyManager.getFamily(new AllOfComponents(
+		typeof(TimeLine)), new NoneOfComponents(typeof(TimelineEvent)));
 	private Family virus_bacterie = FamilyManager.getFamily(
 		new AllOfComponents(
 			typeof(Attack),typeof(Move),typeof(Nutrition)
@@ -115,10 +117,15 @@ public class AutoAttackSystem : FSystem {
 		}
 	}
 	private void attack(GameObject target,GameObject att){
+
 		hp= target.GetComponent<HP>().hp;
 		bd= att.GetComponent<Attack>().baseDamage;
 		hp=hp-bd;
 		if(hp<0){
+			if(target.CompareTag("enemy")){
+				GameObject tl=timeline.First();
+				tl.GetComponent<TimeLine>().win_condtion -=1;
+			}
 			GameObjectManager.unbind(target);
 			Object.Destroy(target);
 		}else{

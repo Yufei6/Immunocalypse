@@ -6,10 +6,10 @@ using System.Collections;
 public class FactorySystem : FSystem {
 	private Family factory=FamilyManager.getFamily (new AllOfComponents(typeof (ID)));
 	private int frame_compteur=0;
-	private Family timeline=FamilyManager.getFamily(new AllOfComponents(typeof(TimeLine)));
+	private Family timeline=FamilyManager.getFamily(new AllOfComponents(typeof(TimeLine)), new NoneOfComponents(typeof(TimelineEvent)));
 	private int enemy_compteur=0;
 	private TimeLine tl;
-	private Family alltype=FamilyManager.getFamily(new AllOfComponents(typeof(AllTypeEnemy)), new NoneOfComponents(typeof(TimelineEvent)));
+	private Family alltype=FamilyManager.getFamily(new AllOfComponents(typeof(AllTypeEnemy)));
 	private AllTypeEnemy te;
 	private Vector3 v;
 	private Routine r;
