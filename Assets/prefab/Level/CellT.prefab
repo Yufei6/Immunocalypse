@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 461226494792564187}
   - component: {fileID: 5710556247784312554}
   - component: {fileID: -5961544887441525370}
+  - component: {fileID: 2897671688040921622}
   m_Layer: 0
   m_Name: CellT
   m_TagString: def
@@ -618,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172815aa00a697a42be67204cdb27463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 100000
   hp_max: 100
   barre: {fileID: 4251242240243967550}
 --- !u!114 &-4768350516507600945
@@ -633,7 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f4b7cfbb91d640a66a9af2f178da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 20
+  baseDamage: 40
   frequency: 30
   startpoint: 0
   isAttacking: 0
@@ -662,7 +663,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!50 &5710556247784312554
 Rigidbody2D:
@@ -697,6 +698,19 @@ MonoBehaviour:
   m_Script: {fileID: -571295319, guid: ecc542ff4a2be4fe28cc1e62691e5821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2897671688040921622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248461516068396495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ade1a6733cc34a558671598cb32ae1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
 --- !u!1 &9150793534196216259
 GameObject:
   m_ObjectHideFlags: 0
