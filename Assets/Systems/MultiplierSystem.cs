@@ -5,8 +5,16 @@ public class MultiplierSystem : FSystem {
 	private Family nut=FamilyManager.getFamily(new AllOfComponents(typeof(Nutrition)));
 	private int cible,actuelle;
 	private Move mo;
+	private Family alltype=FamilyManager.getFamily(new AllOfComponents(typeof(AllTypeEnemy)));
+	private AllTypeEnemy te;
+	private GameObject pf;
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
+	public MultiplierSystem(){
+		te=alltype.First().GetComponent<AllTypeEnemy>();
+		//test
+		
+	}
 	protected override void onPause(int currentFrame) {
 	}
 
@@ -29,7 +37,18 @@ public class MultiplierSystem : FSystem {
 		}
 	}
 	public void se_multi(GameObject prefab){
-		GameObject go=Object.Instantiate<GameObject>(prefab);
+		int type=prefab.GetComponent<Id_enemy>().id;
+		if(type ==1){
+				pf=te.virus;	
+			}else{
+				pf=te.bac;
+			}
+		GameObject go=Object.Instantiate<GameObject>(pf);
+		go.transform.position=prefab.transform.position;
+		go.GetComponent<Move>().speed=prefab.GetComponent<Move>().speed;
+		go.GetComponent<Move>().isMove=prefab.GetComponent<Move>().isMove;
+		go.GetComponent<Move>().routine=prefab.GetComponent<Move>().routine;
+		go.GetComponent<Move>().cpt=prefab.GetComponent<Move>().cpt;
 		GameObjectManager.bind(go);
 	}
 }
