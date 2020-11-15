@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using FYFY;
 
-public class Controller : FSystem {
+public class ControllerSystem : FSystem {
 	public const int MAINMENU = 0;
 	public const int PLAYING = 1;
 	public const int PAUSE = 2;
@@ -11,6 +11,9 @@ public class Controller : FSystem {
 	public const int LOST = 6;
 	public const int WIN = 7;
 	public const int START = 8;
+	public const int MANUEL = 9;
+	public const int INTROLEVEL1 = 10;
+	public const int INTROLEVEL2 = 11;
 	
 
 	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
@@ -22,7 +25,7 @@ public class Controller : FSystem {
 	private GameObject controller;
 
 
-	public Controller ()
+	public ControllerSystem()
 	{
 		gs = FamilyController.First().GetComponent<GameState>();
 		gl = FamilyController.First().GetComponent<GameLevel>();
@@ -38,6 +41,11 @@ public class Controller : FSystem {
 		gl.currentLevel = level;
 	}
 
+	public void StartIntro()
+	{
+		gs.currentState = START;
+	}
+
 	public void Pauss()
 	{
 		gs.currentState = PAUSE;
@@ -46,6 +54,21 @@ public class Controller : FSystem {
 	public void ShowCollection()
 	{
 		gs.currentState = SHOWCOLLECTION;
+	}
+
+	public void Manuel()
+	{
+		gs.currentState = MANUEL;
+	}
+
+	public void IntroLevel1()
+	{
+		gs.currentState = INTROLEVEL1;
+	}
+
+	public void IntroLevel2()
+	{
+		gs.currentState = INTROLEVEL2;
 	}
 
 	public void Quit()
@@ -121,9 +144,24 @@ public class Controller : FSystem {
 					GameObjectManager.loadScene("IntroductionScene");
 				}
 				break;
-			// case 9:
-			// 	Debug.Log("STATE9");
-			// 	break;
+			case MANUEL:
+				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("ManuelScene");
+				}
+				break;
+			case INTROLEVEL1:
+				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("IntroLevel1");
+				}
+				break;
+			case INTROLEVEL2:
+				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("IntroLevel2");
+				}
+				break;
 			default :
 				Debug.Log("Error : Unknown STATE!");
 				break;
