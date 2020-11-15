@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using FYFY;
 
 public class ControllerSystem : FSystem {
@@ -23,6 +24,8 @@ public class ControllerSystem : FSystem {
 	private int lastState;
 	private int lastLevel;
 	private GameObject controller;
+
+	//private GameObject Manuel1 = GameObject.FindGameObjectWithTag("Manuel1")[0];
 
 
 	public ControllerSystem()
@@ -59,6 +62,16 @@ public class ControllerSystem : FSystem {
 	public void Manuel()
 	{
 		gs.currentState = MANUEL;
+	}
+
+	public void UpdateManuel(){
+		GameObject Manuel1 = GameObject.FindGameObjectsWithTag("Manuel1")[0];
+		Manuel1.SetActive(false);
+		GameObject Manuel2 = GameObject.FindGameObjectsWithTag("Manuel2")[0];
+		Manuel2.SetActive(true);
+		Debug.Log("change");
+
+
 	}
 
 	public void IntroLevel1()
