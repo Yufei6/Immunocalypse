@@ -26,6 +26,8 @@ public class ControllerSystem : FSystem {
 	private GameObject controller;
 
 	//private GameObject Manuel1 = GameObject.FindGameObjectWithTag("Manuel1")[0];
+	private Family FamilyManuel1 = FamilyManager.getFamily (new AllOfComponents (typeof (Manuel1)));
+	private Family FamilyManuel2 = FamilyManager.getFamily (new AllOfComponents (typeof (Manuel2)));
 
 
 	public ControllerSystem()
@@ -68,13 +70,13 @@ public class ControllerSystem : FSystem {
 	}
 
 	public void UpdateManuel(){
-		GameObject Manuel1 = GameObject.FindGameObjectsWithTag("Manuel1")[0];
-		Manuel1.SetActive(false);
-		GameObject Manuel2 = GameObject.FindGameObjectsWithTag("Manuel2")[0];
-		Manuel2.SetActive(true);
-		Debug.Log("change");
+		foreach(GameObject m1 in FamilyManuel1){
+			m1.SetActive(false);
+		}
 
-
+		foreach(GameObject m2 in FamilyManuel2){
+			m2.SetActive(true);
+		}
 	}
 
 	public void IntroLevel1()
