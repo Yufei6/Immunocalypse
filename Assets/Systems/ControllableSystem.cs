@@ -32,6 +32,7 @@ public class ControllableSystem : FSystem {
 	private Texture2D CursorDestroy;
 	private Amount amount;
 	private GameObject buttonTower;
+	private cdTower cdt;
 	
 
 
@@ -144,31 +145,25 @@ public class ControllableSystem : FSystem {
 			if(!go.GetComponent<HasTower>().hasTower)
 			{
 				buttonTower = getButtonTower();
-				cdTower cdt = buttonTower.GetComponent<cdTower>();
+				cdt = buttonTower.GetComponent<cdTower>();
 				switch(towerType)
 				{
 					case 0:
 						if (isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.macrophage);
-							cdt.timer = 0f;
-							amount.amount -= cdt.ressource;
 						}
 						break;
 					case 1:
 						if (!isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.cellT);
-							cdt.timer = 0f;
-							amount.amount -= cdt.ressource;
 						}
 						break;
 					case 2:
 						if (!isMacrophage)
 						{
 							tower = Object.Instantiate<GameObject>(towerFac.cellB);
-							cdt.timer = 0f;
-							amount.amount -= cdt.ressource;
 						}
 						break;
 					default:
@@ -180,6 +175,8 @@ public class ControllableSystem : FSystem {
 				GameObjectManager.bind(tower);
 				tower.transform.position = go.transform.position;
 				go.GetComponent<HasTower>().hasTower = true; 
+				cdt.timer = 0f;
+				amount.amount -= cdt.ressource;
 				tower = null;
 			}
 		}
