@@ -205,31 +205,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6eb4cce5424e0d49a12d1fc5aa193d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1443633773 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4999982599548398905, guid: ffd5395eb5dcb524e95bb7b534f637d3,
-    type: 3}
-  m_PrefabInstance: {fileID: 4999982597976424567}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1443633774
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443633773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675fe12ebe7d11644ae6608eb51c42d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1655860566 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4999982599548398881, guid: ffd5395eb5dcb524e95bb7b534f637d3,
     type: 3}
   m_PrefabInstance: {fileID: 4999982597976424567}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443633773}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebe014c126704448f9a8a4becb003236, type: 3}
@@ -241,7 +223,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4999982597976424567}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443633773}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75b3c11780d6b1941b0694c3d75d808f, type: 3}
@@ -263,6 +245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: type_event.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
+        type: 3}
+      propertyPath: win_condtion
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813525, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
@@ -664,12 +651,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _fixedUpdateSystemDescriptions.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4999982599548398905, guid: ffd5395eb5dcb524e95bb7b534f637d3,
         type: 3}
       propertyPath: m_Name
       value: Main_Loop
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6675610095823890678, guid: ffd5395eb5dcb524e95bb7b534f637d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffd5395eb5dcb524e95bb7b534f637d3, type: 3}
 --- !u!1001 &5262570071938319184
 PrefabInstance:

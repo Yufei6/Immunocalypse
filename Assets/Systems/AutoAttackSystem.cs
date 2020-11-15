@@ -10,19 +10,19 @@ public class AutoAttackSystem : FSystem {
 		new AllOfComponents(
 			typeof(Attack),typeof(Move),typeof(Nutrition)
 			));
-	private Family lym_T_macro = FamilyManager.getFamily(
+	private Family lym_T = FamilyManager.getFamily(
+		new AllOfComponents(
+			typeof(Attack),typeof(TowerId)),
+		new NoneOfComponents(typeof(Move)));
+	private Family marco =FamilyManager.getFamily(
 		new AllOfComponents(
 			typeof(Attack)),
-		new NoneOfComponents(typeof(Move)));
-	private Family anticorp = FamilyManager.getFamily(
-		new AllOfComponents(
-			typeof(Attack),typeof(Move)),
-		new NoneOfComponents(typeof(Nutrition)));
+		new NoneOfComponents(typeof(Move),typeof(TowerId)));
 	private float c=1000f;
 	private bool hastraget=false;
 	private int hp=0;
 	private float d;
-	private int bd;
+	//private int bd;
 	private GameObject t;
 
 	// Use this to update member variables when system pause. 
@@ -38,19 +38,17 @@ public class AutoAttackSystem : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach(GameObject vb in virus_bacterie){
-			
 			Triggered2D vbt= vb.GetComponent<Triggered2D>();
-			//hastraget=false;
 			if (vbt!=null){
 				foreach(GameObject target in vbt.Targets){	
 					if(target.CompareTag("def")||target.CompareTag("cellule")){	
-							d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-							if (d<c){
-								c=d;
-								t=target;
-								hastraget=true;
-								change_is_move(vb);
-							}
+						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+						if (d<c){
+							c=d;
+							t=target;
+							hastraget=true;
+							change_is_move(vb);
+						}
 					}
 				}
 			}
@@ -63,41 +61,11 @@ public class AutoAttackSystem : FSystem {
 					attack(t,vb);
 				}
 			}
-
-
-		}
-		foreach(GameObject vb in anticorp){
-			Triggered2D vbt= vb.GetComponent<Triggered2D> ();
+		}		
+		foreach(GameObject vb in marco){
+			Triggered2D vbt= vb.GetComponent<Triggered2D> ();	
 			if (vbt!=null){
 				foreach(GameObject target in vbt.Targets){
-					if(target.CompareTag("enemy")){	
-							d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-							if (d<c){
-								c=d;
-								t=target;
-								hastraget=true;
-								change_is_move(vb);
-							}
-						}
-				}
-			}
-			if(hastraget==false){
-				change_is_move(vb);
-			}
-			
-			if(hastraget==true){
-				if(attack_cd(vb)){
-				attack(t,vb);
-				}
-			}
-		}
-		foreach(GameObject vb in lym_T_macro){
-			Triggered2D vbt= vb.GetComponent<Triggered2D> ();
-
-			//hastraget=false;		
-			if (vbt!=null){
-				foreach(GameObject target in vbt.Targets){
-					//Debug.Log(vb);
 					if(target.CompareTag("enemy")){
 						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
 						if (d<c){
@@ -112,15 +80,46 @@ public class AutoAttackSystem : FSystem {
 						attack(t,vb);
 					}
 				}
-			}
-			
+			}	
+		}
+		foreach(GameObject vb in lym_T){
+			Triggered2D vbt= vb.GetComponent<Triggered2D> ();	
+			if (vbt!=null){
+				foreach(GameObject target in vbt.Targets){
+					if(target.CompareTag("enemy")){
+						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+						if (d<c){
+							c=d;
+							t=target;
+							hastraget=true;
+						}
+					}
+				}
+				if(hastraget==true){
+					if(attack_cd(vb)){
+						attack(t,vb);
+					}
+				}
+			}	
 		}
 	}
 	private void attack(GameObject target,GameObject att){
 
 		hp= target.GetComponent<HP>().hp;
-		bd= att.GetComponent<Attack>().baseDamage;
-		hp=hp-bd;
+		int bd= att.GetComponent<Attack>().baseDamage;
+		TowerId idtower=att.GetComponent<TowerId>();
+		if(idtower!= null&&target.CompareTag("enemy")){
+			if(idtower.id!=target.GetComponent<Id_enemy>().id){
+				hp=hp-1;
+			}else{
+				//Debug.Log(bd);
+				//Debug.Log(hp);
+				hp=hp-bd;
+			}
+		}else{
+			hp=hp-bd;
+		}
+		
 		if(hp<0){
 			if(target.CompareTag("enemy")){
 				GameObject tl=timeline.First();
