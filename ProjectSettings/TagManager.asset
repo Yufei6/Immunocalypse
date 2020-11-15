@@ -7,6 +7,8 @@ TagManager:
   - enemy
   - def
   - cellule
+  - Manuel2
+  - Manuel1
   layers:
   - Default
   - TransparentFX

@@ -34,6 +34,11 @@ public class ControllerSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "Manuel", null);
 	}
 
+	public void UpdateManuel()
+	{
+		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "UpdateManuel", null);
+	}
+
 	public void IntroLevel1()
 	{
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "IntroLevel1", null);
