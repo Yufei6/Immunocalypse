@@ -28,11 +28,11 @@ public class RefreshSystem : FSystem {
 	protected override void onResume(int currentFrame){
 	}
 
-	public void SetDisabled(int towerType){
-
-		currentType = towerType;
-		
+	public void SetDisabled(int towerType)
+	{
+		currentType = towerType;	
 	}
+
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {

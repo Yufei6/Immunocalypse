@@ -67,55 +67,55 @@ public class Controller : FSystem {
 		}
 		switch (gs.currentState)
 		{
-			case 0:
+			case MAINMENU:
 				// Debug.Log("STATE0");
 				if (stateChange){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("MainMenuScene");
 				}
 				break;
-			case 1:
+			case PLAYING:
 				// Debug.Log("STATE1");
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("level"+gl.currentLevel.ToString());
 				}
 				break;
-			case 2:
+			case PAUSE:
 				// Debug.Log("STATE2");
 				Time.timeScale = 0;
 				break;
-			case 3:
+			case EVENTCHOICE:
 				// Debug.Log("STATE3");
 				Time.timeScale = 0;
 				break;
-			case 4:
+			case OPTIONMENU:
 				// Debug.Log("STATE4");
 				//TODO
 				int i = 1;
 				break;
-			case 5:
+			case SHOWCOLLECTION:
 				// Debug.Log("STATE5");
 				if (stateChange){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("collection");
 				}
 				break;
-			case 6:
+			case LOST:
 				// Debug.Log("STATE6");
 				if (stateChange){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("LostScene");
 				}
 				break;
-			case 7:
+			case WIN:
 				// Debug.Log("STATE7");
 				if (stateChange){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("WinScene");
 				}
 				break;
-			case 8:
+			case START:
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("IntroductionScene");

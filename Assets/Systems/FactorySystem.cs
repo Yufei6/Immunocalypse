@@ -9,7 +9,7 @@ public class FactorySystem : FSystem {
 	private Family timeline=FamilyManager.getFamily(new AllOfComponents(typeof(TimeLine)));
 	private int enemy_compteur=0;
 	private TimeLine tl;
-	private Family alltype=FamilyManager.getFamily(new AllOfComponents(typeof(AllTypeEnemy)));
+	private Family alltype=FamilyManager.getFamily(new AllOfComponents(typeof(AllTypeEnemy)), new NoneOfComponents(typeof(TimelineEvent)));
 	private AllTypeEnemy te;
 	private Vector3 v;
 	private Routine r;
