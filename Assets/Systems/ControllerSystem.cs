@@ -10,6 +10,7 @@ public class Controller : FSystem {
 	public const int SHOWCOLLECTION = 5;
 	public const int LOST = 6;
 	public const int WIN = 7;
+	public const int START = 8;
 	
 
 	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
@@ -47,6 +48,12 @@ public class Controller : FSystem {
 		gs.currentState = SHOWCOLLECTION;
 	}
 
+	public void Quit()
+	{
+		Application.Quit();
+	}
+
+
 
 
 	// Use to process your families.
@@ -71,7 +78,7 @@ public class Controller : FSystem {
 				// Debug.Log("STATE1");
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
-					GameObjectManager.loadScene("Level"+gl.currentLevel.ToString()+"Scene");
+					GameObjectManager.loadScene("level"+gl.currentLevel.ToString());
 				}
 				break;
 			case 2:
@@ -108,9 +115,12 @@ public class Controller : FSystem {
 					GameObjectManager.loadScene("WinScene");
 				}
 				break;
-			// case 8:
-			// 	Debug.Log("STATE8");
-			// 	break;
+			case 8:
+				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("IntroductionScene");
+				}
+				break;
 			// case 9:
 			// 	Debug.Log("STATE9");
 			// 	break;
