@@ -82,7 +82,7 @@ public class AutoAttackSystem : FSystem {
 						if (d<c){
 							c=d;
 							go.GetComponent<Attack>().target=target;
-							hastraget2=true;
+							go.GetComponent<Attack>().hastarget=true;
 						}
 					}
 				}
@@ -102,7 +102,7 @@ public class AutoAttackSystem : FSystem {
 						if (d<c){
 							c=d;
 							go.GetComponent<Attack>().target=target;
-							hastraget3=true;
+							go.GetComponent<Attack>().hastarget=true;
 						}
 					}
 				}
@@ -120,7 +120,7 @@ public class AutoAttackSystem : FSystem {
 		int bd= att.GetComponent<Attack>().baseDamage;
 		TowerId idtower=att.GetComponent<TowerId>();
 		if(idtower.id!=target.GetComponent<Id_enemy>().id){
-			Debug.Log(idtower.id);
+			//Debug.Log(idtower.id);
 			hp=hp-1;
 		}else{
 			hp=hp-bd;
@@ -140,9 +140,11 @@ public class AutoAttackSystem : FSystem {
 		
 	}
 	private void attack2(GameObject att){
+		//Debug.Log(att.GetComponent<Attack>().target);
 		GameObject target=att.GetComponent<Attack>().target;
 		hp= target.GetComponent<HP>().hp;
 		int bd= att.GetComponent<Attack>().baseDamage;
+		hp=hp-bd;
 		if(hp<0){
 			GameObject tl=timeline.First();
 			tl.GetComponent<TimeLine>().win_condtion -=1;
