@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f3b7939a53ac847ad63c519370ee19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.3
   isMove: 1
   routine:
   - {x: -3, y: 3, z: 0}
@@ -135,11 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f4b7cfbb91d640a66a9af2f178da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 5
+  baseDamage: 2
   frequency: 30
   startpoint: 0
   isAttacking: 0
   hastarget: 0
+  target: {fileID: 0}
 --- !u!114 &1229145865748378828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172815aa00a697a42be67204cdb27463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 75
-  hp_max: 100
+  hp: 20
+  hp_max: 20
   barre: {fileID: 3971095666554655869}
 --- !u!111 &3420879558181710019
 Animation:

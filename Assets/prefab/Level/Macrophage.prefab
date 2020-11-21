@@ -670,9 +670,9 @@ GameObject:
   - component: {fileID: -4852874944006927554}
   - component: {fileID: 7170447877098197833}
   - component: {fileID: 8769003930005514362}
-  - component: {fileID: -6287661518174731878}
   - component: {fileID: 5328789799670969702}
   - component: {fileID: 5981582654534934296}
+  - component: {fileID: 5393310715891337261}
   m_Layer: 0
   m_Name: Macrophage
   m_TagString: def
@@ -709,8 +709,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172815aa00a697a42be67204cdb27463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10000
-  hp_max: 10000
+  hp: 1000
+  hp_max: 100
   barre: {fileID: 91308046326159065}
 --- !u!114 &-4852874944006927554
 MonoBehaviour:
@@ -724,11 +724,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f4b7cfbb91d640a66a9af2f178da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 70
+  baseDamage: 10
   frequency: 30
   startpoint: 0
   isAttacking: 0
   hastarget: 0
+  target: {fileID: 0}
 --- !u!33 &7170447877098197833
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -776,22 +777,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!58 &-6287661518174731878
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8830931992787935135}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &5328789799670969702
 Rigidbody2D:
   serializedVersion: 4
@@ -825,3 +810,29 @@ MonoBehaviour:
   m_Script: {fileID: -571295319, guid: ecc542ff4a2be4fe28cc1e62691e5821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &5393310715891337261
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830931992787935135}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
