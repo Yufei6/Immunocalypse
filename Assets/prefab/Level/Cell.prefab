@@ -425,6 +425,7 @@ GameObject:
   - component: {fileID: 7764795681324814860}
   - component: {fileID: -3722226920594481339}
   - component: {fileID: -4266607172316427929}
+  - component: {fileID: -2352147918506349473}
   m_Layer: 8
   m_Name: Cell
   m_TagString: cellule
@@ -581,6 +582,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-2352147918506349473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6210618804349863963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -571295319, guid: ecc542ff4a2be4fe28cc1e62691e5821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6406726794301608393
 GameObject:
   m_ObjectHideFlags: 0
