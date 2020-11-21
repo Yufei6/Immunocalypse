@@ -140,10 +140,11 @@ public class AutoAttackSystem : FSystem {
 		
 	}
 	private void attack2(GameObject att){
-		//Debug.Log(att);
+		//Debug.Log(att.GetComponent<Attack>().target);
 		GameObject target=att.GetComponent<Attack>().target;
 		hp= target.GetComponent<HP>().hp;
 		int bd= att.GetComponent<Attack>().baseDamage;
+		hp=hp-bd;
 		if(hp<0){
 			GameObject tl=timeline.First();
 			tl.GetComponent<TimeLine>().win_condtion -=1;

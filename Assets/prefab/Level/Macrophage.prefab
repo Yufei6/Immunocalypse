@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1000
-  hp_max: 100
+  hp_max: 1000
   barre: {fileID: 91308046326159065}
 --- !u!114 &-4852874944006927554
 MonoBehaviour:
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3f4b7cfbb91d640a66a9af2f178da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
+  baseDamage: 5
   frequency: 30
   startpoint: 0
   isAttacking: 0
