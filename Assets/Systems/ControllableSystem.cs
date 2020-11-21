@@ -189,7 +189,7 @@ public class ControllableSystem : FSystem {
 		if ((tower != null) && (case1 != null))
 		{
 			GameObjectManager.unbind(tower);
-			Object.Destroy(tower);
+			Object.DestroyImmediate(tower);
 			case1.GetComponent<HasTower>().hasTower = false; 
 		}
 	}

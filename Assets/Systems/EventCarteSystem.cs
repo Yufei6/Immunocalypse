@@ -28,12 +28,12 @@ public class EventCarteSystem : FSystem {
 		ce1 = canvasEvent1F.First();
 		ce2 = canvasEvent2F.First();
 		ce3 = canvasEvent3F.First();
-		proba = 0.3f;
+		proba = 1.3f;
 	}
 
 	public void WashHand(int want)
 	{
-		float probaAttackEnemy = 0.5f;
+		float probaAttackEnemy = 1.0f;
 		int dam = 20;
 		if (want>0){
 			foreach (GameObject go in enemyF)
@@ -99,7 +99,7 @@ public class EventCarteSystem : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		frame_compteur += 1;
-		// Debug.Log("counter:"+frame_compteur+" frame:"+tl.frame[event_compteur]);
+		Debug.Log("counter:"+frame_compteur+" frame:"+tl.frame[event_compteur]);
 
 		if(frame_compteur==tl.frame[event_compteur]){
 			// Debug.Log("Hello event");
