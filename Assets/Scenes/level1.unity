@@ -187,6 +187,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &844067758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4999982599548398905, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4999982597976424567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &844067759
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844067758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32eae98f8291845efaf52cc4dd231c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1147064817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2831474573975103543, guid: 4bc024af97e5d084aaf45c50da7eae43,
@@ -211,7 +229,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4999982597976424567}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 844067758}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebe014c126704448f9a8a4becb003236, type: 3}
@@ -223,7 +241,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4999982597976424567}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 844067758}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75b3c11780d6b1941b0694c3d75d808f, type: 3}
@@ -654,7 +672,7 @@ PrefabInstance:
     - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
         type: 3}
       propertyPath: _fixedUpdateSystemDescriptions.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
         type: 3}
@@ -676,6 +694,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _fixedUpdateSystemDescriptions.Array.data[3]._typeFullName
       value: MovingSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _fixedUpdateSystemDescriptions.Array.data[4]._typeAssemblyQualifiedName
+      value: CheckWinSystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _fixedUpdateSystemDescriptions.Array.data[4]._typeFullName
+      value: CheckWinSystem
       objectReference: {fileID: 0}
     - target: {fileID: 4999982599548398905, guid: ffd5395eb5dcb524e95bb7b534f637d3,
         type: 3}
@@ -820,6 +848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanvasEvents
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371144899856962343, guid: 68ee915ffbf785f4ea2e5ef7e954a816,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68ee915ffbf785f4ea2e5ef7e954a816, type: 3}

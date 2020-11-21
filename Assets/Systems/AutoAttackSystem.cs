@@ -128,6 +128,7 @@ public class AutoAttackSystem : FSystem {
 		if(hp<0){
 			GameObject tl=timeline.First();
 			tl.GetComponent<TimeLine>().win_condtion -=1;
+			Debug.Log(tl.GetComponent<TimeLine>().win_condtion);
 			GameObjectManager.unbind(target);
 			Object.DestroyImmediate(target);
 		}else{
@@ -148,6 +149,7 @@ public class AutoAttackSystem : FSystem {
 		if(hp<0){
 			GameObject tl=timeline.First();
 			tl.GetComponent<TimeLine>().win_condtion -=1;
+			Debug.Log(tl.GetComponent<TimeLine>().win_condtion);
 			GameObjectManager.unbind(target);
 			Object.DestroyImmediate(target);
 		}else{
