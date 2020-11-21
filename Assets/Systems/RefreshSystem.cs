@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.CoreModule;
 using System;
 using FYFY;
 
@@ -14,6 +15,7 @@ public class RefreshSystem : FSystem {
 
 	private Family _cdFamily = FamilyManager.getFamily(new AllOfComponents(typeof(cdTower)));
 	private int currentType = -1;
+	private int cpt = 0;
 	//private float cd_timer = 0f;
 
 
@@ -33,6 +35,22 @@ public class RefreshSystem : FSystem {
 		currentType = towerType;	
 	}
 
+	//modidication 11/21
+	public RefreshSystem(){
+		foreach (GameObject c in _cdFamily){
+			cdTower cdt = c.GetComponent<cdTower>();
+			string tower_id = cdt.Tower_id.ToString();
+			string enemyCible = "Enemy"+tower_id;
+
+			if(PlayerPrefs.HasKey(enemyCible)){
+				Debug.Log("I have met this enemy");
+				//c.GetComponent<Button>().interactable = (_amount>=cdt.ressource);
+				cdt.timer = cdt.cd;
+			}
+		}
+
+	}
+
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
@@ -50,31 +68,13 @@ public class RefreshSystem : FSystem {
 			//Debug.Log(r.GetComponent<Amount>().amount);
 		}
 
-		//modidication 11/21
 
-		/*
 		foreach (GameObject c in _cdFamily){
 			cdTower cdt = c.GetComponent<cdTower>();
 			
 			c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.cd);
 			cdt.timer += Time.deltaTime;
 		}
-		*/
-
-		float cpt = 0f;
-
-		foreach (GameObject c in _cdFamily){
-			cdTower cdt = c.GetComponent<cdTower>();
-			if(cpt==0f){
-				//this is the start of the game
-				c.GetComponent<Button>().interactable = (_amount>=cdt.ressource);
-			}else{
-				c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.cd);
-			}
-			cdt.timer += Time.deltaTime;
-			cpt+=1f;
-		}
-
 		
 
 	}
