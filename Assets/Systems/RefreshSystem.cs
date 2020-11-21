@@ -50,11 +50,29 @@ public class RefreshSystem : FSystem {
 			//Debug.Log(r.GetComponent<Amount>().amount);
 		}
 
+		//modidication 11/21
+
+		/*
 		foreach (GameObject c in _cdFamily){
 			cdTower cdt = c.GetComponent<cdTower>();
 			
 			c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.cd);
 			cdt.timer += Time.deltaTime;
+		}
+		*/
+
+		float cpt = 0f;
+
+		foreach (GameObject c in _cdFamily){
+			cdTower cdt = c.GetComponent<cdTower>();
+			if(cpt==0f){
+				//this is the start of the game
+				c.GetComponent<Button>().interactable = (_amount>=cdt.ressource);
+			}else{
+				c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.cd);
+			}
+			cdt.timer += Time.deltaTime;
+			cpt+=1f;
 		}
 
 		
