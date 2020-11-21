@@ -140,7 +140,7 @@ public class AutoAttackSystem : FSystem {
 		
 	}
 	private void attack2(GameObject att){
-		Debug.Log(att.GetComponent<Attack>().target);
+		//Debug.Log(att.GetComponent<Attack>().target);
 		GameObject target=att.GetComponent<Attack>().target;
 		hp= target.GetComponent<HP>().hp;
 		int bd= att.GetComponent<Attack>().baseDamage;
