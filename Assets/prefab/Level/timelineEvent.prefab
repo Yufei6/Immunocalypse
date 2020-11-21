@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3073059768620216010}
   - component: {fileID: 1605941197436872300}
+  - component: {fileID: 2119734264125634082}
   m_Layer: 0
   m_Name: timelineEvent
   m_TagString: Untagged
@@ -46,4 +47,17 @@ MonoBehaviour:
   frame: c8000000f4010000bc02000084030000
   type_enemy: 
   id_fac: 
+  win_condtion: 0
   type_event: 01000000020000000100000002000000
+--- !u!114 &2119734264125634082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2831474573975103543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6eb4cce5424e0d49a12d1fc5aa193d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
