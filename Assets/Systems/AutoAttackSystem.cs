@@ -20,10 +20,16 @@ public class AutoAttackSystem : FSystem {
 		new NoneOfComponents(typeof(Move),typeof(TowerId)));
 	private float c=1000f;
 	private bool hastraget=false;
+	private volatile bool hastraget2=false;
+	private volatile bool hastraget3=false;
 	private int hp=0;
 	private float d;
 	//private int bd;
-	private GameObject t;
+	// private volatile GameObject t;
+	// private volatile GameObject t2;
+	// private volatile GameObject t3;
+
+
 
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
@@ -39,104 +45,136 @@ public class AutoAttackSystem : FSystem {
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach(GameObject vb in virus_bacterie){
 			Triggered2D vbt= vb.GetComponent<Triggered2D>();
-			if (vbt!=null){
+			if(vbt!=null){
 				foreach(GameObject target in vbt.Targets){	
 					if(target.CompareTag("def")||target.CompareTag("cellule")){	
 						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
 						if (d<c){
 							c=d;
-							t=target;
-							hastraget=true;
+							vb.GetComponent<Attack>().target=target;
+							vb.GetComponent<Attack>().hastarget=true;
 							change_is_move(vb);
 						}
 					}
+
 				}
+				
 			}
-			if(hastraget==false){
+			if(vb.GetComponent<Attack>().target==null){
+						vb.GetComponent<Attack>().hastarget=false;
+				}
+			if(vb.GetComponent<Attack>().hastarget==false){
 				change_is_move(vb);
 			}
-			if(hastraget==true){
+			if(vb.GetComponent<Attack>().target!=null){
 				if(attack_cd(vb)){
-					add_nutrition(vb,t);
-					attack(t,vb);
+					add_nutrition(vb);
+					attack(vb);
 				}
 			}
 		}		
-		foreach(GameObject vb in marco){
-			Triggered2D vbt= vb.GetComponent<Triggered2D> ();	
-			if (vbt!=null){
-				foreach(GameObject target in vbt.Targets){
+		foreach(GameObject go in marco){
+			Triggered2D got= go.GetComponent<Triggered2D> ();	
+			if (got!=null){
+				foreach(GameObject target in got.Targets){
 					if(target.CompareTag("enemy")){
-						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+						d=Vector2.Distance(got.transform.position, go.transform.position);
 						if (d<c){
 							c=d;
-							t=target;
-							hastraget=true;
+							go.GetComponent<Attack>().target=target;
+							hastraget2=true;
 						}
 					}
 				}
-				if(hastraget==true){
-					if(attack_cd(vb)){
-						attack(t,vb);
+				if(go.GetComponent<Attack>().target!=null){
+					if(attack_cd(go)){
+						attack2(go);
 					}
 				}
 			}	
 		}
-		foreach(GameObject vb in lym_T){
-			Triggered2D vbt= vb.GetComponent<Triggered2D> ();	
-			if (vbt!=null){
-				foreach(GameObject target in vbt.Targets){
+		foreach(GameObject go in lym_T){
+			Triggered2D got= go.GetComponent<Triggered2D> ();	
+			if (got!=null){
+				foreach(GameObject target in got.Targets){
 					if(target.CompareTag("enemy")){
-						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
+						d=Vector2.Distance(got.transform.position, go.transform.position);
 						if (d<c){
 							c=d;
-							t=target;
-							hastraget=true;
+							go.GetComponent<Attack>().target=target;
+							hastraget3=true;
 						}
 					}
 				}
-				if(hastraget==true){
-					if(attack_cd(vb)){
-						attack(t,vb);
+				if(go.GetComponent<Attack>().target!=null){
+					if(attack_cd(go)){
+						attack3(go);
 					}
 				}
 			}	
 		}
 	}
-	private void attack(GameObject target,GameObject att){
-
+	private void attack3(GameObject att){
+		GameObject target=att.GetComponent<Attack>().target;
 		hp= target.GetComponent<HP>().hp;
 		int bd= att.GetComponent<Attack>().baseDamage;
 		TowerId idtower=att.GetComponent<TowerId>();
-		if(idtower!= null&&target.CompareTag("enemy")){
-			if(idtower.id!=target.GetComponent<Id_enemy>().id){
-				hp=hp-1;
-			}else{
-				//Debug.Log(bd);
-				//Debug.Log(hp);
-				hp=hp-bd;
-			}
+		if(idtower.id!=target.GetComponent<Id_enemy>().id){
+			Debug.Log(idtower.id);
+			hp=hp-1;
 		}else{
 			hp=hp-bd;
 		}
-		
 		if(hp<0){
-			if(target.CompareTag("enemy")){
-				GameObject tl=timeline.First();
-				tl.GetComponent<TimeLine>().win_condtion -=1;
-			}
+			GameObject tl=timeline.First();
+			tl.GetComponent<TimeLine>().win_condtion -=1;
 			GameObjectManager.unbind(target);
-			Object.Destroy(target);
+			Object.DestroyImmediate(target);
 		}else{
 			//Debug.Log(hp);
 			target.GetComponent<HP>().hp=hp;
 		}
-		hastraget=false;
+		hastraget3=false;
+		c=1000f;
+		
+		
+	}
+	private void attack2(GameObject att){
+		GameObject target=att.GetComponent<Attack>().target;
+		hp= target.GetComponent<HP>().hp;
+		int bd= att.GetComponent<Attack>().baseDamage;
+		if(hp<0){
+			GameObject tl=timeline.First();
+			tl.GetComponent<TimeLine>().win_condtion -=1;
+			GameObjectManager.unbind(target);
+			Object.DestroyImmediate(target);
+		}else{
+			//Debug.Log(hp);
+			target.GetComponent<HP>().hp=hp;
+		}
+		
+		c=1000f;
+		
+	}
+	private void attack(GameObject att){
+		GameObject target=att.GetComponent<Attack>().target;
+		hp= target.GetComponent<HP>().hp;
+		int bd= att.GetComponent<Attack>().baseDamage;
+		hp=hp-bd;
+		if(hp<0){
+			GameObjectManager.unbind(target);
+			Object.DestroyImmediate(target);
+
+		}else{
+			//Debug.Log(hp);
+			target.GetComponent<HP>().hp=hp;
+		}
+		//hastraget=false;
 		c=1000f;
 		
 	}
 	private void change_is_move(GameObject g){
-		g.GetComponent<Attack>().isAttacking=hastraget;
+		g.GetComponent<Attack>().isAttacking=g.GetComponent<Attack>().hastarget;
 
 	}
 	private bool attack_cd(GameObject v){
@@ -150,7 +188,8 @@ public class AutoAttackSystem : FSystem {
 			return false;
 		}
 	}
-	private void add_nutrition(GameObject v,GameObject target){
+	private void add_nutrition(GameObject v){
+		GameObject target=v.GetComponent<Attack>().target;
 		if(target.CompareTag("cellule")){
 			int actuelle=v.GetComponent<Nutrition>().nut_actuelle;
 			int nut=min_v(v.GetComponent<Attack>().baseDamage,target.GetComponent<HP>().hp);

@@ -7,6 +7,7 @@ public class Attack : MonoBehaviour {
 	public float startpoint ;
 	public bool isAttacking;
 	public bool hastarget;
+	public GameObject target;
 	//test code
 	//public bool isAttack = false;
 }
