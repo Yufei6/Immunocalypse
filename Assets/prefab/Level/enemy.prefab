@@ -698,7 +698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f3b7939a53ac847ad63c519370ee19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 0.5
   isMove: 1
   routine:
   - {x: -3, y: 3, z: 0}
@@ -723,6 +723,7 @@ MonoBehaviour:
   startpoint: 0
   isAttacking: 0
   hastarget: 0
+  target: {fileID: 0}
 --- !u!114 &8953706597383962250
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -656,6 +656,27 @@ PrefabInstance:
       propertyPath: _fixedUpdateSystemDescriptions.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _fixedUpdateSystemDescriptions.Array.data[2]._typeAssemblyQualifiedName
+      value: AutoAttackSystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _fixedUpdateSystemDescriptions.Array.data[2]._typeFullName
+      value: AutoAttackSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _fixedUpdateSystemDescriptions.Array.data[3]._typeAssemblyQualifiedName
+      value: MovingSystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _fixedUpdateSystemDescriptions.Array.data[3]._typeFullName
+      value: MovingSystem
+      objectReference: {fileID: 0}
     - target: {fileID: 4999982599548398905, guid: ffd5395eb5dcb524e95bb7b534f637d3,
         type: 3}
       propertyPath: m_Name
