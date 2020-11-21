@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: -811318975111390455}
   - component: {fileID: 1875611327911587672}
   m_Layer: 0
-  m_Name: CellB
+  m_Name: CellT2
   m_TagString: def
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -728,6 +728,7 @@ MonoBehaviour:
   startpoint: 0
   isAttacking: 0
   hastarget: 0
+  target: {fileID: 0}
 --- !u!61 &854992729013030524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -799,4 +800,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ade1a6733cc34a558671598cb32ae1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
+  id: 2

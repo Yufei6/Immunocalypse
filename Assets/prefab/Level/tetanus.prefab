@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  hp_max: 20
+  hp_max: 100
   barre: {fileID: 3971095666554655869}
 --- !u!111 &3420879558181710019
 Animation:

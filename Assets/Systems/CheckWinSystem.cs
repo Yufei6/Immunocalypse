@@ -17,8 +17,20 @@ public class CheckWinSystem : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		GameObject tl=timeline.First();
+
 		if(tl.GetComponent<TimeLine>().win_condtion <=0){
-			GameObjectManager.loadScene("WinScene");
+			int i=PlayerPrefs.GetInt("level");
+			PlayerPrefs.SetInt("level",i+1);
+			int d=i+1;
+			string c="EnemyType"+d.ToString();
+			PlayerPrefs.SetInt(c,0);
+			if(i <2){
+				GameObjectManager.loadScene("ContinueScene");
+			}else{
+				GameObjectManager.loadScene("WinScene");
+			}
 		}
+		
+
 	}
 }
