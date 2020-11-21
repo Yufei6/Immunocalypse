@@ -3,7 +3,11 @@ using FYFY;
 
 public class CheckWinSystem : FSystem {
 	private Family timeline=FamilyManager.getFamily(new AllOfComponents(typeof(TimeLine)), new NoneOfComponents(typeof(TimelineEvent)));
-	
+	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
+	private GameObject controller;
+	public CheckWinSystem(){
+		controller = FamilyController.First();
+	}
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
 	protected override void onPause(int currentFrame) {
@@ -25,8 +29,10 @@ public class CheckWinSystem : FSystem {
 			string c="EnemyType"+d.ToString();
 			PlayerPrefs.SetInt(c,0);
 			if(i <2){
+				GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 				GameObjectManager.loadScene("ContinueScene");
 			}else{
+				GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 				GameObjectManager.loadScene("WinScene");
 			}
 		}

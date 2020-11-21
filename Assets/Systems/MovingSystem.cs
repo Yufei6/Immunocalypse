@@ -7,8 +7,11 @@ public class MovingSystem : FSystem {
 	// Advice: avoid to update your families inside this function.
 
 	private Family _controllableGO = FamilyManager.getFamily(new AllOfComponents(typeof(Move)));
-
-
+	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
+	private GameObject controller;
+	public MovingSystem(){
+		controller = FamilyController.First();
+	}
 	//private int cpt = 0;
 
 	protected override void onPause(int currentFrame) {
@@ -45,7 +48,7 @@ public class MovingSystem : FSystem {
 					//Debug.Log(go.GetComponent<Move>().routine.Count);
 					//Debug.Log(target);
 				}else{
-					
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("WinScene");
 					//Debug.Log("All targets reached");
 				}
