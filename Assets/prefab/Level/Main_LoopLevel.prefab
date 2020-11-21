@@ -62,13 +62,13 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
     _typeFullName: FactorySystem
     _pause: 0
-  - _typeAssemblyQualifiedName: MovingSystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    _typeFullName: MovingSystem
-    _pause: 0
   - _typeAssemblyQualifiedName: AutoAttackSystem, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     _typeFullName: AutoAttackSystem
+    _pause: 0
+  - _typeAssemblyQualifiedName: MovingSystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    _typeFullName: MovingSystem
     _pause: 0
   - _typeAssemblyQualifiedName: EventCarteSystem, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
