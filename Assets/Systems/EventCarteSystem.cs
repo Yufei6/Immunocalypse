@@ -28,7 +28,7 @@ public class EventCarteSystem : FSystem {
 		ce1 = canvasEvent1F.First();
 		ce2 = canvasEvent2F.First();
 		ce3 = canvasEvent3F.First();
-		proba = 1.3f;
+		proba = 0.2f;
 	}
 
 	public void WashHand(int want)
