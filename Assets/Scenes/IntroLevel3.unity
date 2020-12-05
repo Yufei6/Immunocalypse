@@ -255,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9090525f322d8be4e95c8d17449b1e6d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e2f3c37da9b467468377ff7b6f50806, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -472,10 +472,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "C'est quoi la coqueluche?\nLa coqueluche est une infection bact\xE9rienne
-    des voies respiratoires. Ses sympt\xF4mes et leur gravait\xE9 se varient. Les
-    principaux sont:\n\n-fi\xE8vre\n-toux soudaine\n-mal de gorge\n-fatigue\n-la
-    rinite\n\nLa coqueluche est caus\xE9e par le Bordetella pertussis, une bact\xE9rie.\n\n"
+  m_Text: "L'agent responsable pour la poliomy\xE9lite est le poliovirus. \n\nIl
+    est transmis par voie orale et digestive. Dans la plupart des cas, le poliovirus
+    ne provoque que des syptomes similaires avec la grippe. Mais dans 1% des cas,
+    il infecte les cellueles nerveuses et conduit la poliomy\xE9lite.\n"
 --- !u!222 &1532946082
 CanvasRenderer:
   m_ObjectHideFlags: 0
