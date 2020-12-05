@@ -49,6 +49,16 @@ public class ControllerSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "IntroLevel2", null);
 	}
 
+	public void IntroLevel3()
+	{
+		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "IntroLevel3", null);
+	}
+
+	public void IntroLevel4()
+	{
+		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "IntroLevel4", null);
+	}
+
 	public void Quit()
 	{
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "Quit", null);

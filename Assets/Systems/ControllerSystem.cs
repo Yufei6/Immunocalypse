@@ -15,6 +15,8 @@ public class ControllerSystem : FSystem {
 	public const int MANUEL = 9;
 	public const int INTROLEVEL1 = 10;
 	public const int INTROLEVEL2 = 11;
+	public const int INTROLEVEL3 = 12;
+	public const int INTROLEVEL4 = 13;
 	
 
 	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
@@ -89,6 +91,18 @@ public class ControllerSystem : FSystem {
 	public void IntroLevel2()
 	{
 		gs.currentState = INTROLEVEL2;
+		stateChange = true;
+	}
+
+	public void IntroLevel3()
+	{
+		gs.currentState = INTROLEVEL3;
+		stateChange = true;
+	}
+
+	public void IntroLevel4()
+	{
+		gs.currentState = INTROLEVEL4;
 		stateChange = true;
 	}
 
@@ -187,6 +201,18 @@ public class ControllerSystem : FSystem {
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("IntroLevel2");
+				}
+				break;
+			case INTROLEVEL3:
+				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("IntroLevel3");
+				}
+				break;
+			case INTROLEVEL4:
+				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("IntroLevel4");
 				}
 				break;
 			default :

@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Poliomy\xE9lite"
+  m_Text: Covid - 19
 --- !u!222 &439375707
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -361,7 +361,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -472,10 +472,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "L'agent responsable pour la poliomy\xE9lite est le poliovirus. \n\nIl
-    est transmis par voie orale et digestive. Dans la plupart des cas, le poliovirus
-    ne provoque que des syptomes similaires avec la grippe. Mais dans 1% des cas,
-    il infecte les cellueles nerveuses et conduit la poliomy\xE9lite.\n"
+  m_Text: "WANG LAOBAN \nXIE YI XIA COVID19"
 --- !u!222 &1532946082
 CanvasRenderer:
   m_ObjectHideFlags: 0
