@@ -18,13 +18,13 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroLevel1.unity
     guid: 40fbb37003a3f6f47935bd65f605152c
   - enabled: 1
-    path: Assets/Scenes/level0.unity
+    path: Assets/Scenes/level1.unity
     guid: fb7ec8fe761f2428e8b2f0b55daf462a
   - enabled: 1
     path: Assets/Scenes/IntroLevel2.unity
     guid: fda0f7056f85c8047924ca43289bec92
   - enabled: 1
-    path: Assets/Scenes/level1.unity
+    path: Assets/Scenes/level2.unity
     guid: 4a73b5fb61f3d45858a2486372b73f10
   - enabled: 1
     path: Assets/Scenes/LoseScene.unity

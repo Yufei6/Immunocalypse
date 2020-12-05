@@ -2419,7 +2419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id_c: 1
-  virusname: 
+  virusname: bordetella
   block: {fileID: 740387158}
 --- !u!1 &554763263
 GameObject:
@@ -3065,7 +3065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id_c: 0
-  virusname: 
+  virusname: poliovirus
   block: {fileID: 1370291995}
 --- !u!1 &740387158
 GameObject:

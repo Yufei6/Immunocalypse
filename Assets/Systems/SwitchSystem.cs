@@ -23,14 +23,8 @@ public class SwitchSystem : FSystem {
 		//test
 		PlayerPrefs.SetInt("poliovirus", 1);
 		PlayerPrefs.SetInt("bordetella", 1);
-			
-	}
-	protected override void onPause(int currentFrame) {
-	}
-
-	// Use this to update member variables when system resume.
-	// Advice: avoid to update your families inside this function.
-	protected override void onResume(int currentFrame){
+		PlayerPrefs.SetInt("clostridiumTetani", 1);
+		PlayerPrefs.SetInt("covid19",1);
 	}
 
 	// Use to process your families.
@@ -45,10 +39,6 @@ public class SwitchSystem : FSystem {
 				c.SetActive(false);
 			}
 		}
-
-		
-
-
 	}
 	public void next(){
 		id_cam=id_cam+1;

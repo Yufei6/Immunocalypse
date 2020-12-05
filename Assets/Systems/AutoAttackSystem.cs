@@ -24,6 +24,12 @@ public class AutoAttackSystem : FSystem {
 	private volatile bool hastraget3=false;
 	private int hp=0;
 	private float d;
+	private Family anticorp=FamilyManager.getFamily(
+		new AllOfComponents(
+			typeof(Attack),typeof(Move)
+			),
+		new NoneOfComponents(typeof(Nutrition) )
+		);
 	//private int bd;
 	// private volatile GameObject t;
 	// private volatile GameObject t2;
@@ -114,6 +120,7 @@ public class AutoAttackSystem : FSystem {
 			}	
 		}
 	}
+
 	private void attack3(GameObject att){
 		GameObject target=att.GetComponent<Attack>().target;
 		hp= target.GetComponent<HP>().hp;
@@ -140,6 +147,7 @@ public class AutoAttackSystem : FSystem {
 		
 		
 	}
+
 	private void attack2(GameObject att){
 		//Debug.Log(att.GetComponent<Attack>().target);
 		GameObject target=att.GetComponent<Attack>().target;

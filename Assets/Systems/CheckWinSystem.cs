@@ -28,7 +28,7 @@ public class CheckWinSystem : FSystem {
 			int d=i+1;
 			string c="EnemyType"+d.ToString();
 			PlayerPrefs.SetInt(c,0);
-			if(i <2){
+			if(i <1){
 				GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 				GameObjectManager.loadScene("ContinueScene");
 			}else{
