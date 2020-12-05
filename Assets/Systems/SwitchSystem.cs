@@ -39,10 +39,6 @@ public class SwitchSystem : FSystem {
 				c.SetActive(false);
 			}
 		}
-
-		
-
-
 	}
 	public void next(){
 		id_cam=id_cam+1;
