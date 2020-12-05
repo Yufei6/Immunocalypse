@@ -42,9 +42,13 @@ public class MultiplierSystem : FSystem {
 		tl.GetComponent<TimeLine>().win_condtion +=1;
 		int type=prefab.GetComponent<Id_enemy>().id;
 		if(type ==1){
-				pf=te.virus;	
-			}else{
-				pf=te.bac;
+				pf=te.tetanus;	
+			}else if(type == 2){
+				pf=te.bordetella;
+			}else if(type == 3){
+				pf=te.poliovirus;
+			}else if(type == 4){
+				pf=te.covid19;
 			}
 		GameObject go=Object.Instantiate<GameObject>(pf);
 		go.transform.position=prefab.transform.position;

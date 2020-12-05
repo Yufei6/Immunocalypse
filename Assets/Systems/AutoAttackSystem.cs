@@ -162,7 +162,6 @@ public class AutoAttackSystem : FSystem {
 		GameObject target=att.GetComponent<Attack>().target;
 		hp= target.GetComponent<HP>().hp;
 		int bd= att.GetComponent<Attack>().baseDamage;
-		TowerId idtower=att.GetComponent<TowerId>();
 		hp=hp-bd;
 		if(hp<0){
 			GameObject tl=timeline.First();
@@ -271,7 +270,6 @@ public class AutoAttackSystem : FSystem {
 			int nut=min_v(v.GetComponent<Attack>().baseDamage,target.GetComponent<HP>().hp);
 			v.GetComponent<Nutrition>().nut_actuelle=actuelle+nut;
 		}
-
 	}
 
 	private int min_v(int i,int j){

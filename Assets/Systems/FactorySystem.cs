@@ -48,7 +48,7 @@ public class FactorySystem : FSystem {
 		if(frame_compteur==tl.frame[enemy_compteur]){
 			int type=tl.type_enemy[enemy_compteur];
 			int id=tl.id_fac[enemy_compteur];
-			GameObject prefab;
+			GameObject prefab=te.tetanus;
 			if(type ==1){
 				prefab=te.tetanus;	
 			}else if(type == 2){
