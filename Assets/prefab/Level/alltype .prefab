@@ -43,5 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e44c14ef316243eb9dd26d65a51d2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virus: {fileID: 0}
-  bac: {fileID: 0}
+  tetanus: {fileID: 1591776982113233080, guid: 0b070711d0ea54729b6e5472980e9fec, type: 3}
+  bordetella: {fileID: 8887882084525712126, guid: 6e2389505f7ca421fa68ef582c0ffb38,
+    type: 3}
+  poliovirus: {fileID: 1271655960509359457, guid: c7a2dcefb537175488e380e2a3326120,
+    type: 3}
+  covid19: {fileID: 7117998568913330438, guid: 9bc9f354a6761e64c9f62e87ed87f296, type: 3}
