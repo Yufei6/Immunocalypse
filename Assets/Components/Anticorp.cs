@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
 public class Anticorp : MonoBehaviour {
-	private int id_anticorp;
+	public int cdfab;
+	public int cdcur;
+	public GameObject at;
 	// Advice: FYFY component aims to contain only public members (according to Entity-Component-System paradigm).
 }

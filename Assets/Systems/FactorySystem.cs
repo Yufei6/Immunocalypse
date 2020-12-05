@@ -13,6 +13,8 @@ public class FactorySystem : FSystem {
 	private AllTypeEnemy te;
 	private Vector3 v;
 	private Routine r;
+	private Family celluleB=FamilyManager.getFamily (new AllOfComponents(typeof (Anticorp)));
+
 	
 
 	
@@ -57,7 +59,14 @@ public class FactorySystem : FSystem {
 			create_enemy(prefab,v,r);
 			enemy_compteur=enemy_compteur+1;
 		}
-
+		foreach(GameObject go in celluleB){
+			if (go.GetComponent<Anticorp>().cdcur>go.GetComponent<Anticorp>().cdfab){
+				create_anticorp(go.GetComponent<Anticorp>().at , go.transform.position);
+				go.GetComponent<Anticorp>().cdcur=0;
+			}else{
+				go.GetComponent<Anticorp>().cdcur +=1;
+			}
+		}
 
 
 
@@ -66,7 +75,9 @@ public class FactorySystem : FSystem {
 		GameObject go=Object.Instantiate<GameObject>(prefab,v,Quaternion.identity);
 		go.GetComponent<Move>().routine=r.routine;
 		GameObjectManager.bind(go);
-		
-
+	}
+	private void create_anticorp(GameObject at,Vector3 v){
+		GameObject go=Object.Instantiate<GameObject>(at,v,Quaternion.identity);
+		GameObjectManager.bind(go);
 	}
 }
