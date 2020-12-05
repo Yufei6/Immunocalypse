@@ -19,9 +19,9 @@ public class EventCarteSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("EventCarteSystem", "DoSport", want);
 	}
 
-	public void Vaccine(System.Int32 want)
+	public void Vaccine(System.Int32 typeEnemy)
 	{
-		MainLoop.callAppropriateSystemMethod ("EventCarteSystem", "Vaccine", want);
+		MainLoop.callAppropriateSystemMethod ("EventCarteSystem", "Vaccine", typeEnemy);
 	}
 
 }

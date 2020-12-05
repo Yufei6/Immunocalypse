@@ -33,8 +33,8 @@ public class EventCarteSystem : FSystem {
 
 	public void WashHand(int want)
 	{
-		float probaAttackEnemy = 1.0f;
-		int dam = 20;
+		float probaAttackEnemy = 0.5f;
+		int dam = 30;
 		if (want>0){
 			foreach (GameObject go in enemyF)
 			{
@@ -54,9 +54,8 @@ public class EventCarteSystem : FSystem {
 
 	public void DoSport(int want)
 	{
-		
-		float probaAttackEnemy = 0.5f;
-		int dam = 20;
+		float probaAttackEnemy = 0.3f;
+		int dam = 30;
 		if (want>0){
 			foreach (GameObject go in enemyF)
 			{
@@ -74,24 +73,26 @@ public class EventCarteSystem : FSystem {
 		Time.timeScale = 1;
 	}
 
-	public void Vaccine(int want)
+	public void Vaccine(int typeEnemy)
 	{
-		float probaAttackEnemy = 0.5f;
-		int dam = 20;
-		if (want>0){
-			foreach (GameObject go in enemyF)
-			{
-				if (Random.value <= probaAttackEnemy)
-				{
-					go.GetComponent<HP>().hp -= dam;
-					if (go.GetComponent<HP>().hp<0)
-					{
-						go.GetComponent<HP>().hp = 1;
-					}
-				}
-			}
+		switch(typeEnemy)
+		{
+			case 1:
+				PlayerPrefs.SetInt("tetanus", 1);
+				break;
+			case 2:
+				PlayerPrefs.SetInt("bordetella", 1);
+				break;
+			case 3:
+				PlayerPrefs.SetInt("poliovirus", 1);
+				break;
+			case 4:
+				PlayerPrefs.SetInt("covid19", 1);
+				break;
+			default:
+				Debug.Log("Unknown type for vaccin(yufei)");
+				break;
 		}
-		ce3.SetActive(false);
 		Time.timeScale = 1;
 	}
 
