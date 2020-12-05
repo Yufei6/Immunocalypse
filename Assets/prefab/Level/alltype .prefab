@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5262570072454852819}
-  - component: {fileID: 5262570072454852818}
+  - component: {fileID: 6036557283121206129}
   m_Layer: 0
   m_Name: 'alltype '
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 2.49, z: 0}
---- !u!114 &5262570072454852818
+--- !u!114 &6036557283121206129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e44c14ef316243eb9dd26d65a51d2be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virus: {fileID: 8887882084525712126, guid: 6e2389505f7ca421fa68ef582c0ffb38, type: 3}
-  bac: {fileID: 8887882084525712126, guid: 6e2389505f7ca421fa68ef582c0ffb38, type: 3}
+  virus: {fileID: 0}
+  bac: {fileID: 0}

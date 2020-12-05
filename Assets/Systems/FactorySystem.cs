@@ -50,9 +50,13 @@ public class FactorySystem : FSystem {
 			int id=tl.id_fac[enemy_compteur];
 			GameObject prefab;
 			if(type ==1){
-				prefab=te.virus;	
-			}else{
-				prefab=te.bac;
+				prefab=te.tetanus;	
+			}else if(type == 2){
+				prefab=te.bordetella;
+			}else if(type == 3){
+				prefab=te.poliovirus;
+			}else if(type == 4){
+				prefab=te.covid19;
 			}
 			foreach(GameObject fac in factory ){
 				if(id==fac.GetComponent<ID>().id){
