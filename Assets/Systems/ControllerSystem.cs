@@ -49,7 +49,7 @@ public class ControllerSystem : FSystem {
 	{
 		gs.currentState = START;
 		stateChange = true;
-		PlayerPrefs.SetInt("level",0);
+		PlayerPrefs.SetInt("level",1);
 	}
 
 	public void Pauss()
