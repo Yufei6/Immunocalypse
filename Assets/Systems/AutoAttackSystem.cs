@@ -26,7 +26,7 @@ public class AutoAttackSystem : FSystem {
 	private float d;
 	private Family anticorp=FamilyManager.getFamily(
 		new AllOfComponents(
-			typeof(Attack),typeof(Move)
+			typeof(Attack),typeof(Move),typeof(Lifetime),typeof(TowerId)
 			),
 		new NoneOfComponents(typeof(Nutrition) )
 		);
@@ -49,9 +49,11 @@ public class AutoAttackSystem : FSystem {
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
+
 		foreach(GameObject vb in virus_bacterie){
 			Triggered2D vbt= vb.GetComponent<Triggered2D>();
 			if(vbt!=null){
+				c=1000f;
 				foreach(GameObject target in vbt.Targets){	
 					if(target.CompareTag("def")||target.CompareTag("cellule")){	
 						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
@@ -78,10 +80,12 @@ public class AutoAttackSystem : FSystem {
 					attack(vb);
 				}
 			}
-		}		
+		}
+
 		foreach(GameObject go in marco){
 			Triggered2D got= go.GetComponent<Triggered2D> ();	
 			if (got!=null){
+				c=1000f;
 				foreach(GameObject target in got.Targets){
 					if(target.CompareTag("enemy")){
 						d=Vector2.Distance(got.transform.position, go.transform.position);
@@ -99,9 +103,11 @@ public class AutoAttackSystem : FSystem {
 				}
 			}	
 		}
+
 		foreach(GameObject go in lym_T){
 			Triggered2D got= go.GetComponent<Triggered2D> ();	
 			if (got!=null){
+				c=1000f;
 				foreach(GameObject target in got.Targets){
 					if(target.CompareTag("enemy")){
 						d=Vector2.Distance(got.transform.position, go.transform.position);
@@ -119,6 +125,64 @@ public class AutoAttackSystem : FSystem {
 				}
 			}	
 		}
+
+		foreach(GameObject go in anticorp){
+			Triggered2D got= go.GetComponent<Triggered2D> ();
+			if (got!=null){
+				c=1000f;
+				foreach(GameObject target in got.Targets){
+					if(target.CompareTag("enemy")){
+						if(target.GetComponent<Id_enemy>().id==go.GetComponent<TowerId>().id){
+							d=Vector2.Distance(got.transform.position, go.transform.position);
+							if (d<c){
+								c=d;
+								go.GetComponent<Attack>().target=target;
+								go.GetComponent<Attack>().hastarget=true;
+							}
+						}
+					}
+				}
+				if(go.GetComponent<Attack>().target==null){
+					GameObjectManager.unbind(go);
+					Object.DestroyImmediate(go);
+				}
+				else{
+					if(go.GetComponent<Attack>().hastarget!=false){
+						if(attack_cd(go)){
+							attack4(go);
+						}
+					}
+				}				
+			}	
+		}
+
+	}
+
+	private void attack4(GameObject att){
+		GameObject target=att.GetComponent<Attack>().target;
+		hp= target.GetComponent<HP>().hp;
+		int bd= att.GetComponent<Attack>().baseDamage;
+		TowerId idtower=att.GetComponent<TowerId>();
+		hp=hp-bd;
+		if(hp<0){
+			GameObject tl=timeline.First();
+			tl.GetComponent<TimeLine>().win_condtion -=1;
+			Debug.Log(tl.GetComponent<TimeLine>().win_condtion);
+			GameObjectManager.unbind(target);
+			Object.DestroyImmediate(target);
+			GameObjectManager.unbind(att);
+			Object.DestroyImmediate(att);
+		}else{
+			//Debug.Log(hp);
+			target.GetComponent<HP>().hp=hp;
+			if(att.GetComponent<Lifetime>().limit == att.GetComponent<Lifetime>().current){
+				GameObjectManager.unbind(att);
+				Object.DestroyImmediate(att);
+			}
+
+		}
+		hastraget3=false;
+		c=1000f;	
 	}
 
 	private void attack3(GameObject att){
@@ -143,9 +207,7 @@ public class AutoAttackSystem : FSystem {
 			target.GetComponent<HP>().hp=hp;
 		}
 		hastraget3=false;
-		c=1000f;
-		
-		
+		c=1000f;	
 	}
 
 	private void attack2(GameObject att){
@@ -164,10 +226,9 @@ public class AutoAttackSystem : FSystem {
 			//Debug.Log(hp);
 			target.GetComponent<HP>().hp=hp;
 		}
-		
-		c=1000f;
-		
+		c=1000f;	
 	}
+
 	private void attack(GameObject att){
 		GameObject target=att.GetComponent<Attack>().target;
 		hp= target.GetComponent<HP>().hp;
@@ -185,10 +246,12 @@ public class AutoAttackSystem : FSystem {
 		c=1000f;
 		
 	}
+
 	private void change_is_move(GameObject g){
 		g.GetComponent<Attack>().isAttacking=g.GetComponent<Attack>().hastarget;
 
 	}
+
 	private bool attack_cd(GameObject v){
 		float b=v.GetComponent<Attack>().startpoint;
 		float a=v.GetComponent<Attack>().frequency;
@@ -200,6 +263,7 @@ public class AutoAttackSystem : FSystem {
 			return false;
 		}
 	}
+
 	private void add_nutrition(GameObject v){
 		GameObject target=v.GetComponent<Attack>().target;
 		if(target.CompareTag("cellule")){
@@ -209,6 +273,7 @@ public class AutoAttackSystem : FSystem {
 		}
 
 	}
+
 	private int min_v(int i,int j){
 		if (i<j){
 			return i;

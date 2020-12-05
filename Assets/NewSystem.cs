@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using FYFY;
 
-public class AnticorpSystem : FSystem {
-	private Family anticorp=FamilyManager.getFamily (new AllOfComponents(typeof (Lifetime)));
+public class NewSystem : FSystem {
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
 	protected override void onPause(int currentFrame) {
