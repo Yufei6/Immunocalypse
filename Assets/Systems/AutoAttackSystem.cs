@@ -174,9 +174,11 @@ public class AutoAttackSystem : FSystem {
 		}else{
 			//Debug.Log(hp);
 			target.GetComponent<HP>().hp=hp;
-			if(att.GetComponent<Lifetime>().limit == att.GetComponent<Lifetime>().current){
+			if(att.GetComponent<Lifetime>().limit <= att.GetComponent<Lifetime>().current){
 				GameObjectManager.unbind(att);
 				Object.DestroyImmediate(att);
+			}else{
+				att.GetComponent<Lifetime>().current +=1;
 			}
 
 		}

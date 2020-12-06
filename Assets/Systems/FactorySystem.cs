@@ -71,7 +71,7 @@ public class FactorySystem : FSystem {
 			if (go.GetComponent<Anticorp>().cdcur>go.GetComponent<Anticorp>().cdfab){
 				GameObject target=search_target(go.GetComponent<TowerId>().id);
 				if(target!=null){
-					create_anticorp(go.GetComponent<Anticorp>().at , go.transform.position,target);
+					create_anticorp(go.GetComponent<Anticorp>().at , go.transform.position,target,go.GetComponent<TowerId>().id);
 					go.GetComponent<Anticorp>().cdcur=0;
 				}
 			}else{
@@ -86,9 +86,10 @@ public class FactorySystem : FSystem {
 		GameObjectManager.bind(go);
 	}
 
-	private void create_anticorp(GameObject at,Vector3 v,GameObject target){
+	private void create_anticorp(GameObject at,Vector3 v,GameObject target,int id ){
 		GameObject go=Object.Instantiate<GameObject>(at,v,Quaternion.identity);
 		go.GetComponent<Attack>().target=target;
+		go.GetComponent<TowerId>().id=id;
 		GameObjectManager.bind(go);
 	}
 
