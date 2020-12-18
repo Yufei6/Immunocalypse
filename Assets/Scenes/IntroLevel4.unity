@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Covid - 19
+  m_Text: COVID-19
 --- !u!222 &439375707
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7e2f3c37da9b467468377ff7b6f50806, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b4e6cab85d08191438516457950cbb25, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -472,7 +472,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "WANG LAOBAN \nXIE YI XIA COVID19"
+  m_Text: "La pand\xE9mie de covid19 a \xE9t\xE9 caus\xE9 par le coronavirus, aussi
+    appel\xE9 SARS-Cov2. Dans touy le mone entier; il y a plus d'un million des gens
+    sont tu\xE9es pendant 2020.\n\nLes sympt\xF4mes se varient gravement, de grippes
+    \xE0 la difficult\xE9 respiratoire. Et jusqu'\xE0 maintenant, aucun m\xE9dicalement
+    a \xE9t\xE9 prouv\xE9 cent pour cent utile contre cette pand\xE9mie."
 --- !u!222 &1532946082
 CanvasRenderer:
   m_ObjectHideFlags: 0
