@@ -7,4 +7,6 @@ public class cdTower : MonoBehaviour {
 	public int id;
 	public float timer=0;
 	public int Tower_id;
+	public string towerType;
+	public int new_cd;
 }
