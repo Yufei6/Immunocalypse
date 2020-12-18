@@ -10,7 +10,7 @@ public class ControllableSystem : FSystem {
 	public const int IMPHOCYTEB = 2;
 
 	public int currentTowerType;
-	private Family pointerOverCaseFamily = FamilyManager.getFamily (new AllOfComponents (typeof (PointerOver), typeof(HasTower)));
+	private Family pointerOverCaseFamily = FamilyManager.getFamily (new AllOfComponents (typeof (PointerOver), typeof(cdTower)));
 	private Family towerFacFamily = FamilyManager.getFamily(new AllOfComponents(typeof(BuildTower)));
 	private Family normalCellF = FamilyManager.getFamily(new AllOfComponents(typeof(HP), typeof(HasTower)));
 	private Family caseTowerF = FamilyManager.getFamily(new AllOfComponents(typeof(TypeCase), typeof(HasTower)));
@@ -33,7 +33,7 @@ public class ControllableSystem : FSystem {
 	private Amount amount;
 	private GameObject buttonTower;
 	private cdTower cdt;
-	
+	private int drapTower; 
 
 
 	public ControllableSystem()
@@ -47,6 +47,7 @@ public class ControllableSystem : FSystem {
 		CursorB = tc.CursorB;
 		CursorDestroy = tc.CursorDestroy;
 		amount = ressourcesF.First().GetComponent<Amount>();
+		drapTower = -1;
 	}
 
 
@@ -124,11 +125,11 @@ public class ControllableSystem : FSystem {
 		return null;
 	}
 
-	private GameObject getButtonTower()
+	private GameObject getButtonTower(int towerType)
 	{
 		foreach (GameObject go in buttonTowerF)
 		{
-			if (go.GetComponent<cdTower>().id == currentTowerType)
+			if (go.GetComponent<cdTower>().id == towerType)
 			{
 				return go;
 			}
@@ -144,7 +145,7 @@ public class ControllableSystem : FSystem {
 			bool isMacrophage = go.GetComponent<HP>() == null ? false:true;
 			if(!go.GetComponent<HasTower>().hasTower)
 			{
-				buttonTower = getButtonTower();
+				buttonTower = getButtonTower(towerType);
 				cdt = buttonTower.GetComponent<cdTower>();
 				switch(towerType)
 				{
@@ -226,8 +227,22 @@ public class ControllableSystem : FSystem {
 		foreach (GameObject go in pointerOverCaseFamily)
 		{
 			// Debug.Log("INNN");
+			if (Input.GetMouseButtonDown(0)){
+				cdTower cdt = go.GetComponent<cdTower>();
+				if (cdt.timer>=cdt.cd){
+					int type = cdt.id;
+					drapTower=type;
+				}
+				// if (Input.GetMouseButtonUp(0)){
+				// 	Debug.Log("BUILDDD"+type);
+				// }
+			}
 			ChangeCaseColor(go);
 			ShowInformation(go);
+		}
+		if ((Input.GetMouseButtonUp(0))&&(drapTower>=0)){
+			BuildTower(mousePos2worldPos(Input.mousePosition), drapTower);
+			drapTower = -1;
 		}
 		if (currentTowerType == -1){
 			if (Input.GetMouseButton(0))
