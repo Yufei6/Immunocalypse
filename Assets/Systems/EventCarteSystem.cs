@@ -93,6 +93,7 @@ public class EventCarteSystem : FSystem {
 				Debug.Log("Unknown type for vaccin(yufei)");
 				break;
 		}
+		ce3.SetActive(false);
 		Time.timeScale = 1;
 	}
 
@@ -117,7 +118,7 @@ public class EventCarteSystem : FSystem {
 						ce2.SetActive(true);
 						break;
 					case 3:
-						ce2.SetActive(true);
+						ce3.SetActive(true);
 						break;
 					default:
 						Debug.Log("Unknown Event(Yufei)");
