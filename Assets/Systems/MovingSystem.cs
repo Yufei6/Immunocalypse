@@ -6,7 +6,7 @@ public class MovingSystem : FSystem {
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
 
-	private Family _controllableGO = FamilyManager.getFamily(new AllOfComponents(typeof(Move)));
+	private Family _controllableGO = FamilyManager.getFamily(new AllOfComponents(typeof(Move)),new NoneOfComponents(typeof(Lifetime)));
 	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
 	private GameObject controller;
 	public MovingSystem(){

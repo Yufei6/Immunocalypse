@@ -13,7 +13,7 @@ public class AutoAttackSystem : FSystem {
 	private Family lym_T = FamilyManager.getFamily(
 		new AllOfComponents(
 			typeof(Attack),typeof(TowerId)),
-		new NoneOfComponents(typeof(Move)));
+		new NoneOfComponents(typeof(Move),typeof(Anticorp)));
 	private Family marco =FamilyManager.getFamily(
 		new AllOfComponents(
 			typeof(Attack)),
@@ -127,33 +127,23 @@ public class AutoAttackSystem : FSystem {
 		}
 
 		foreach(GameObject go in anticorp){
-			Triggered2D got= go.GetComponent<Triggered2D> ();
-			if (got!=null){
-				c=1000f;
-				foreach(GameObject target in got.Targets){
-					if(target.CompareTag("enemy")){
-						if(target.GetComponent<Id_enemy>().id==go.GetComponent<TowerId>().id){
-							d=Vector2.Distance(got.transform.position, go.transform.position);
-							if (d<c){
-								c=d;
-								go.GetComponent<Attack>().target=target;
-								go.GetComponent<Attack>().hastarget=true;
-							}
-						}
+			if(go.GetComponent<Attack>().target==null){
+				GameObjectManager.unbind(go);
+				Object.DestroyImmediate(go);
+			} 
+			d=Vector2.Distance(go.GetComponent<Attack>().target.transform.position, go.transform.position);
+			if (d<1.0f){
+				
+				go.GetComponent<Attack>().hastarget=true;
+			}
+			
+			else{
+				if(go.GetComponent<Attack>().hastarget!=false){
+					if(attack_cd(go)){
+						attack4(go);
 					}
 				}
-				if(go.GetComponent<Attack>().target==null){
-					GameObjectManager.unbind(go);
-					Object.DestroyImmediate(go);
-				}
-				else{
-					if(go.GetComponent<Attack>().hastarget!=false){
-						if(attack_cd(go)){
-							attack4(go);
-						}
-					}
-				}				
-			}	
+			}					
 		}
 
 	}
