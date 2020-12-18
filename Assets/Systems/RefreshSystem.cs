@@ -36,6 +36,7 @@ public class RefreshSystem : FSystem {
 	}
 
 	//modidication 11/21
+	/*
 	public RefreshSystem(){
 		foreach (GameObject c in _cdFamily){
 			cdTower cdt = c.GetComponent<cdTower>();
@@ -45,11 +46,13 @@ public class RefreshSystem : FSystem {
 			if(PlayerPrefs.HasKey(enemyCible)){
 				Debug.Log("I have met this enemy");
 				//c.GetComponent<Button>().interactable = (_amount>=cdt.ressource);
-				cdt.timer = cdt.cd;
+				cdt.timer = cdt.new_cd;
+				//diminuer le temps
 			}
 		}
 
 	}
+	*/
 
 
 	// Use to process your families.
@@ -71,9 +74,27 @@ public class RefreshSystem : FSystem {
 
 		foreach (GameObject c in _cdFamily){
 			cdTower cdt = c.GetComponent<cdTower>();
+			//string tower_id = cdt.Tower_id.ToString();
+			//string enemyCible = "Enemy"+tower_id;
+			string type = cdt.towerType;
+
+			//if(PlayerPrefs.HasKey(enemyCible)){
+			if(PlayerPrefs.GetInt(type)==1){
+
+				Debug.Log("new_cd"+cdt.new_cd.ToString());
+				c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.new_cd);
+				cdt.timer += Time.deltaTime;
+
+				}
+			else{
+
+				c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.cd);
+				cdt.timer += Time.deltaTime;
+
+			}
+
 			
-			c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.cd);
-			cdt.timer += Time.deltaTime;
+			
 		}
 		
 
