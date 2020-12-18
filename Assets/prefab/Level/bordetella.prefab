@@ -554,7 +554,7 @@ SpriteRenderer:
   m_SortingLayerID: 96724285
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e60a9ce7885924fe784f22c56c456508, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1ac5a742d523bf4ca189d9806945435, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -604,7 +604,7 @@ GameObject:
   - component: {fileID: -5261744470151598434}
   - component: {fileID: -9154264593248697746}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: bordetella
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
