@@ -12,7 +12,7 @@ Material:
   m_ShaderKeywords: _PARALLAXMAP
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 5000
   stringTagMap: {}
   disabledShaderPasses: []
@@ -85,7 +85,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 1
     - _GlossyReflections: 1
-    - _InvFade: 1
+    - _InvFade: 1.17
     - _LightingEnabled: 1
     - _Metallic: 0
     - _Mode: 0
@@ -109,6 +109,6 @@ Material:
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _TintColor: {r: 0.8773585, g: 0.8191083, b: 0.062077243, a: 0.5}
+    - _TintColor: {r: 0.49056602, g: 0.0763617, b: 0.40716213, a: 0}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
