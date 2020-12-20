@@ -225,8 +225,12 @@ public class AutoAttackSystem : FSystem {
 		int bd= att.GetComponent<Attack>().baseDamage;
 		hp=hp-bd;
 		if(hp<0){
-			GameObject go=target.GetComponent<TowerCase>().towercase;
-			go.GetComponent<HasTower>().hasTower = false;
+			TowerCase go=target.GetComponent<TowerCase>();
+			if(go!=null){
+				if(go.towercase!=null){
+					go.towercase.GetComponent<HasTower>().hasTower = false;
+				}
+			}
 			GameObjectManager.unbind(target);
 			Object.DestroyImmediate(target);
 
