@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9811321, g: 0.9765041, b: 0.9765041, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -461,7 +461,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 28
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -472,10 +472,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "C'est quoi la coqueluche?\nLa coqueluche est une infection bact\xE9rienne
+  m_Text: "C'est quoi la coqueluche?\n\nLa coqueluche est une infection bact\xE9rienne
     des voies respiratoires. Ses sympt\xF4mes et leur gravait\xE9 se varient. Les
-    principaux sont:\n\n-fi\xE8vre\n-toux soudaine\n-mal de gorge\n-fatigue\n-la
-    rinite\n\nLa coqueluche est caus\xE9e par le Bordetella pertussis, une bact\xE9rie.\n\n"
+    principaux sont: la fi\xE8vre, la toux soudaine, le mal de gorge, la fatigue
+    et la rinite.\n\nLa coqueluche est caus\xE9e par le Bordetella pertussis, une
+    bact\xE9rie.\n\n"
 --- !u!222 &1532946082
 CanvasRenderer:
   m_ObjectHideFlags: 0

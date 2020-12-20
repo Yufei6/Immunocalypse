@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.9811321, g: 0.96724814, b: 0.96724814, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -461,7 +461,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 28
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -472,14 +472,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "C'est quoi une coupure?\nLa coupure est la blessure produite par un instrument
-    tranchant. La peau est la premi\xE8re barri\xE8re physique de notre syst\xE8me
-    immunitaire, elle emp\xEAche la plupart des crops \xE9trangers. Apr\xE8s la coupure,
-    sa capacit\xE9 se dimunue et va appeler la r\xE9ponse immunitaire avec les macrophages,
-    cellues B et T.\n\nComment faire face \xE0 une coupure?\n-Rincer la coupure \xE0
-    l\u2019eau savonneuse\r\n-Comprimer la plaie pendant 10-15 minutes, \xE0 l\u2019aide
-    d\u2019une compresse st\xE9rile ou d\u2019un tissu propre.\n-Placer sur la plaie
-    un pansement st\xE9rile"
+  m_Text: "C'est quoi une coupure?\n\nLa coupure est la blessure produite par un
+    instrument tranchant. La peau est la premi\xE8re barri\xE8re physique de notre
+    syst\xE8me immunitaire, elle emp\xEAche la plupart des crops \xE9trangers. Apr\xE8s
+    la coupure, sa capacit\xE9 se dimunue et va appeler la r\xE9ponse immunitaire
+    avec les macrophages, cellues B et T."
 --- !u!222 &1532946082
 CanvasRenderer:
   m_ObjectHideFlags: 0
