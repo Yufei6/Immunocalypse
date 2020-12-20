@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using FYFY;
 using FYFY_plugins.TriggerManager;
+using UnityEngine.AI;
 
 
 public class AutoAttackSystem : FSystem {
@@ -73,10 +74,14 @@ public class AutoAttackSystem : FSystem {
 				}
 			if(vb.GetComponent<Attack>().hastarget==false){
 				change_is_move(vb);
+				GameObject go= vb.GetComponent<Ani>().ani;
+				go.GetComponent<Animator>().SetInteger("State", 0);
 			}
 			if(vb.GetComponent<Attack>().target!=null){
 				if(attack_cd(vb)){
 					add_nutrition(vb);
+					GameObject go= vb.GetComponent<Ani>().ani;
+					go.GetComponent<Animator>().SetInteger("State", 1);
 					attack(vb);
 				}
 			}
@@ -156,6 +161,8 @@ public class AutoAttackSystem : FSystem {
 			GameObject tl=timeline.First();
 			tl.GetComponent<TimeLine>().win_condtion -=1;
 			Debug.Log(tl.GetComponent<TimeLine>().win_condtion);
+			GameObject go= target.GetComponent<Ani>().ani;
+			go.GetComponent<Animator>().SetInteger("State", 2);
 			GameObjectManager.unbind(target);
 			Object.DestroyImmediate(target);
 			GameObjectManager.unbind(att);
@@ -189,7 +196,9 @@ public class AutoAttackSystem : FSystem {
 		if(hp<0){
 			GameObject tl=timeline.First();
 			tl.GetComponent<TimeLine>().win_condtion -=1;
-			Debug.Log(tl.GetComponent<TimeLine>().win_condtion);
+			//Debug.Log(tl.GetComponent<TimeLine>().win_condtion);
+			GameObject go= target.GetComponent<Ani>().ani;
+			go.GetComponent<Animator>().SetInteger("State", 2);
 			GameObjectManager.unbind(target);
 			Object.DestroyImmediate(target);
 		}else{
@@ -209,7 +218,9 @@ public class AutoAttackSystem : FSystem {
 		if(hp<0){
 			GameObject tl=timeline.First();
 			tl.GetComponent<TimeLine>().win_condtion -=1;
-			Debug.Log(tl.GetComponent<TimeLine>().win_condtion);
+			//Debug.Log(tl.GetComponent<TimeLine>().win_condtion);
+			GameObject go= target.GetComponent<Ani>().ani;
+			go.GetComponent<Animator>().SetInteger("State", 2);
 			GameObjectManager.unbind(target);
 			Object.DestroyImmediate(target);
 		}else{
