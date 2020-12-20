@@ -64,4 +64,9 @@ public class ControllerSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "Quit", null);
 	}
 
+	public void Continue()
+	{
+		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "Continue", null);
+	}
+
 }
