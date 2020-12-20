@@ -604,6 +604,7 @@ GameObject:
   - component: {fileID: 2485856735286844576}
   - component: {fileID: -5261744470151598434}
   - component: {fileID: -9154264593248697746}
+  - component: {fileID: -6966961410811734931}
   m_Layer: 0
   m_Name: bordetella
   m_TagString: enemy
@@ -826,3 +827,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-6966961410811734931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887882084525712126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa134260e11ee4e46ac71d6550d1e6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ani: {fileID: 2220614894430276704}
