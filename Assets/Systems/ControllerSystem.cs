@@ -31,6 +31,9 @@ public class ControllerSystem : FSystem {
 	private Family FamilyManuel1 = FamilyManager.getFamily (new AllOfComponents (typeof (Manuel1)));
 	private Family FamilyManuel2 = FamilyManager.getFamily (new AllOfComponents (typeof (Manuel2)));
 
+	//add pause component
+	private Family pauseCanvas = FamilyManager.getFamily(new AllOfComponents(typeof(PauseCanvas)));
+
 
 	public ControllerSystem()
 	{
@@ -58,6 +61,7 @@ public class ControllerSystem : FSystem {
 	{
 		gs.currentState = PAUSE;
 		stateChange = true;
+
 	}
 
 	public void ShowCollection()
@@ -111,6 +115,12 @@ public class ControllerSystem : FSystem {
 		Application.Quit();
 	}
 
+	//add continue button
+	public void Continue()
+	{
+		gs.currentState = PLAYING;
+		stateChange = true;
+	}
 
 
 
@@ -125,6 +135,10 @@ public class ControllerSystem : FSystem {
 		{
 			//Restart game
 			Time.timeScale = 1;
+			foreach(GameObject p in pauseCanvas){
+					//Debug.Log("pause");
+					p.SetActive(false);
+				}
 		}
 		lastState = gs.currentState;
 		// Debug.Log("lastStat"+lastState);
@@ -148,6 +162,10 @@ public class ControllerSystem : FSystem {
 			case PAUSE:
 				// Debug.Log("STATE2");
 				Time.timeScale = 0;
+				foreach(GameObject p in pauseCanvas){
+					//Debug.Log("pause");
+					p.SetActive(true);
+				}
 				break;
 			case EVENTCHOICE:
 				// Debug.Log("STATE3");
