@@ -175,6 +175,7 @@ public class ControllableSystem : FSystem {
 			if (tower != null){
 				GameObjectManager.bind(tower);
 				tower.transform.position = go.transform.position;
+				tower.GetComponent<TowerCase>().towercase=go;
 				go.GetComponent<HasTower>().hasTower = true; 
 				cdt.timer = 0f;
 				amount.amount -= cdt.ressource;

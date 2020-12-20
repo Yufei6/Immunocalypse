@@ -181,6 +181,10 @@ public class ControllerSystem : FSystem {
 				break;
 			case START:
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
+					PlayerPrefs.SetInt("poliovirus", 0);
+					PlayerPrefs.SetInt("bordetella", 0);
+					PlayerPrefs.SetInt("clostridiumTetani", 0);
+					PlayerPrefs.SetInt("covid19",0);
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("IntroductionScene");
 				}

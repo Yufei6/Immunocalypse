@@ -6,10 +6,13 @@ public class SwitchSystem : FSystem {
 	private int id_cam=0;
 	private int cam_max;
 	private Family cam = FamilyManager.getFamily(new AllOfComponents(typeof(Id_camera)));
+	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
+	private GameObject controller;
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
 
 	public SwitchSystem(){
+		controller = FamilyController.First();
 		cam_max=0;
 		foreach(GameObject c in cam){
 			if(c.GetComponent<Id_camera>().id_c==id_cam){
@@ -21,10 +24,10 @@ public class SwitchSystem : FSystem {
 			cam_max=cam_max+1;
 		}
 		//test
-		PlayerPrefs.SetInt("poliovirus", 1);
-		PlayerPrefs.SetInt("bordetella", 1);
-		PlayerPrefs.SetInt("clostridiumTetani", 1);
-		PlayerPrefs.SetInt("covid19",1);
+		//PlayerPrefs.SetInt("poliovirus", 1);
+		//PlayerPrefs.SetInt("bordetella", 1);
+		//PlayerPrefs.SetInt("clostridiumTetani", 1);
+		//PlayerPrefs.SetInt("covid19",1);
 	}
 
 	// Use to process your families.
@@ -53,6 +56,7 @@ public class SwitchSystem : FSystem {
 		}
 	}
 	public void back(){
+		GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 		GameObjectManager.loadScene("MainMenuScene");
 	}
 		

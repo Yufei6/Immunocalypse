@@ -130,20 +130,19 @@ public class AutoAttackSystem : FSystem {
 			if(go.GetComponent<Attack>().target==null){
 				GameObjectManager.unbind(go);
 				Object.DestroyImmediate(go);
-			} 
-			d=Vector2.Distance(go.GetComponent<Attack>().target.transform.position, go.transform.position);
-			if (d<1.0f){
-				
-				go.GetComponent<Attack>().hastarget=true;
 			}
-			
 			else{
+				d=Vector2.Distance(go.GetComponent<Attack>().target.transform.position, go.transform.position);
+				if (d<1.0f){
+					
+					go.GetComponent<Attack>().hastarget=true;
+				}
 				if(go.GetComponent<Attack>().hastarget!=false){
 					if(attack_cd(go)){
 						attack4(go);
 					}
 				}
-			}					
+			}				
 		}
 
 	}
@@ -226,6 +225,8 @@ public class AutoAttackSystem : FSystem {
 		int bd= att.GetComponent<Attack>().baseDamage;
 		hp=hp-bd;
 		if(hp<0){
+			GameObject go=target.GetComponent<TowerCase>().towercase;
+			go.GetComponent<HasTower>().hasTower = false;
 			GameObjectManager.unbind(target);
 			Object.DestroyImmediate(target);
 
