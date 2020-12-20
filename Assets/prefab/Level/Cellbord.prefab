@@ -577,6 +577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 616561015682286310}
+  - component: {fileID: 6121948182602813440}
   - component: {fileID: 6837789348118151503}
   - component: {fileID: -4768350516507600945}
   - component: {fileID: 461226494792564187}
@@ -584,7 +585,7 @@ GameObject:
   - component: {fileID: -5961544887441525370}
   - component: {fileID: 2897671688040921622}
   m_Layer: 0
-  m_Name: CellT
+  m_Name: Cellbord
   m_TagString: def
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -607,6 +608,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6121948182602813440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248461516068396495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1778c3b940ec4d9c9baacc6f9d1e8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towercase: {fileID: 0}
 --- !u!114 &6837789348118151503
 MonoBehaviour:
   m_ObjectHideFlags: 0

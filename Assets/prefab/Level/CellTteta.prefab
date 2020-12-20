@@ -667,6 +667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6934793736290104417}
   - component: {fileID: 6445922338887916474}
+  - component: {fileID: 2212249111273543842}
   - component: {fileID: 1950372479157029555}
   - component: {fileID: 854992729013030524}
   - component: {fileID: 4639734033009035361}
@@ -711,6 +712,19 @@ MonoBehaviour:
   hp: 10000
   hp_max: 100
   barre: {fileID: 4832498558871648337}
+--- !u!114 &2212249111273543842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8271908241248789686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1778c3b940ec4d9c9baacc6f9d1e8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towercase: {fileID: 0}
 --- !u!114 &1950372479157029555
 MonoBehaviour:
   m_ObjectHideFlags: 0

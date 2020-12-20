@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 4311691608588888777}
   - component: {fileID: 3923477937119238919}
   - component: {fileID: 9095360150361875583}
+  - component: {fileID: 2401097584822174402}
   - component: {fileID: 7689287670124881040}
   - component: {fileID: 5303435777785666349}
   - component: {fileID: 8953706597383962250}
@@ -603,6 +604,7 @@ GameObject:
   - component: {fileID: 2485856735286844576}
   - component: {fileID: -5261744470151598434}
   - component: {fileID: -9154264593248697746}
+  - component: {fileID: -6966961410811734931}
   m_Layer: 0
   m_Name: bordetella
   m_TagString: enemy
@@ -686,6 +688,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2401097584822174402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887882084525712126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa134260e11ee4e46ac71d6550d1e6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ani: {fileID: 2220614894430276704}
 --- !u!114 &7689287670124881040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,3 +827,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-6966961410811734931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887882084525712126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa134260e11ee4e46ac71d6550d1e6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ani: {fileID: 2220614894430276704}
