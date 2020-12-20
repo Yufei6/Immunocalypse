@@ -1464,7 +1464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1472,7 +1472,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1483,28 +1483,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Bonjour les apprenans,\n\nN'apportons pas d'entraves au mariage de nos
-    \xE2mes loyales. Ce n'est pas de l'amour que l'amour qui change quand il voit
-    un changement, et qui r\xE9pond toujours \xE0 un pas en arri\xE8re par un pas
-    en arri\xE8re.\r\n\n\nOh ! non ! l'amour est un fanal permanent qui regarde les
-    temp\xEAtes sans \xEAtre \xE9branl\xE9 par elles ; c'est l'\xE9toile brillant
-    pour toute barque errante, dont la valeur est inconnue de celui m\xEAme qui en
-    consulte la hauteur.\r\n\r\nL'amour n'est pas le jouet du Temps, bien que les
-    l\xE8vres et les joues roses soient dans le cercle de sa faux recourb\xE9e ;
-    l'amour ne change pas avec les heures et les semaines \xE9ph\xE9m\xE8res, mais
-    il reste immuable jusqu'au jour du jugement.\r\n\r\nSi ma vie d\xE9ment jamais
-    ce que je dis l\xE0, je n'ai jamais \xE9crit, je n'ai jamais aim\xE9.\n\nN'apportons
-    pas d'entraves au mariage de nos \xE2mes loyales. Ce n'est pas de l'amour que
-    l'amour qui change quand il voit un changement, et qui r\xE9pond toujours \xE0
-    un pas en arri\xE8re par un pas en arri\xE8re.\r\n\r\nOh ! non ! l'amour est
-    un fanal permanent qui regarde les temp\xEAtes sans \xEAtre \xE9branl\xE9 par
-    elles ; c'est l'\xE9toile brillant pour toute barque errante, dont la valeur
-    est inconnue de celui m\xEAme qui en consulte la hauteur.\r\n\r\nL'amour n'est
-    pas le jouet du Temps, bien que les l\xE8vres et les joues roses soient dans
-    le cercle de sa faux recourb\xE9e ; l'amour ne change pas avec les heures et
-    les semaines \xE9ph\xE9m\xE8res, mais il reste immuable jusqu'au jour du jugement.\r\n\r\nSi
-    ma vie d\xE9ment jamais ce que je dis l\xE0, je n'ai jamais \xE9crit, je n'ai
-    jamais aim\xE9.\n\r"
+  m_Text: "Bonjour les apprenants,\n\nNous sommes des \xE9tudiants \xE0 l'UPMC, de
+    la sp\xE9cialit\xE9 androide. Notre \xE9quipe se concentre sur ce jeu comme un
+    projet ISG. Ce jeu s\xE9rieux a \xE9t\xE9 cr\xE9e vis \xE0 les enfants \xE0 l'\xE9cole
+    primaire pour les apprendre des notions propres aux m\xE9canismes du syst\xE8mes
+    immunitaires et de diff\xE9rentes maladies enfantiles. Ce jeu est de type tower
+    defense, \xE0 chaque niveau vous faites face \xE0 une pathog\xE8ne d'une maladie,
+    vous devez placer les cellules immunitaires dans le bon endroit pour freiner
+    l'avancement des virus ou des bact\xE9ries. Si les ennemies arrivenent \xE0 attaquer
+    le tour du coeur, vous perdez le jeu. Chaque virus ou bact\xE9rie que vous avez
+    combattu va \xEAtre enregistr\xE9 dans le livret de collection, qui contient
+    les informations plus pr\xE9cises dans tous les aspects. Nous esp\xE9rons que
+    ce jeu vous allez b\xE9nificie.\n"
 --- !u!222 &1170172103
 CanvasRenderer:
   m_ObjectHideFlags: 0
