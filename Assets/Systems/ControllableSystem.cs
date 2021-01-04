@@ -6,8 +6,14 @@ public class ControllableSystem : FSystem {
 	public const int NOTHING = -2;
 	public const int DESTROY = -1;
 	public const int MACROPHAGE = 0;
-	public const int IMPHOCYTET = 1;
-	public const int IMPHOCYTEB = 2;
+	public const int IMPHOCYTET1 = 1;
+	public const int IMPHOCYTET2 = 2;
+	public const int IMPHOCYTET3 = 3;
+	public const int IMPHOCYTET4 = 4;
+	public const int IMPHOCYTEB1 = 5;
+	public const int IMPHOCYTEB2 = 6;
+	public const int IMPHOCYTEB3 = 7;
+	public const int IMPHOCYTEB4 = 8;
 
 	public int currentTowerType;
 	private Family pointerOverCaseFamily = FamilyManager.getFamily (new AllOfComponents (typeof (PointerOver), typeof(cdTower)));
@@ -27,8 +33,8 @@ public class ControllableSystem : FSystem {
 	private TypeCursor tc;
 	private Texture2D CursorNormal;
 	private Texture2D CursorM;
-	private Texture2D CursorT;
-	private Texture2D CursorB;
+	private Texture2D CursorT1, CursorT2, CursorT3, CursorT4;
+	private Texture2D CursorB1, CursorB2, CursorB3, CursorB4;
 	private Texture2D CursorDestroy;
 	private Amount amount;
 	private GameObject buttonTower;
@@ -43,8 +49,14 @@ public class ControllableSystem : FSystem {
 		tc = cursorTypeF.First().GetComponent<TypeCursor>();
 		CursorNormal = tc.CursorNormal;
 		CursorM = tc.CursorM;
-		CursorT = tc.CursorT;
-		CursorB = tc.CursorB;
+		CursorT1 = tc.CursorT1;
+		CursorT2 = tc.CursorT2;
+		CursorT3 = tc.CursorT3;
+		CursorT4 = tc.CursorT4;
+		CursorB1 = tc.CursorB1;
+		CursorB2 = tc.CursorB2;
+		CursorB3 = tc.CursorB3;
+		CursorB4 = tc.CursorB4;
 		CursorDestroy = tc.CursorDestroy;
 		amount = ressourcesF.First().GetComponent<Amount>();
 		drapTower = -1;
@@ -158,13 +170,49 @@ public class ControllableSystem : FSystem {
 					case 1:
 						if (!isMacrophage)
 						{
-							tower = Object.Instantiate<GameObject>(towerFac.cellT);
+							tower = Object.Instantiate<GameObject>(towerFac.cellT1);
 						}
 						break;
 					case 2:
 						if (!isMacrophage)
 						{
-							tower = Object.Instantiate<GameObject>(towerFac.cellB);
+							tower = Object.Instantiate<GameObject>(towerFac.cellT2);
+						}
+						break;
+					case 3:
+						if (!isMacrophage)
+						{
+							tower = Object.Instantiate<GameObject>(towerFac.cellT3);
+						}
+						break;
+					case 4:
+						if (!isMacrophage)
+						{
+							tower = Object.Instantiate<GameObject>(towerFac.cellT4);
+						}
+						break;
+					case 5:
+						if (!isMacrophage)
+						{
+							tower = Object.Instantiate<GameObject>(towerFac.cellB1);
+						}
+						break;
+					case 6:
+						if (!isMacrophage)
+						{
+							tower = Object.Instantiate<GameObject>(towerFac.cellB2);
+						}
+						break;
+					case 7:
+						if (!isMacrophage)
+						{
+							tower = Object.Instantiate<GameObject>(towerFac.cellB3);
+						}
+						break;
+					case 8:
+						if (!isMacrophage)
+						{
+							tower = Object.Instantiate<GameObject>(towerFac.cellB4);
 						}
 						break;
 					default:
@@ -209,11 +257,29 @@ public class ControllableSystem : FSystem {
 			case MACROPHAGE:
 				Cursor.SetCursor(CursorM, Vector2.zero, CursorMode.Auto);
 				break;
-			case IMPHOCYTET:
-				Cursor.SetCursor(CursorT, Vector2.zero, CursorMode.Auto);
+			case IMPHOCYTET1:
+				Cursor.SetCursor(CursorT1, Vector2.zero, CursorMode.Auto);
+				break;
+			case IMPHOCYTET2:
+				Cursor.SetCursor(CursorT2, Vector2.zero, CursorMode.Auto);
 				break;	
-			case IMPHOCYTEB:
-				Cursor.SetCursor(CursorB, Vector2.zero, CursorMode.Auto);
+			case IMPHOCYTET3:
+				Cursor.SetCursor(CursorT3, Vector2.zero, CursorMode.Auto);
+				break;	
+			case IMPHOCYTET4:
+				Cursor.SetCursor(CursorT4, Vector2.zero, CursorMode.Auto);
+				break;		
+			case IMPHOCYTEB1:
+				Cursor.SetCursor(CursorB1, Vector2.zero, CursorMode.Auto);
+				break;
+			case IMPHOCYTEB2:
+				Cursor.SetCursor(CursorB2, Vector2.zero, CursorMode.Auto);
+				break;
+			case IMPHOCYTEB3:
+				Cursor.SetCursor(CursorB3, Vector2.zero, CursorMode.Auto);
+				break;
+			case IMPHOCYTEB4:
+				Cursor.SetCursor(CursorB4, Vector2.zero, CursorMode.Auto);
 				break;
 			default:
 				Debug.Log("Unknow CursorType!!(Yufei)");
@@ -224,7 +290,7 @@ public class ControllableSystem : FSystem {
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
-		//UpdateCursor();
+		UpdateCursor();
 		foreach (GameObject go in pointerOverCaseFamily)
 		{
 			// Debug.Log("INNN");

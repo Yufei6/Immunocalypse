@@ -43,8 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6e46240daf39246a135bc6ed5c5cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CursorNormal: {fileID: 2800000, guid: a9e14798f9f2ca24fb09de1a04cd02fd, type: 3}
+  CursorNormal: {fileID: 2800000, guid: d4c9970826e6c544392d6bb104d59685, type: 3}
   CursorM: {fileID: 2800000, guid: 7d26fcec761693d4fa5e65dcfe12e47c, type: 3}
-  CursorT: {fileID: 2800000, guid: 5155981f10a02b744be40fe298548ee3, type: 3}
-  CursorB: {fileID: 2800000, guid: c807ce86d28b0234aa515b247a63c016, type: 3}
+  CursorT1: {fileID: 2800000, guid: 5314afb034a31471eb106d0c94ff36bb, type: 3}
+  CursorT2: {fileID: 2800000, guid: e1b26072e5496c84bb42463e44cde96d, type: 3}
+  CursorT3: {fileID: 2800000, guid: 4b22b6489eb40bf45929afa8594bff74, type: 3}
+  CursorT4: {fileID: 2800000, guid: 40a59ae2bbd60374683ba1372700bffe, type: 3}
+  CursorB1: {fileID: 2800000, guid: a8a2db464e2575943b264a7ffa30ae23, type: 3}
+  CursorB2: {fileID: 2800000, guid: 53defbd7c30fb8844bac7eb8724a2825, type: 3}
+  CursorB3: {fileID: 2800000, guid: 48c7e885337109a48a147489c24e263e, type: 3}
+  CursorB4: {fileID: 2800000, guid: e700903cf5aba154e987f71338525bdd, type: 3}
   CursorDestroy: {fileID: 2800000, guid: bfaf487a06b8bd6479963e25954e048d, type: 3}

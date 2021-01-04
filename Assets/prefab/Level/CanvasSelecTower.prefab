@@ -24,25 +24,6 @@ MonoBehaviour:
   m_Script: {fileID: -53623643, guid: 55508ec339b204f1baf7691294db5d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5519547312740739711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4218604381569665729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ea6eec7c6ecf4ca45cb101b7437f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ressource: 7
-  cd: 7
-  id: 2
-  timer: 0
-  Tower_id: 0
-  towerType: 
-  new_cd: 0
 --- !u!114 &3009040352075848920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,25 +36,6 @@ MonoBehaviour:
   m_Script: {fileID: -53623643, guid: 55508ec339b204f1baf7691294db5d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9215045608686133983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4509355142261805838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ea6eec7c6ecf4ca45cb101b7437f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ressource: 7
-  cd: 7
-  id: 2
-  timer: 0
-  Tower_id: 0
-  towerType: 
-  new_cd: 0
 --- !u!114 &8358763972525632680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,25 +72,6 @@ MonoBehaviour:
   m_Script: {fileID: -53623643, guid: 55508ec339b204f1baf7691294db5d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6986957403472833352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6055072983967185798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d73ea6eec7c6ecf4ca45cb101b7437f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ressource: 7
-  cd: 7
-  id: 2
-  timer: 0
-  Tower_id: 0
-  towerType: 
-  new_cd: 0
 --- !u!1 &8576868635891015612
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,10 +647,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ressource: 7
   cd: 7
-  id: 2
+  id: 5
   timer: 0
   Tower_id: 0
-  towerType: 
+  towerType: tetanus
   new_cd: 0
 --- !u!114 &8624937367349322582
 MonoBehaviour:
@@ -959,6 +902,16 @@ PrefabInstance:
       propertyPath: m_text
       value: 87
       objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: id
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: towerType
+      value: covid19
+      objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -969,6 +922,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SelectTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230579, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
@@ -1103,15 +1066,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 073226d2fda7ba04192f7fec4bee98cb, type: 3}
---- !u!224 &2979121602210892495 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3703002798566230581, guid: 073226d2fda7ba04192f7fec4bee98cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1888206974083416314}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2979121602210892494 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3703002798566230580, guid: 073226d2fda7ba04192f7fec4bee98cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1888206974083416314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &2979121602210892495 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3703002798566230581, guid: 073226d2fda7ba04192f7fec4bee98cb,
     type: 3}
   m_PrefabInstance: {fileID: 1888206974083416314}
   m_PrefabAsset: {fileID: 0}
@@ -1165,6 +1128,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetDisabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505109326474454096, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505109326474454096, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1505109326474454097, guid: d8bab9c1ed24a46799afb3a6041fc02c,
         type: 3}
@@ -1297,6 +1270,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.1375
       objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: id
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: towerType
+      value: bordetella
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8bab9c1ed24a46799afb3a6041fc02c, type: 3}
 --- !u!224 &4509355142261805839 stripped
@@ -1359,6 +1342,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetDisabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505109326474454096, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505109326474454096, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1505109326474454097, guid: d8bab9c1ed24a46799afb3a6041fc02c,
         type: 3}
@@ -1491,6 +1484,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.2074999
       objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: id
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: towerType
+      value: covid19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8bab9c1ed24a46799afb3a6041fc02c, type: 3}
 --- !u!1 &4218604381569665729 stripped
@@ -1553,6 +1556,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetDisabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505109326474454096, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505109326474454096, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1505109326474454097, guid: d8bab9c1ed24a46799afb3a6041fc02c,
         type: 3}
@@ -1685,6 +1698,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.2074999
       objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: towerType
+      value: poliovirus
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: id
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8bab9c1ed24a46799afb3a6041fc02c, type: 3}
 --- !u!224 &6055072983967185799 stripped
@@ -1725,6 +1748,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: towerType
+      value: tetanus
       objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
@@ -1936,6 +1964,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetDisabled
       objectReference: {fileID: 0}
+    - target: {fileID: 1505109326474454096, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505109326474454096, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1505109326474454097, guid: d8bab9c1ed24a46799afb3a6041fc02c,
         type: 3}
       propertyPath: m_Sprite
@@ -2067,7 +2105,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.1375
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d8bab9c1ed24a46799afb3a6041fc02c, type: 3}
 --- !u!224 &8576868637262858346 stripped
 RectTransform:
@@ -2108,6 +2147,16 @@ PrefabInstance:
       propertyPath: m_text
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: towerType
+      value: poliovirus
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: id
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2118,6 +2167,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SelectTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230579, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
@@ -2421,6 +2480,16 @@ PrefabInstance:
       propertyPath: m_text
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: towerType
+      value: bordetella
+      objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2431,6 +2500,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SelectTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230579, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
