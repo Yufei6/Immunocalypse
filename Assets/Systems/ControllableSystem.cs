@@ -40,6 +40,7 @@ public class ControllableSystem : FSystem {
 	private GameObject buttonTower;
 	private cdTower cdt;
 	private int drapTower; 
+	private bool changeCursor, drapCursor;
 
 
 	public ControllableSystem()
@@ -59,13 +60,16 @@ public class ControllableSystem : FSystem {
 		CursorB4 = tc.CursorB4;
 		CursorDestroy = tc.CursorDestroy;
 		amount = ressourcesF.First().GetComponent<Amount>();
-		drapTower = -1;
+		drapTower = -2;
+		changeCursor = false;
+		drapCursor = false;
 	}
 
 
 	public void SelectTower(int towerType)
 	{
 		currentTowerType = towerType;
+		changeCursor = true;
 	}
 
 	public void ShowInformation(GameObject go)
@@ -244,53 +248,62 @@ public class ControllableSystem : FSystem {
 		}
 	}
 
-	private void UpdateCursor()
+	private void UpdateCursor(int type)
 	{
-		switch (currentTowerType)
+		switch (type)
 		{
 			case NOTHING:
-				Cursor.SetCursor(CursorNormal, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorNormal, new Vector2(100, 100), CursorMode.Auto);
 				break;
 			case DESTROY:
-				Cursor.SetCursor(CursorDestroy, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorDestroy, new Vector2(56, 55), CursorMode.Auto);
 				break;
 			case MACROPHAGE:
-				Cursor.SetCursor(CursorM, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorM, new Vector2(280, 215), CursorMode.Auto);
 				break;
 			case IMPHOCYTET1:
-				Cursor.SetCursor(CursorT1, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorT1, new Vector2(74, 69), CursorMode.Auto);
 				break;
 			case IMPHOCYTET2:
-				Cursor.SetCursor(CursorT2, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorT2, new Vector2(83, 79), CursorMode.Auto);
 				break;	
 			case IMPHOCYTET3:
-				Cursor.SetCursor(CursorT3, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorT3, new Vector2(58, 60), CursorMode.Auto);
 				break;	
 			case IMPHOCYTET4:
-				Cursor.SetCursor(CursorT4, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorT4, new Vector2(56, 58), CursorMode.Auto);
 				break;		
 			case IMPHOCYTEB1:
-				Cursor.SetCursor(CursorB1, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorB1, new Vector2(75, 72), CursorMode.Auto);
 				break;
 			case IMPHOCYTEB2:
-				Cursor.SetCursor(CursorB2, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorB2, new Vector2(56, 55), CursorMode.Auto);
 				break;
 			case IMPHOCYTEB3:
-				Cursor.SetCursor(CursorB3, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorB3, new Vector2(60, 59), CursorMode.Auto);
 				break;
 			case IMPHOCYTEB4:
-				Cursor.SetCursor(CursorB4, Vector2.zero, CursorMode.Auto);
+				Cursor.SetCursor(CursorB4, new Vector2(74, 72), CursorMode.Auto);
 				break;
 			default:
 				Debug.Log("Unknow CursorType!!(Yufei)");
 				break;
 		}
+		changeCursor = false;
+		drapCursor = false;
 	}
 	
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
-		UpdateCursor();
+		if ((drapCursor) && !(changeCursor))
+		{
+			UpdateCursor(drapTower);
+		}
+		if (changeCursor)
+		{
+			UpdateCursor(currentTowerType);
+		}
 		foreach (GameObject go in pointerOverCaseFamily)
 		{
 			// Debug.Log("INNN");
@@ -298,7 +311,8 @@ public class ControllableSystem : FSystem {
 				cdTower cdt = go.GetComponent<cdTower>();
 				if (cdt.timer>=cdt.cd){
 					int type = cdt.id;
-					drapTower=type;
+					drapTower = type;
+					drapCursor = true;
 				}
 				// if (Input.GetMouseButtonUp(0)){
 				// 	Debug.Log("BUILDDD"+type);
@@ -307,26 +321,35 @@ public class ControllableSystem : FSystem {
 			ChangeCaseColor(go);
 			ShowInformation(go);
 		}
-		if ((Input.GetMouseButtonUp(0))&&(drapTower>=0)){
-			BuildTower(mousePos2worldPos(Input.mousePosition), drapTower);
-			drapTower = -1;
-		}
-		if (currentTowerType == -1){
-			if (Input.GetMouseButton(0))
-			{
-				DestroyTower(mousePos2worldPos(Input.mousePosition));
-				currentTowerType = -2;
-			}
-		} 
-		else if (currentTowerType > -1)
+		if (currentTowerType>-2)
 		{
-			if (Input.GetMouseButton(0))
+			if (currentTowerType == -1){
+				if (Input.GetMouseButton(0))
+				{
+					DestroyTower(mousePos2worldPos(Input.mousePosition));
+					currentTowerType = -2;
+					changeCursor = true;
+				}
+			} 
+			else if (currentTowerType > -1)
 			{
-				BuildTower(mousePos2worldPos(Input.mousePosition), currentTowerType);
-				//coldDown
-
-				currentTowerType = -2;
+				if (Input.GetMouseButton(0))
+				{
+					BuildTower(mousePos2worldPos(Input.mousePosition), currentTowerType);
+					//coldDown
+					currentTowerType = -2;
+					changeCursor = true;
+				}
 			}
 		}
+		else
+		{
+			if ((Input.GetMouseButtonUp(0))&&(drapTower>=0)){
+				BuildTower(mousePos2worldPos(Input.mousePosition), drapTower);
+				drapTower = -2;
+				drapCursor = true;
+			}
+		}
+		
 	}
 }
