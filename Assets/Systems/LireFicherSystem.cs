@@ -10,18 +10,23 @@ public class LireFicherSystem : FSystem {
 		new AllOfComponents(
 			typeof(Map),typeof(ObjetMap)
 			));
+    private Family prefabfac = FamilyManager.getFamily(
+        new AllOfComponents(
+            typeof(factoryObjet)
+            ));
 	private Map map1;
     private TimeLine tl;
     private List<string> paths=new List<string>();
     private int factory=0;
     private List<Vector3> pfactory=new List<Vector3>();
     private GameObject prefab;
-    private string text="";
+    private string text="Assets/selfmake/allpath";
     private Family timeline=FamilyManager.getFamily(new AllOfComponents(typeof(TimeLine)), new NoneOfComponents(typeof(TimelineEvent)));
 	public LireFicherSystem(){
 		lireAllpath(text);
         tl=timeline.First().GetComponent<TimeLine>();
 		map1=map.First().GetComponent<Map>();
+        prefab=prefabfac.First().GetComponent<factoryObjet>().fac;
         string path=(string)paths[0];
         liremap(map1,path);
         lirefactory();
@@ -123,6 +128,7 @@ public class LireFicherSystem : FSystem {
     private void lirefactory(){
         for(int i=1; i<factory+1; i++){
             GameObject ft=Object.Instantiate<GameObject>(prefab,pfactory[i-1],Quaternion.identity);
+            ft.GetComponent<ID>().id=i;
             try
             {
                 string[] lines = File.ReadAllLines(paths[i]);
