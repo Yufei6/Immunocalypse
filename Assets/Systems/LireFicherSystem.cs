@@ -20,10 +20,11 @@ public class LireFicherSystem : FSystem {
     private int factory=0;
     private List<Vector3> pfactory=new List<Vector3>();
     private GameObject prefab;
-    private string text="Assets/selfmake/allpath";
+    private string text="Assets/selfmake/allpath.txt";
     private Family timeline=FamilyManager.getFamily(new AllOfComponents(typeof(TimeLine)), new NoneOfComponents(typeof(TimelineEvent)));
 	public LireFicherSystem(){
 		lireAllpath(text);
+
         tl=timeline.First().GetComponent<TimeLine>();
 		map1=map.First().GetComponent<Map>();
         prefab=prefabfac.First().GetComponent<factoryObjet>().fac;
@@ -38,6 +39,7 @@ public class LireFicherSystem : FSystem {
 		try
         {
             string[] lines = File.ReadAllLines(path);
+            Debug.Log(lines);
             foreach( string str in lines){
               paths.Add(str);  
             }
