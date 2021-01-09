@@ -31,6 +31,7 @@ public class AutoAttackSystem : FSystem {
 			),
 		new NoneOfComponents(typeof(Nutrition) )
 		);
+	private int score=0;
 	//private int bd;
 	// private volatile GameObject t;
 	// private volatile GameObject t2;
@@ -242,8 +243,18 @@ public class AutoAttackSystem : FSystem {
 					go.towercase.GetComponent<HasTower>().hasTower = false;
 				}
 			}
+			//modification:1/4
+			if(target.tag=="cellule"){
+				score = PlayerPrefs.GetInt("score");
+				score += 1;
+				PlayerPrefs.SetInt("score",score);
+			}
+			//Debug.Log(PlayerPrefs.GetInt("score"));
+			//----FIN DE MODIFICATION
+
 			GameObjectManager.unbind(target);
 			Object.DestroyImmediate(target);
+
 
 		}else{
 			//Debug.Log(hp);

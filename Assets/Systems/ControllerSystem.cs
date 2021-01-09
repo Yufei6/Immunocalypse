@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using FYFY;
 
@@ -33,6 +34,10 @@ public class ControllerSystem : FSystem {
 
 	//add pause component
 	private Family pauseCanvas = FamilyManager.getFamily(new AllOfComponents(typeof(PauseCanvas)));
+
+	//add score: modification 01/04
+	private GameObject[] s = GameObject.FindGameObjectsWithTag("score");
+	private Text score;
 
 
 	public ControllerSystem()
@@ -118,8 +123,17 @@ public class ControllerSystem : FSystem {
 	//add continue button
 	public void Continue()
 	{
+		//lastState = PAUSE;
 		gs.currentState = PLAYING;
-		stateChange = true;
+		//stateChange = true;
+		foreach(GameObject p in pauseCanvas)
+		{
+			p.SetActive(false);
+		}
+
+
+		Time.timeScale = 1;
+
 	}
 
 
@@ -131,15 +145,27 @@ public class ControllerSystem : FSystem {
 		// if(stateChange){
 		// 	Debug.Log(lastState+"CHANGE"+gs.currentState);
 		// }
+		//Debug.Log(PlayerPrefs.GetInt("score"));
+		s = GameObject.FindGameObjectsWithTag("score");
+		if(s.Length!=0){
+			//Debug.Log("founded");
+			foreach(GameObject ss in s){
+				//score = ss.GetComponent<Text>();
+				if(ss!=null){
+					score = ss.GetComponent<Text>();
+					score.text =  PlayerPrefs.GetInt("score").ToString();
+				}
+			}
+			
+		}
+
 		if (stateChange && (lastState==PAUSE||lastState==EVENTCHOICE)) 
 		{
 			//Restart game
 			Time.timeScale = 1;
-			foreach(GameObject p in pauseCanvas){
-					//Debug.Log("pause");
-					p.SetActive(false);
-				}
 		}
+
+
 		lastState = gs.currentState;
 		// Debug.Log("lastStat"+lastState);
 		lastLevel = gl.currentLevel;
@@ -157,6 +183,7 @@ public class ControllerSystem : FSystem {
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("level"+gl.currentLevel.ToString());
+					//Debug.Log("not right");
 				}
 				break;
 			case PAUSE:
@@ -199,6 +226,9 @@ public class ControllerSystem : FSystem {
 				break;
 			case START:
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
+					//modification 11/14
+					PlayerPrefs.SetInt("score",0);
+					//fin modification
 					PlayerPrefs.SetInt("poliovirus", 0);
 					PlayerPrefs.SetInt("bordetella", 0);
 					PlayerPrefs.SetInt("clostridiumTetani", 0);
