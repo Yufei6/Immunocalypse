@@ -131,6 +131,7 @@ public class LireFicherSystem : FSystem {
         for(int i=1; i<factory+1; i++){
             GameObject ft=Object.Instantiate<GameObject>(prefab,pfactory[i-1],Quaternion.identity);
             ft.GetComponent<ID>().id=i;
+            GameObjectManager.bind(ft);
             try
             {
                 string[] lines = File.ReadAllLines(paths[i]);

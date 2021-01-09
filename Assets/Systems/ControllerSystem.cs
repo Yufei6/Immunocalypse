@@ -18,6 +18,7 @@ public class ControllerSystem : FSystem {
 	public const int INTROLEVEL2 = 11;
 	public const int INTROLEVEL3 = 12;
 	public const int INTROLEVEL4 = 13;
+	public const int SELFMAKEMAP = 14;
 	
 
 	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
@@ -113,6 +114,13 @@ public class ControllerSystem : FSystem {
 	{
 		gs.currentState = INTROLEVEL4;
 		stateChange = true;
+	}
+
+	public void SelfMakeMap()
+	{
+		gs.currentState = SELFMAKEMAP;
+		stateChange = true;
+
 	}
 
 	public void Quit()
@@ -265,6 +273,12 @@ public class ControllerSystem : FSystem {
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 					GameObjectManager.loadScene("IntroLevel4");
+				}
+				break;
+			case SELFMAKEMAP:
+				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
+					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+					GameObjectManager.loadScene("sceneselfmake");
 				}
 				break;
 			default :
