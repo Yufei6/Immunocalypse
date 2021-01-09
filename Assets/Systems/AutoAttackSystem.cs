@@ -76,13 +76,25 @@ public class AutoAttackSystem : FSystem {
 			if(vb.GetComponent<Attack>().hastarget==false){
 				change_is_move(vb);
 				GameObject go= vb.GetComponent<Ani>().ani;
-				go.GetComponent<Animator>().SetInteger("State", 0);
+				if(go.GetComponent<Animator>().GetInteger("State")==1){
+						go.GetComponent<Animator>().SetInteger("State", 0);
+					}
+				if(go.GetComponent<Animator>().GetInteger("State")==4){
+						go.GetComponent<Animator>().SetInteger("State", 3);
+					}
+					
 			}
 			if(vb.GetComponent<Attack>().target!=null){
 				if(attack_cd(vb)){
 					add_nutrition(vb);
 					GameObject go= vb.GetComponent<Ani>().ani;
-					go.GetComponent<Animator>().SetInteger("State", 1);
+					if(go.GetComponent<Animator>().GetInteger("State")==0){
+						go.GetComponent<Animator>().SetInteger("State", 1);
+					}
+					if(go.GetComponent<Animator>().GetInteger("State")==3){
+							go.GetComponent<Animator>().SetInteger("State", 4);
+						}
+					
 					attack(vb);
 				}
 			}
