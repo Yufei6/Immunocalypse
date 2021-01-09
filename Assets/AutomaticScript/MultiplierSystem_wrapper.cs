@@ -9,9 +9,4 @@ public class MultiplierSystem_wrapper : MonoBehaviour
 		this.hideFlags = HideFlags.HideInInspector; // Hide this component in Inspector
 	}
 
-	public void se_multi(UnityEngine.GameObject prefab)
-	{
-		MainLoop.callAppropriateSystemMethod ("MultiplierSystem", "se_multi", prefab);
-	}
-
 }
