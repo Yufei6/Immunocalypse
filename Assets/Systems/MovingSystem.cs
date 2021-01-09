@@ -49,7 +49,7 @@ public class MovingSystem : FSystem {
 					//Debug.Log(target);
 				}else{
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
-					GameObjectManager.loadScene("WinScene");
+					GameObjectManager.loadScene("LoseScene");
 					//Debug.Log("All targets reached");
 				}
 
