@@ -33,11 +33,12 @@ public class MultiplierSystem : FSystem {
 			//nu.GetComponent<Nutrition>().nut_actuelle=actuelle+1;
 			if (cible<=actuelle){
 				nu.GetComponent<Nutrition>().nut_actuelle=actuelle-cible;
-				se_multi(nu);
+				int state=nu.GetComponent<Animator>().GetInteger("State");
+				se_multi(nu,state);
 			}
 		}
 	}
-	public void se_multi(GameObject prefab){
+	public void se_multi(GameObject prefab,int state){
 		GameObject tl=timeline.First();
 		tl.GetComponent<TimeLine>().win_condtion +=1;
 		int type=prefab.GetComponent<Id_enemy>().id;
@@ -56,6 +57,7 @@ public class MultiplierSystem : FSystem {
 		go.GetComponent<Move>().isMove=prefab.GetComponent<Move>().isMove;
 		go.GetComponent<Move>().routine=prefab.GetComponent<Move>().routine;
 		go.GetComponent<Move>().cpt=prefab.GetComponent<Move>().cpt;
+		go.GetComponent<Animator>().SetInteger("State", state);
 		GameObjectManager.bind(go);
 	}
 }
