@@ -59,6 +59,11 @@ public class ControllerSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "IntroLevel4", null);
 	}
 
+	public void SelfMakeMap()
+	{
+		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "SelfMakeMap", null);
+	}
+
 	public void Quit()
 	{
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "Quit", null);
