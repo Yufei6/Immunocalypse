@@ -45,5 +45,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   macrophage: {fileID: 8830931992787935135, guid: cf4715ba4097c4d889f9f4ffe6ec933d,
     type: 3}
-  cellT: {fileID: 8248461516068396495, guid: 09705ca2dc87145e5bdfb62d8939ee76, type: 3}
-  cellB: {fileID: 8271908241248789686, guid: 4dd2dc602e9b348c2a22b97fc2cf1912, type: 3}
+  cellT1: {fileID: 2764194390099885248, guid: 24babf162743d4e469ed5af9b74d93fd, type: 3}
+  cellB1: {fileID: 8326307201612066296, guid: e7561114b672b4bd1bdc6c0b7c2f84cb, type: 3}
+  cellT2: {fileID: 3085603382015283587, guid: ce94c53cfa0fb4663bcfb9ed349dd63d, type: 3}
+  cellB2: {fileID: 421523577804563478, guid: f1372a965aa1f43f4ab2dfbd9e52967e, type: 3}
+  cellT3: {fileID: 7633305289090182837, guid: 83178f855bcf74463a01402690ec82cc, type: 3}
+  cellB3: {fileID: 1355541069284512173, guid: 3d01276a3306f4d4baf3268a6fb559a2, type: 3}
+  cellT4: {fileID: 6127573919240640909, guid: e82f152c5c2204e63a91d515d6224006, type: 3}
+  cellB4: {fileID: 4270309760393827387, guid: 3e6ea7744097840949523b4d50619c67, type: 3}
