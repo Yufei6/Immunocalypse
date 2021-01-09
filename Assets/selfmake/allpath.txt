@@ -1,0 +1,3 @@
+Assets/selfmake/map.txt
+Assets/selfmake/fac.txt
+Assets/selfmake/tl.txt
