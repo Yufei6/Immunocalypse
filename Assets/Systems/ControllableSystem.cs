@@ -72,19 +72,6 @@ public class ControllableSystem : FSystem {
 		changeCursor = true;
 	}
 
-	public void ShowInformation(GameObject go)
-	{
-		int i = 1;
-		// Debug.Log(go.transform+"Hello");
-
-	}
-
-	public void ChangeCaseColor(GameObject go)
-	{
-		int i = 1;
-		//TODO
-		// go.GetComponent<MeshRenderer>().material.color = Color.green;
-	}
 
 
 	public Vector3 mousePos2worldPos(Vector3 mousePos)
@@ -105,8 +92,6 @@ public class ControllableSystem : FSystem {
 		{
 			return false;
 		}
-		// Debug.Log("OK, Object at"+go.transform.position+" ; your mouse at "+pos);
-		// Debug.Log("Diff X="+diffX+" ; Diff Y= "+diffY);
 		return true;
 	}
 
@@ -306,7 +291,6 @@ public class ControllableSystem : FSystem {
 		}
 		foreach (GameObject go in pointerOverCaseFamily)
 		{
-			// Debug.Log("INNN");
 			if (Input.GetMouseButtonDown(0)){
 				cdTower cdt = go.GetComponent<cdTower>();
 				if (cdt.timer>=cdt.cd){
@@ -314,12 +298,7 @@ public class ControllableSystem : FSystem {
 					drapTower = type;
 					drapCursor = true;
 				}
-				// if (Input.GetMouseButtonUp(0)){
-				// 	Debug.Log("BUILDDD"+type);
-				// }
 			}
-			ChangeCaseColor(go);
-			ShowInformation(go);
 		}
 		if (currentTowerType>-2)
 		{
