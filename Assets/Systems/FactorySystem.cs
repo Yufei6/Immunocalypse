@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 
 public class FactorySystem : FSystem {
+
 	private Family factory=FamilyManager.getFamily (new AllOfComponents(typeof (ID)));
 	private int frame_compteur=0;
 	private Family timeline=FamilyManager.getFamily(new AllOfComponents(typeof(TimeLine)), new NoneOfComponents(typeof(TimelineEvent)));
@@ -18,16 +19,11 @@ public class FactorySystem : FSystem {
 		new AllOfComponents(
 			typeof(Attack),typeof(Move),typeof(Nutrition)
 			));
-
-	
-
-	
 	public FactorySystem(){
 		tl=timeline.First().GetComponent<TimeLine>();
 		te=alltype.First().GetComponent<AllTypeEnemy>();
-		//test
-		
 	}
+	
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
 	protected override void onPause(int currentFrame) {
@@ -43,8 +39,6 @@ public class FactorySystem : FSystem {
 		tl=timeline.First().GetComponent<TimeLine>();
 		te=alltype.First().GetComponent<AllTypeEnemy>();
 		frame_compteur=frame_compteur+1;
-
-		//Debug.Log(tl.i);
 		if(frame_compteur==tl.frame[enemy_compteur]){
 			int type=tl.type_enemy[enemy_compteur];
 			int id=tl.id_fac[enemy_compteur];
@@ -79,13 +73,11 @@ public class FactorySystem : FSystem {
 			}
 		}
 	}
-
 	public void create_enemy(GameObject prefab,Vector3 v,Routine r){
 		GameObject go=Object.Instantiate<GameObject>(prefab,v,Quaternion.identity);
 		go.GetComponent<Move>().routine=r.routine;
 		GameObjectManager.bind(go);
 	}
-
 	private void create_anticorp(GameObject at,Vector3 v,GameObject target,int id ){
 		GameObject go=Object.Instantiate<GameObject>(at,v,Quaternion.identity);
 		go.GetComponent<Attack>().target=target;

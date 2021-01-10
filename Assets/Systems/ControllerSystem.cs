@@ -161,7 +161,7 @@ public class ControllerSystem : FSystem {
 				//score = ss.GetComponent<Text>();
 				if(ss!=null){
 					score = ss.GetComponent<Text>();
-					score.text =  PlayerPrefs.GetInt("score").ToString();
+					score.text = (100-PlayerPrefs.GetInt("score")).ToString();
 				}
 			}
 			
