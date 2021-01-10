@@ -33,7 +33,7 @@ public class MovingSystem : FSystem {
 
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
-
+		
 		foreach (GameObject go in _controllableGO){
 			bool isMove = !go.GetComponent<Attack>().isAttacking;
 			//get his own compteur for the targets
