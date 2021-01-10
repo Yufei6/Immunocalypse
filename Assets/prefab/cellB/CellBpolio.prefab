@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 1493502255588519442}
   - component: {fileID: 8792120774991600195}
   - component: {fileID: 3924481191210915312}
+  - component: {fileID: 8633558108407739547}
   m_Layer: 0
   m_Name: CellBpolio
   m_TagString: def
@@ -377,6 +378,19 @@ MonoBehaviour:
   cdfab: 100
   cdcur: 0
   at: {fileID: 3345517437272857787, guid: bb41aa5e402c6483eaea162613936de8, type: 3}
+--- !u!114 &8633558108407739547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355541069284512173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1778c3b940ec4d9c9baacc6f9d1e8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towercase: {fileID: 0}
 --- !u!1 &4092910166668684775
 GameObject:
   m_ObjectHideFlags: 0

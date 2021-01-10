@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 4410454580414475140}
   - component: {fileID: 6021042439563026389}
   - component: {fileID: 2304268132582445158}
+  - component: {fileID: 6348249888753855688}
   m_Layer: 0
   m_Name: CellBcovid
   m_TagString: def
@@ -270,6 +271,19 @@ MonoBehaviour:
   cdfab: 100
   cdcur: 0
   at: {fileID: 3345517437272857787, guid: bb41aa5e402c6483eaea162613936de8, type: 3}
+--- !u!114 &6348249888753855688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4270309760393827387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1778c3b940ec4d9c9baacc6f9d1e8dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towercase: {fileID: 0}
 --- !u!1 &4290364477289059722
 GameObject:
   m_ObjectHideFlags: 0
