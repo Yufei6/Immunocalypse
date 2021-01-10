@@ -14,14 +14,4 @@ public class ControllableSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("ControllableSystem", "SelectTower", towerType);
 	}
 
-	public void ShowInformation(UnityEngine.GameObject go)
-	{
-		MainLoop.callAppropriateSystemMethod ("ControllableSystem", "ShowInformation", go);
-	}
-
-	public void ChangeCaseColor(UnityEngine.GameObject go)
-	{
-		MainLoop.callAppropriateSystemMethod ("ControllableSystem", "ChangeCaseColor", go);
-	}
-
 }
