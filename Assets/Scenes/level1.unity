@@ -1071,42 +1071,42 @@ PrefabInstance:
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: frame.Array.data[17]
-      value: 1600
+      value: 1550
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: frame.Array.data[16]
-      value: 1580
+      value: 1540
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: frame.Array.data[19]
-      value: 2000
+      value: 1570
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: frame.Array.data[20]
-      value: 2500
+      value: 1580
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: frame.Array.data[21]
-      value: 2513
+      value: 1590
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: frame.Array.data[18]
-      value: 1800
+      value: 1560
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: frame.Array.data[22]
-      value: 2555
+      value: 1600
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: frame.Array.data[23]
-      value: 2568
+      value: 1610
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}

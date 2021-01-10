@@ -591,22 +591,22 @@ PrefabInstance:
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[0]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[1]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[2]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[3]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
@@ -621,32 +621,32 @@ PrefabInstance:
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[6]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[7]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[8]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[9]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[10]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[11]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
