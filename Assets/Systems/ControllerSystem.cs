@@ -22,8 +22,10 @@ public class ControllerSystem : FSystem {
 	
 
 	private Family FamilyController = FamilyManager.getFamily (new AllOfComponents (typeof (GameState)));
+	private Family FamilyAudio = FamilyManager.getFamily (new AllOfComponents (typeof (Audio1)));
 	private GameState gs;
 	private GameLevel gl;
+	private GameObject audio1;
 	private bool stateChange;
 	private int lastState = 0;
 	private int lastLevel = 0;
@@ -39,12 +41,19 @@ public class ControllerSystem : FSystem {
 	//add score: modification 01/04
 	private GameObject[] s = GameObject.FindGameObjectsWithTag("score");
 	private Text score;
+	private AudioSource _audio;
 
 
 	public ControllerSystem()
 	{
 		gs = FamilyController.First().GetComponent<GameState>();
 		gl = FamilyController.First().GetComponent<GameLevel>();
+		audio1 =FamilyAudio.First();
+		if(audio1!=null){
+			_audio=audio1.GetComponent<AudioSource>();
+		}
+		
+
 		stateChange = false;
 		controller = FamilyController.First();
 	}
@@ -54,6 +63,17 @@ public class ControllerSystem : FSystem {
 		gs.currentState = PLAYING;
 		gl.currentLevel = level;
 		stateChange = true;
+	}
+
+	public void playoffmusic()
+	{
+		if(_audio.isPlaying){
+			_audio.Pause();
+		}else{
+			_audio.Play();
+		}
+		
+
 	}
 
 	public void StartIntro()

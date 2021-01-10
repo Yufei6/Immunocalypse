@@ -14,6 +14,11 @@ public class ControllerSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "StartGame", level);
 	}
 
+	public void playoffmusic()
+	{
+		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "playoffmusic", null);
+	}
+
 	public void StartIntro()
 	{
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "StartIntro", null);
