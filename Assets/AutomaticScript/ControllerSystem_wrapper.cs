@@ -24,6 +24,11 @@ public class ControllerSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "StartIntro", null);
 	}
 
+	public void ContinueLevel()
+	{
+		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "ContinueLevel", null);
+	}
+
 	public void Pauss()
 	{
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "Pauss", null);

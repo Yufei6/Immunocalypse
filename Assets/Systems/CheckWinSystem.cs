@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using FYFY;
+using System.Collections.Generic;
 
 public class CheckWinSystem : FSystem {
 
@@ -18,8 +19,15 @@ public class CheckWinSystem : FSystem {
 			int i=PlayerPrefs.GetInt("level");
 			PlayerPrefs.SetInt("level",i+1);
 			int d=i+1;
-			string c="EnemyType"+d.ToString();
-			PlayerPrefs.SetInt(c,0);
+			var namevirus = new List<string>()
+                    {
+                        "tetanus",
+                        "bordetella",
+                        "poliovirus",
+                        "covid19"                    
+                    };
+			string c=namevirus[i-1];
+			PlayerPrefs.SetInt(c,1);
 			if(i < 3){
 				GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 				GameObjectManager.loadScene("ContinueScene"+d);

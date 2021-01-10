@@ -36,7 +36,7 @@ public class SwitchSystem : FSystem {
 			if(c.GetComponent<Id_camera>().id_c==id_cam){
 				c.SetActive(true);
 				c.GetComponent<Id_camera>().block.SetActive(
-					PlayerPrefs.GetInt(c.GetComponent<Id_camera>().virusname)==0);
+					PlayerPrefs.GetInt(c.GetComponent<Id_camera>().virusname)==1);
 			}
 			else{
 				c.SetActive(false);
