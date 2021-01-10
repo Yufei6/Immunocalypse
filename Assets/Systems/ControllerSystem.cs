@@ -207,9 +207,7 @@ public class ControllerSystem : FSystem {
 				Time.timeScale = 0;
 				break;
 			case OPTIONMENU:
-				// Debug.Log("STATE4");
-				//TODO
-				int i = 1;
+				Debug.Log("TODO");
 				break;
 			case SHOWCOLLECTION:
 				// Debug.Log("STATE5");
