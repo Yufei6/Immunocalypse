@@ -81,7 +81,7 @@ public class RefreshSystem : FSystem {
 			//if(PlayerPrefs.HasKey(enemyCible)){
 			if(PlayerPrefs.GetInt(type)==1){
 
-				Debug.Log("new_cd"+cdt.new_cd.ToString());
+				//Debug.Log("new_cd"+cdt.new_cd.ToString());
 				c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.new_cd);
 				cdt.timer += Time.deltaTime;
 

@@ -1237,7 +1237,7 @@ GameObject:
   - component: {fileID: 2053034843}
   - component: {fileID: 2053034842}
   m_Layer: 5
-  m_Name: Text
+  m_Name: score
   m_TagString: score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
