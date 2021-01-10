@@ -81,6 +81,38 @@ public class ControllerSystem : FSystem {
 		gs.currentState = START;
 		stateChange = true;
 		PlayerPrefs.SetInt("level",1);
+		PlayerPrefs.SetInt("tetanus",0);
+		PlayerPrefs.SetInt("bordetella",0);
+		PlayerPrefs.SetInt("poliovirus",0);
+		PlayerPrefs.SetInt("covid19",0);
+	}
+
+	public void ContinueLevel()
+	{
+		int lv = PlayerPrefs.GetInt("level");
+		switch(lv){
+			case 1:
+				IntroLevel1();
+				break;
+
+			case 2:
+				IntroLevel2();
+				break;
+			
+			case 3:
+				IntroLevel3();
+				break;
+			
+			case 4:
+				IntroLevel4();
+				break;
+			
+			default:
+				Debug.Log("Unknown level (yufei)");
+				break;
+			
+		}
+
 	}
 
 	public void Pauss()
