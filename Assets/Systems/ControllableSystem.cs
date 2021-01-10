@@ -253,37 +253,37 @@ public class ControllableSystem : FSystem {
 		switch (type)
 		{
 			case NOTHING:
-				Cursor.SetCursor(CursorNormal, new Vector2(100, 100), CursorMode.Auto);
+				Cursor.SetCursor(CursorNormal, new Vector2(6, 6), CursorMode.Auto);
 				break;
 			case DESTROY:
-				Cursor.SetCursor(CursorDestroy, new Vector2(56, 55), CursorMode.Auto);
+				Cursor.SetCursor(CursorDestroy, new Vector2(10, 10), CursorMode.Auto);
 				break;
 			case MACROPHAGE:
-				Cursor.SetCursor(CursorM, new Vector2(280, 215), CursorMode.Auto);
+				Cursor.SetCursor(CursorM, new Vector2(16, 16), CursorMode.Auto);
 				break;
 			case IMPHOCYTET1:
-				Cursor.SetCursor(CursorT1, new Vector2(74, 69), CursorMode.Auto);
+				Cursor.SetCursor(CursorT1, new Vector2(16, 16), CursorMode.Auto);
 				break;
 			case IMPHOCYTET2:
-				Cursor.SetCursor(CursorT2, new Vector2(83, 79), CursorMode.Auto);
+				Cursor.SetCursor(CursorT2, new Vector2(16, 16), CursorMode.Auto);
 				break;	
 			case IMPHOCYTET3:
-				Cursor.SetCursor(CursorT3, new Vector2(58, 60), CursorMode.Auto);
+				Cursor.SetCursor(CursorT3, new Vector2(16, 16), CursorMode.Auto);
 				break;	
 			case IMPHOCYTET4:
-				Cursor.SetCursor(CursorT4, new Vector2(56, 58), CursorMode.Auto);
+				Cursor.SetCursor(CursorT4, new Vector2(16, 16), CursorMode.Auto);
 				break;		
 			case IMPHOCYTEB1:
-				Cursor.SetCursor(CursorB1, new Vector2(75, 72), CursorMode.Auto);
+				Cursor.SetCursor(CursorB1, new Vector2(16, 16), CursorMode.Auto);
 				break;
 			case IMPHOCYTEB2:
-				Cursor.SetCursor(CursorB2, new Vector2(56, 55), CursorMode.Auto);
+				Cursor.SetCursor(CursorB2, new Vector2(16, 16), CursorMode.Auto);
 				break;
 			case IMPHOCYTEB3:
-				Cursor.SetCursor(CursorB3, new Vector2(60, 59), CursorMode.Auto);
+				Cursor.SetCursor(CursorB3, new Vector2(16, 16), CursorMode.Auto);
 				break;
 			case IMPHOCYTEB4:
-				Cursor.SetCursor(CursorB4, new Vector2(74, 72), CursorMode.Auto);
+				Cursor.SetCursor(CursorB4, new Vector2(16, 16), CursorMode.Auto);
 				break;
 			default:
 				Debug.Log("Unknow CursorType!!(Yufei)");
