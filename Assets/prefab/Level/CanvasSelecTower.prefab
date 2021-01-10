@@ -554,12 +554,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ressource: 7
-  cd: 7
+  cd: 6
   id: 5
   timer: 0
   Tower_id: 0
   towerType: tetanus
-  new_cd: 0
+  new_cd: 3
 --- !u!114 &8624937367349322582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,9 +706,7 @@ PrefabInstance:
     - target: {fileID: 7363481291433950715, guid: 0c0d39b2a860cb546ac322fb3d2502e3,
         type: 3}
       propertyPath: m_text
-      value: '10
-
-'
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7363481291433950715, guid: 0c0d39b2a860cb546ac322fb3d2502e3,
         type: 3}
@@ -948,6 +946,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectMacrophage
       objectReference: {fileID: 0}
+    - target: {fileID: 7363481293003953775, guid: 0c0d39b2a860cb546ac322fb3d2502e3,
+        type: 3}
+      propertyPath: ressource
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363481293003953775, guid: 0c0d39b2a860cb546ac322fb3d2502e3,
+        type: 3}
+      propertyPath: cd
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363481293003953775, guid: 0c0d39b2a860cb546ac322fb3d2502e3,
+        type: 3}
+      propertyPath: new_cd
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c0d39b2a860cb546ac322fb3d2502e3, type: 3}
 --- !u!1 &8576868636632817372 stripped
@@ -997,7 +1010,7 @@ PrefabInstance:
     - target: {fileID: 3703002798404030577, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
       propertyPath: m_text
-      value: 18
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3703002798404030577, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
@@ -1033,6 +1046,21 @@ PrefabInstance:
         type: 3}
       propertyPath: towerType
       value: covid19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: ressource
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: cd
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: new_cd
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
@@ -1334,7 +1362,7 @@ PrefabInstance:
     - target: {fileID: 1505109325793564664, guid: d8bab9c1ed24a46799afb3a6041fc02c,
         type: 3}
       propertyPath: m_text
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1505109325793564664, guid: d8bab9c1ed24a46799afb3a6041fc02c,
         type: 3}
@@ -1559,6 +1587,21 @@ PrefabInstance:
       propertyPath: towerType
       value: bordetella
       objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: ressource
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: cd
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: new_cd
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8bab9c1ed24a46799afb3a6041fc02c, type: 3}
 --- !u!224 &4509355142261805839 stripped
@@ -1583,7 +1626,7 @@ PrefabInstance:
     - target: {fileID: 1505109325793564664, guid: d8bab9c1ed24a46799afb3a6041fc02c,
         type: 3}
       propertyPath: m_text
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1505109325793564664, guid: d8bab9c1ed24a46799afb3a6041fc02c,
         type: 3}
@@ -1807,6 +1850,21 @@ PrefabInstance:
         type: 3}
       propertyPath: towerType
       value: covid19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: ressource
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: cd
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: new_cd
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8bab9c1ed24a46799afb3a6041fc02c, type: 3}
@@ -2311,6 +2369,21 @@ PrefabInstance:
       propertyPath: id
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: ressource
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: cd
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828436431192316801, guid: d8bab9c1ed24a46799afb3a6041fc02c,
+        type: 3}
+      propertyPath: new_cd
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8bab9c1ed24a46799afb3a6041fc02c, type: 3}
 --- !u!224 &6055072983967185799 stripped
@@ -2360,7 +2433,7 @@ PrefabInstance:
     - target: {fileID: 3703002798404030577, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
       propertyPath: m_text
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3703002798404030577, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
@@ -2391,6 +2464,21 @@ PrefabInstance:
         type: 3}
       propertyPath: towerType
       value: tetanus
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: cd
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: new_cd
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: ressource
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
@@ -3049,7 +3137,7 @@ PrefabInstance:
     - target: {fileID: 1505109325793564664, guid: d8bab9c1ed24a46799afb3a6041fc02c,
         type: 3}
       propertyPath: m_text
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1505109325793564664, guid: d8bab9c1ed24a46799afb3a6041fc02c,
         type: 3}
@@ -3356,6 +3444,21 @@ PrefabInstance:
       propertyPath: id
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: ressource
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: cd
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: new_cd
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3648,6 +3751,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8576868636717242208}
     m_Modifications:
+    - target: {fileID: 1973212776126754136, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.82155573
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973212776126754136, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.95425177
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973212776126754136, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9622642
+      objectReference: {fileID: 0}
     - target: {fileID: 3058420274813423884, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3711,12 +3829,12 @@ PrefabInstance:
     - target: {fileID: 3699059392852786215, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -911.8
+      value: -885
       objectReference: {fileID: 0}
     - target: {fileID: 3699059392852786215, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 332
+      value: 314
       objectReference: {fileID: 0}
     - target: {fileID: 3699059392852786215, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
         type: 3}
@@ -3757,6 +3875,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699059392852786215, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699059392852786215, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699059392852786215, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.08
       objectReference: {fileID: 0}
     - target: {fileID: 6191015094941821231, guid: 8b2e8c9c9f3d3d44b94997edf75af097,
         type: 3}
@@ -3806,7 +3939,7 @@ PrefabInstance:
     - target: {fileID: 3703002798404030577, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
       propertyPath: m_text
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3703002798404030577, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
@@ -3842,6 +3975,21 @@ PrefabInstance:
         type: 3}
       propertyPath: towerType
       value: bordetella
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: ressource
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: cd
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703002798566230577, guid: 073226d2fda7ba04192f7fec4bee98cb,
+        type: 3}
+      propertyPath: new_cd
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3703002798566230578, guid: 073226d2fda7ba04192f7fec4bee98cb,
         type: 3}
