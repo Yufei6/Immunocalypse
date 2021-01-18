@@ -196,7 +196,11 @@ public class ControllerSystem : FSystem {
 
 
 		Time.timeScale = 1;
+	}
 
+	public void Replay()
+	{
+		ContinueLevel();
 	}
 
 

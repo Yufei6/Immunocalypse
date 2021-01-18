@@ -89,4 +89,9 @@ public class ControllerSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "Continue", null);
 	}
 
+	public void Replay()
+	{
+		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "Replay", null);
+	}
+
 }
