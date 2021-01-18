@@ -50,4 +50,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ContinueScene4.unity
     guid: 5fa6f3eed3aac384da220d9403c3e0db
+  - enabled: 1
+    path: Assets/Scenes/IntroLevel3.unity
+    guid: 4d0479cb653e40d498d5ee80e9a78034
+  - enabled: 1
+    path: Assets/Scenes/IntroLevel4.unity
+    guid: 30fb7a0e20cb3d54bb9418ab26b97bf8
   m_configObjects: {}
