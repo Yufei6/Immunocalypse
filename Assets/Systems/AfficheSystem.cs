@@ -34,7 +34,7 @@ public class AfficheSystem : FSystem {
 			a.GetComponent<Text>().text = _amount.ToString();
 		}
 		foreach(GameObject hp in hp_family){
-			hp.GetComponent<HP>().barre.value= hp.GetComponent<HP>().hp;
+			hp.GetComponent<HP>().barre.value= hp.GetComponent<HP>().hp*100/hp.GetComponent<HP>().hp_max;
 
 		}
 

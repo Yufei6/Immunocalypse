@@ -15,6 +15,10 @@ public class AutoAttackSystem : FSystem {
 		new AllOfComponents(
 			typeof(Attack),typeof(TowerId)),
 		new NoneOfComponents(typeof(Move),typeof(Anticorp)));
+	private Family immuno =FamilyManager.getFamily(
+		new AllOfComponents(
+			typeof(HP)),
+		new NoneOfComponents(typeof(Nutrition)));
 	private Family marco =FamilyManager.getFamily(
 		new AllOfComponents(
 			typeof(Attack)),
@@ -53,22 +57,18 @@ public class AutoAttackSystem : FSystem {
 	protected override void onProcess(int familiesUpdateCount) {
 
 		foreach(GameObject vb in virus_bacterie){
-			Triggered2D vbt= vb.GetComponent<Triggered2D>();
-			if(vbt!=null){
-				c=1000f;
-				foreach(GameObject target in vbt.Targets){	
-					if(target.CompareTag("def")||target.CompareTag("cellule")){	
-						d=Vector2.Distance(vbt.transform.position, vb.transform.position);
-						if (d<c){
-							c=d;
-							vb.GetComponent<Attack>().target=target;
-							vb.GetComponent<Attack>().hastarget=true;
-							change_is_move(vb);
-						}
-					}
 
+			c=1f;
+			foreach(GameObject target in immuno){	
+				if(target.CompareTag("def")||target.CompareTag("cellule")){	
+					d=Vector2.Distance(target.transform.position, vb.transform.position);
+					if (d<c){
+						c=d;
+						vb.GetComponent<Attack>().target=target;
+						vb.GetComponent<Attack>().hastarget=true;
+						change_is_move(vb);
+					}
 				}
-				
 			}
 			if(vb.GetComponent<Attack>().target==null){
 						vb.GetComponent<Attack>().hastarget=false;
@@ -101,12 +101,11 @@ public class AutoAttackSystem : FSystem {
 		}
 
 		foreach(GameObject go in marco){
-			Triggered2D got= go.GetComponent<Triggered2D> ();	
-			if (got!=null){
-				c=1000f;
-				foreach(GameObject target in got.Targets){
+			
+				c=1f;
+				foreach(GameObject target in virus_bacterie){
 					if(target.CompareTag("enemy")){
-						d=Vector2.Distance(got.transform.position, go.transform.position);
+						d=Vector2.Distance(target.transform.position, go.transform.position);
 						if (d<c){
 							c=d;
 							go.GetComponent<Attack>().target=target;
@@ -119,16 +118,14 @@ public class AutoAttackSystem : FSystem {
 						attack2(go);
 					}
 				}
-			}	
+				
 		}
 
 		foreach(GameObject go in lym_T){
-			Triggered2D got= go.GetComponent<Triggered2D> ();	
-			if (got!=null){
-				c=1000f;
-				foreach(GameObject target in got.Targets){
+				c=3f;
+				foreach(GameObject target in virus_bacterie){
 					if(target.CompareTag("enemy")){
-						d=Vector2.Distance(got.transform.position, go.transform.position);
+						d=Vector2.Distance(target.transform.position, go.transform.position);
 						if (d<c){
 							c=d;
 							go.GetComponent<Attack>().target=target;
@@ -138,10 +135,11 @@ public class AutoAttackSystem : FSystem {
 				}
 				if(go.GetComponent<Attack>().target!=null){
 					if(attack_cd(go)){
+						Debug.Log(go.GetComponent<Attack>().target.GetComponent<HP>().hp);
 						attack3(go);
 					}
 				}
-			}	
+				
 		}
 
 		foreach(GameObject go in anticorp){
