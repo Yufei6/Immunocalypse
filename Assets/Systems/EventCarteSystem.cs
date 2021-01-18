@@ -28,7 +28,7 @@ public class EventCarteSystem : FSystem {
 		ce1 = canvasEvent1F.First();
 		ce2 = canvasEvent2F.First();
 		ce3 = canvasEvent3F.First();
-		proba = 0.0f;
+		proba = 0.3f;
 	}
 
 	public void WashHand(int want)
@@ -55,7 +55,7 @@ public class EventCarteSystem : FSystem {
 	public void DoSport(int want)
 	{
 		float probaAttackEnemy = 0.3f;
-		int dam = 30;
+		int dam = 50;
 		if (want>0){
 			foreach (GameObject go in enemyF)
 			{
