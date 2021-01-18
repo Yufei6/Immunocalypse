@@ -19,6 +19,11 @@ public class ControllerSystem_wrapper : MonoBehaviour
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "playoffmusic", null);
 	}
 
+	public void Back2Menu()
+	{
+		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "Back2Menu", null);
+	}
+
 	public void StartIntro()
 	{
 		MainLoop.callAppropriateSystemMethod ("ControllerSystem", "StartIntro", null);

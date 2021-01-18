@@ -52,8 +52,6 @@ public class ControllerSystem : FSystem {
 		if(audio1!=null){
 			_audio=audio1.GetComponent<AudioSource>();
 		}
-		
-
 		stateChange = false;
 		controller = FamilyController.First();
 	}
@@ -72,8 +70,13 @@ public class ControllerSystem : FSystem {
 		}else{
 			_audio.Play();
 		}
-		
+	}
 
+	public void Back2Menu()
+	{
+		gs.currentState = MAINMENU;
+		GameObjectManager.dontDestroyOnLoadAndRebind(controller);
+		GameObjectManager.loadScene("MainMenuScene");
 	}
 
 	public void StartIntro()
@@ -206,6 +209,9 @@ public class ControllerSystem : FSystem {
 		// 	Debug.Log(lastState+"CHANGE"+gs.currentState);
 		// }
 		//Debug.Log(PlayerPrefs.GetInt("score"));
+		if (gs.currentState == -1){
+			Back2Menu();
+		}
 		s = GameObject.FindGameObjectsWithTag("score");
 		if(s.Length!=0){
 			//Debug.Log("founded");
