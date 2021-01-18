@@ -9,7 +9,7 @@ public class RefreshSystem : FSystem {
 	//get the family using refresh
 	private Family _controllerR = FamilyManager.getFamily(new AllOfComponents(typeof(Amount)));
 
-	private const float Increase = 1f;
+	private const float Increase = 3f;
 	private float timer = 0f;
 	private float _amount = 0f;
 
