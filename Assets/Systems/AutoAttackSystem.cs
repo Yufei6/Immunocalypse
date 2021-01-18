@@ -171,7 +171,7 @@ public class AutoAttackSystem : FSystem {
 		if(hp<0){
 			GameObject tl=timeline.First();
 			tl.GetComponent<TimeLine>().win_condtion -=1;
-			Debug.Log(tl.GetComponent<TimeLine>().win_condtion);
+			//Debug.Log(tl.GetComponent<TimeLine>().win_condtion);
 			GameObject go= target.GetComponent<Ani>().ani;
 			go.GetComponent<Animator>().SetInteger("State", 2);
 			GameObjectManager.unbind(target);
