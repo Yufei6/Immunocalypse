@@ -9,7 +9,7 @@ public class RefreshSystem : FSystem {
 	//get the family using refresh
 	private Family _controllerR = FamilyManager.getFamily(new AllOfComponents(typeof(Amount)));
 
-	private const float Increase = 3f;
+	private const float Increase = 1f;
 	private float timer = 0f;
 	private float _amount = 0f;
 
@@ -66,7 +66,13 @@ public class RefreshSystem : FSystem {
 			//for every 1 second, the money increases a certain amount
 			timer += Time.deltaTime;
 			if(timer>=1f){
-				r.GetComponent<Amount>().amount += Increase;
+				int lv = PlayerPrefs.GetInt("level");
+				if (lv==4){
+					r.GetComponent<Amount>().amount += Increase * 2;
+				}
+				else{
+					r.GetComponent<Amount>().amount += Increase;
+				}
 				timer = 0f;
 			}
 			_amount = r.GetComponent<Amount>().amount;
