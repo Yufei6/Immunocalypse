@@ -1675,6 +1675,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1655860566}
+    - target: {fileID: 8576868637249541062, guid: a54e3876dbf77f847bcd75eb1d70c0f2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectTower
+      objectReference: {fileID: 0}
     - target: {fileID: 8576868637262858345, guid: a54e3876dbf77f847bcd75eb1d70c0f2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
