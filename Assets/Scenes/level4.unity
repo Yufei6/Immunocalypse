@@ -463,6 +463,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32eae98f8291845efaf52cc4dd231c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &844067760
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844067758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c36d977dbb3142f2b66a767d403bc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &844067761
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844067758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab22717fdb12fc46a03a7e0dd1dbf19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1147064817 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2831474573975103543, guid: 4bc024af97e5d084aaf45c50da7eae43,
@@ -2373,6 +2397,11 @@ PrefabInstance:
     - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
         type: 3}
       propertyPath: _fixedUpdateSystemDescriptions.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _updateSystemDescriptions.Array.size
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
@@ -2405,6 +2434,27 @@ PrefabInstance:
         type: 3}
       propertyPath: _fixedUpdateSystemDescriptions.Array.data[4]._typeFullName
       value: CheckWinSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _fixedUpdateSystemDescriptions.Array.data[5]._typeAssemblyQualifiedName
+      value: AnticorpSystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _fixedUpdateSystemDescriptions.Array.data[5]._typeFullName
+      value: AnticorpSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _updateSystemDescriptions.Array.data[4]._typeAssemblyQualifiedName
+      value: ControllerSystem, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999982599548398885, guid: ffd5395eb5dcb524e95bb7b534f637d3,
+        type: 3}
+      propertyPath: _updateSystemDescriptions.Array.data[4]._typeFullName
+      value: ControllerSystem
       objectReference: {fileID: 0}
     - target: {fileID: 4999982599548398905, guid: ffd5395eb5dcb524e95bb7b534f637d3,
         type: 3}

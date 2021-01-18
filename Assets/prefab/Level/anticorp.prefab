@@ -154,7 +154,7 @@ Animation:
   m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 0}
-  - {fileID: 7400000, guid: 59a85e3b411b74b8fb8459b95aaf7dfd, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -301,7 +301,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 5c9be41e1273f44e588ce7a7fd58cabc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e232ea8ea56fb437696d949e2cbb3dc3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
