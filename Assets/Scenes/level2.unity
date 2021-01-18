@@ -601,12 +601,12 @@ PrefabInstance:
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[2]
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
       propertyPath: type_enemy.Array.data[3]
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1266585219949813524, guid: e71e443e5deceba43a967d8167bb4b3e,
         type: 3}
@@ -1343,8 +1343,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1605941197436872300, guid: 4bc024af97e5d084aaf45c50da7eae43,
         type: 3}
+      propertyPath: frame.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605941197436872300, guid: 4bc024af97e5d084aaf45c50da7eae43,
+        type: 3}
+      propertyPath: type_event.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605941197436872300, guid: 4bc024af97e5d084aaf45c50da7eae43,
+        type: 3}
       propertyPath: frame.Array.data[3]
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605941197436872300, guid: 4bc024af97e5d084aaf45c50da7eae43,
+        type: 3}
+      propertyPath: frame.Array.data[4]
+      value: 1100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605941197436872300, guid: 4bc024af97e5d084aaf45c50da7eae43,
+        type: 3}
+      propertyPath: frame.Array.data[5]
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605941197436872300, guid: 4bc024af97e5d084aaf45c50da7eae43,
+        type: 3}
+      propertyPath: type_event.Array.data[4]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605941197436872300, guid: 4bc024af97e5d084aaf45c50da7eae43,
+        type: 3}
+      propertyPath: type_event.Array.data[5]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605941197436872300, guid: 4bc024af97e5d084aaf45c50da7eae43,
+        type: 3}
+      propertyPath: type_event.Array.data[1]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2831474573975103543, guid: 4bc024af97e5d084aaf45c50da7eae43,
         type: 3}
