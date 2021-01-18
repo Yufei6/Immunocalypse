@@ -28,7 +28,7 @@ public class CheckWinSystem : FSystem {
                     };
 			string c=namevirus[i-1];
 			PlayerPrefs.SetInt(c,1);
-			if(i < 3){
+			if(i < 4){
 				GameObjectManager.dontDestroyOnLoadAndRebind(controller);
 				GameObjectManager.loadScene("ContinueScene"+d);
 			}else{
