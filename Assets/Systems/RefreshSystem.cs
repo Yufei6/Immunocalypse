@@ -16,6 +16,8 @@ public class RefreshSystem : FSystem {
 	private Family _cdFamily = FamilyManager.getFamily(new AllOfComponents(typeof(cdTower)));
 	private int currentType = -1;
 	private int cpt = 0;
+
+	private Family _maskFamily = FamilyManager.getFamily(new AllOfComponents(typeof(Mask)));
 	//private float cd_timer = 0f;
 
 
@@ -77,6 +79,7 @@ public class RefreshSystem : FSystem {
 			//string tower_id = cdt.Tower_id.ToString();
 			//string enemyCible = "Enemy"+tower_id;
 			string type = cdt.towerType;
+			int id = cdt.id;
 
 			//if(PlayerPrefs.HasKey(enemyCible)){
 			if(PlayerPrefs.GetInt(type)==1){
@@ -84,15 +87,24 @@ public class RefreshSystem : FSystem {
 				//Debug.Log("new_cd"+cdt.new_cd.ToString());
 				c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.new_cd);
 				cdt.timer += Time.deltaTime;
-
+				foreach (GameObject go_mask in _maskFamily){
+					if (go_mask.GetComponent<Mask>().type == id){
+						Image img = go_mask.GetComponent<Image>();
+						img.fillAmount = 1 - cdt.timer/cdt.new_cd;
+					}
 				}
+			}
 			else{
-
 				c.GetComponent<Button>().interactable = (_amount>=cdt.ressource)&&(cdt.timer>=cdt.cd);
 				cdt.timer += Time.deltaTime;
+				foreach (GameObject go_mask in _maskFamily){
+					if (go_mask.GetComponent<Mask>().type == id){
+						Image img = go_mask.GetComponent<Image>();
+						img.fillAmount = 1 - cdt.timer/cdt.cd;
+					}
+				}
 
 			}
-
 			
 			
 		}
