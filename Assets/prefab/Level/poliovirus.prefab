@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd402de61004c814aabc7113291f6f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nut_cible: 50
+  nut_cible: 100
   nut_actuelle: 0
 --- !u!114 &1095661194872694990
 MonoBehaviour:
