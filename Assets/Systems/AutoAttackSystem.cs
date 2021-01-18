@@ -135,7 +135,7 @@ public class AutoAttackSystem : FSystem {
 				}
 				if(go.GetComponent<Attack>().target!=null){
 					if(attack_cd(go)){
-						Debug.Log(go.GetComponent<Attack>().target.GetComponent<HP>().hp);
+						//Debug.Log(go.GetComponent<Attack>().target.GetComponent<HP>().hp);
 						attack3(go);
 					}
 				}
