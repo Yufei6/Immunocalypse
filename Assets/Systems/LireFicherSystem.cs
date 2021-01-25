@@ -23,6 +23,7 @@ public class LireFicherSystem : FSystem {
     private string text="Assets/selfmake/allpath.txt";
     private Family timeline=FamilyManager.getFamily(new AllOfComponents(typeof(TimeLine)), new NoneOfComponents(typeof(TimelineEvent)));
 	public LireFicherSystem(){
+        text=PlayerPrefs.GetString("path");
 		lireAllpath(text);
 
         tl=timeline.First().GetComponent<TimeLine>();

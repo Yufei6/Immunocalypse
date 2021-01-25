@@ -338,7 +338,7 @@ public class ControllerSystem : FSystem {
 			case SELFMAKEMAP:
 				if ((stateChange) && (lastState!=PAUSE) && (lastState!=EVENTCHOICE)){
 					GameObjectManager.dontDestroyOnLoadAndRebind(controller);
-					GameObjectManager.loadScene("sceneselfmake");
+					GameObjectManager.loadScene("loadfilescene");
 				}
 				break;
 			default :
