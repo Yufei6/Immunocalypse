@@ -1994,7 +1994,7 @@ PrefabInstance:
     - target: {fileID: 3690707335633202502, guid: 069f3ed8d0e7b3440803c60835fbad16,
         type: 3}
       propertyPath: rout3.Array.data[2]
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3690707335633202502, guid: 069f3ed8d0e7b3440803c60835fbad16,
         type: 3}
@@ -2024,7 +2024,7 @@ PrefabInstance:
     - target: {fileID: 3690707335633202502, guid: 069f3ed8d0e7b3440803c60835fbad16,
         type: 3}
       propertyPath: rout3.Array.data[3]
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3690707335633202502, guid: 069f3ed8d0e7b3440803c60835fbad16,
         type: 3}
